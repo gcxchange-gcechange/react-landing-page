@@ -3,8 +3,6 @@ import React from 'react'
 import {Link} from "react-router-dom";
 import {Helmet} from "react-helmet";
 
-//document.title = "gcx-gce.gc.ca";
-
 import gcxLogo from '../assets/gcx-gce.png'
 
 const Index = () => (
