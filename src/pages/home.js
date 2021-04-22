@@ -1,6 +1,7 @@
 import React, {Fragment} from 'react'
 import { Container, Row, Col, Button } from 'reactstrap';
 import {Helmet} from "react-helmet";
+import {Link} from "react-router-dom";
 
 import { DefaultPlayer as Video } from 'react-html5video';
 import 'react-html5video/dist/styles.css';
@@ -11,6 +12,7 @@ import stepTwoEn from '../assets/img/stepTwoEn.png'
 import stepThreeEn from '../assets/img/stepThreeEn.png'
 
 import teaserVideo from '../assets/video/Gcxchange teaser 6_EN.mp4';
+import teaserVideoVTT from '../assets/video/WEBVTT.vtt';
 import teaserVideoPoster from '../assets/video/videoPosterEn.jpg';
 
 import Canada from '../assets/img/Canada-blanc-01.png';
@@ -35,15 +37,16 @@ class Home extends React.Component {
             <Container>
               <Row>
                 <Col>
+                  <nav className="d-flex lang-select">
+                    <h1 className="sr-only">{lang.title}</h1>
+                    {this.props.lang === "en-us" ? <Link className="ml-auto" to="/accueil" lang="fr-ca">Français</Link> : <Link className="ml-auto" to="/home" lang="en-us">English</Link> }
+                  </nav>
                   <div className="text-center">
                     <img className="logo-img" src={gcxLogo} alt="gcxchange | gcéchange" />
                     <div className="mb-5 heading-zone text-center d-block">
-                      <h1 className="display-2 pb-3" dangerouslySetInnerHTML={{__html: lang.hero.h1}} />
+                      <h2 className="display-2 pb-3" dangerouslySetInnerHTML={{__html: lang.hero.h1}} />
                       <p className="mt-1 lead">{lang.hero.subtitle}</p>
                     </div>
-                    <Button className="mb-5" color="primary" size="lg">
-                      {lang.hero.ctabutton}
-                    </Button>
                   </div>
                 </Col>
               </Row>
@@ -77,6 +80,11 @@ class Home extends React.Component {
                     <p className="lead mb-5" dangerouslySetInnerHTML={{__html: lang.step3.paragraph5}} />
                     <hr />
                   </div>
+                  <div className="text-center">
+                    <Button className="mt-5 mb-5" color="primary" size="lg" href={lang.hero.link} target="_blank">
+                      {lang.hero.ctabutton}
+                    </Button>
+                  </div>
                 </Col>
               </Row>
             </Container>
@@ -88,14 +96,21 @@ class Home extends React.Component {
                   <div className="text-center">
                     <div className="mb-5">
                       <Video
-                        controls={['PlayPause', 'Seek', 'Time', 'Volume', 'Fullscreen']}
+                        controls={['PlayPause', 'Seek', 'Time', 'Captions', 'Volume', 'Fullscreen']}
                         poster={teaserVideoPoster}
-                        onCanPlayThrough={() => {
-                            // Do stuff
+                        copy={{
+                          play: lang.onboarding.videoPlay,
+                          pause: lang.onboarding.videoPause,
+                          mute: lang.onboarding.videoMute,
+                          unmute: lang.onboarding.videoUnmute,
+                          volume: lang.onboarding.videoVolume,
+                          fullscreen: lang.onboarding.videoFullscreen,
+                          seek: lang.onboarding.videoSeek,
+                          captions: lang.onboarding.videoCaptions,
                         }}
                       >
                         <source src={teaserVideo} type="video/mp4" />
-                        <track label="English" kind="subtitles" srcLang="en" src="http://source.vtt" default />
+                        <track label="English" kind="subtitles" srcLang="en" src={teaserVideoVTT} default />
                       </Video>
                     </div>
                     <p className="lead">{lang.onboarding.paragraph}</p>
