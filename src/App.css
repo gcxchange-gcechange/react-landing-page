@@ -81,6 +81,12 @@ img {
   border-radius: 2rem;
 }
 
+.CTA {
+  background-color: #3AA16F !important;
+  border-color: #3AA16F !important;
+  border-radius: 2rem !important;
+}
+
 .cta-hero .lead {
   font-size: 1.5rem;
   font-weight: 400;
@@ -112,6 +118,13 @@ img {
 .step-section hr {
   max-width: 240px;
   border-top: 2px solid rgba(0,0,0,.1);
+}
+
+.btn-lg {
+  padding: .6rem 1.2rem !important;
+  font-size: 1.6rem !important;
+  line-height: 2 !important;
+  border-radius: 3rem !important;
 }
 
 .onboarding-section h2,

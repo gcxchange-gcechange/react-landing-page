@@ -1,9 +1,9 @@
 const Lang = {
     "en-us": {
-        title: 'gcxchange',
+        title: 'gcxchange - Activate your account',
         hero: {
             h1: 'You\'re <span class="highlight">so</span> close!',
-            subtitle: 'It’s time to get you onboarded onto gcxchange, the new platform for GC-wide communication and collaboration. Start by clicking the button below to kickstart the account activation process, then follow the steps.',
+            subtitle: 'It\'s time to get you onboarded onto gcxchange, the new platform for GC-wide communication and collaboration.  Review the steps below and once you’re ready, click the green “Activate your account” button at the bottom to kickstart the account activation process.',
             ctabutton: 'Activate your account',
             link: 'https://myaccess.microsoft.com/@tbssctdev.onmicrosoft.com#/access-packages/5211fd69-07b9-499d-ab67-10d80d6107aa',
         },
@@ -19,7 +19,7 @@ const Lang = {
         },
         step3: {
             heading: 'Step <span class="highlight">three</span>',
-            paragraph1: 'Check your email!',
+            paragraph1: 'Check your email.',
             paragraph2: 'You\'ll receive two emails. The first one you\'ll get is the "You\'re in" message. This is the important one. It\'s where you\'ll find the <strong>Click here to get started</strong> link that will bring you to the gcxchange homepage.',
             paragraph3: 'But don\'t click it yet, the system needs a few minutes (5 minutes tops) to complete the activation. Patience is a virtue, and the reward is that when you finally do click the link, you\'ll be in right away.',
             paragraph4: 'If you got a "That didn\'t work" message when you clicked the link, don’t panic. The system just needs a bit more time to activate your account. Wait a few more minutes then refresh the page.',
@@ -45,7 +45,7 @@ const Lang = {
         },
     },
     "fr-ca": {
-        title: 'gcéchange',
+        title: 'gcéchange - Activate your account',
         hero: {
             h1: 'You\'re <span class="highlight">so</span> close!',
             subtitle: 'It’s time to get you onboarded onto gcxchange, the new platform for GC-wide communication and collaboration. Start by clicking the button below to kickstart the account activation process, then follow the steps.',

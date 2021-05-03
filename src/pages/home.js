@@ -7,6 +7,8 @@ import { DefaultPlayer as Video } from 'react-html5video';
 import 'react-html5video/dist/styles.css';
 
 import gcxLogo from '../assets/img/gcx-eng-logo.png'
+import gcxLogoFR from '../assets/img/gcx-fr-logo.png'
+
 import stepOneEn from '../assets/img/stepOneEn.png'
 import stepTwoEn from '../assets/img/stepTwoEn.png'
 import stepThreeEn from '../assets/img/stepThreeEn.png'
@@ -14,6 +16,10 @@ import stepThreeEn from '../assets/img/stepThreeEn.png'
 import teaserVideo from '../assets/video/Gcxchange teaser 6_EN.mp4';
 import teaserVideoVTT from '../assets/video/WEBVTT.vtt';
 import teaserVideoPoster from '../assets/video/videoPosterEn.jpg';
+
+import teaserVideoFR from '../assets/video/Gcxchange teaser 7_FR.mp4';
+import teaserVideoVTTFR from '../assets/video/WEBVTT - FR.vtt';
+import teaserVideoPosterFR from '../assets/video/videoPosterFr.jpg';
 
 import Canada from '../assets/img/Canada-blanc-01.png';
 import govCandaEn from '../assets/img/gouv_BLANC_EN-01.png';
@@ -42,7 +48,11 @@ class Home extends React.Component {
                     {this.props.lang === "en-us" ? <Link className="ml-auto" to="/accueil" lang="fr-ca">Français</Link> : <Link className="ml-auto" to="/home" lang="en-us">English</Link> }
                   </nav>
                   <div className="text-center">
-                    <img className="logo-img" src={gcxLogo} alt="gcxchange | gcéchange" />
+                    {this.props.lang === "en-us" ?
+                      <img className="logo-img" src={gcxLogo} alt="gcxchange" />
+                    :
+                      <img className="logo-img" src={gcxLogoFR} alt="gcéchange" />
+                    }
                     <div className="mb-5 heading-zone text-center d-block">
                       <h2 className="display-2 pb-3" dangerouslySetInnerHTML={{__html: lang.hero.h1}} />
                       <p className="mt-1 lead">{lang.hero.subtitle}</p>
@@ -81,7 +91,7 @@ class Home extends React.Component {
                     <hr />
                   </div>
                   <div className="text-center">
-                    <Button className="mt-5 mb-5" color="primary" size="lg" href={lang.hero.link} target="_blank">
+                    <Button className="mt-5 mb-5 CTA" color="primary" size="lg" href={lang.hero.link} target="_blank">
                       {lang.hero.ctabutton}
                     </Button>
                   </div>
@@ -95,23 +105,43 @@ class Home extends React.Component {
                 <Col>
                   <div className="text-center">
                     <div className="mb-5">
-                      <Video
-                        controls={['PlayPause', 'Seek', 'Time', 'Captions', 'Volume', 'Fullscreen']}
-                        poster={teaserVideoPoster}
-                        copy={{
-                          play: lang.onboarding.videoPlay,
-                          pause: lang.onboarding.videoPause,
-                          mute: lang.onboarding.videoMute,
-                          unmute: lang.onboarding.videoUnmute,
-                          volume: lang.onboarding.videoVolume,
-                          fullscreen: lang.onboarding.videoFullscreen,
-                          seek: lang.onboarding.videoSeek,
-                          captions: lang.onboarding.videoCaptions,
-                        }}
-                      >
-                        <source src={teaserVideo} type="video/mp4" />
-                        <track label="English" kind="subtitles" srcLang="en" src={teaserVideoVTT} default />
-                      </Video>
+                      {this.props.lang === 'en-us' ? 
+                        <Video
+                          controls={['PlayPause', 'Seek', 'Time', 'Captions', 'Volume', 'Fullscreen']}
+                          poster={teaserVideoPoster}
+                          copy={{
+                            play: lang.onboarding.videoPlay,
+                            pause: lang.onboarding.videoPause,
+                            mute: lang.onboarding.videoMute,
+                            unmute: lang.onboarding.videoUnmute,
+                            volume: lang.onboarding.videoVolume,
+                            fullscreen: lang.onboarding.videoFullscreen,
+                            seek: lang.onboarding.videoSeek,
+                            captions: lang.onboarding.videoCaptions,
+                          }}
+                        >
+                          <source src={teaserVideo} type="video/mp4" />
+                          <track label="English" kind="subtitles" srcLang="en" src={teaserVideoVTT} default />
+                        </Video>
+                      :
+                        <Video
+                          controls={['PlayPause', 'Seek', 'Time', 'Captions', 'Volume', 'Fullscreen']}
+                          poster={teaserVideoPosterFR}
+                          copy={{
+                            play: lang.onboarding.videoPlay,
+                            pause: lang.onboarding.videoPause,
+                            mute: lang.onboarding.videoMute,
+                            unmute: lang.onboarding.videoUnmute,
+                            volume: lang.onboarding.videoVolume,
+                            fullscreen: lang.onboarding.videoFullscreen,
+                            seek: lang.onboarding.videoSeek,
+                            captions: lang.onboarding.videoCaptions,
+                          }}
+                        >
+                          <source src={teaserVideoFR} type="video/mp4" />
+                          <track label="Français" kind="subtitles" srcLang="fr" src={teaserVideoVTTFR} default />
+                        </Video>
+                      }
                     </div>
                     <p className="lead">{lang.onboarding.paragraph}</p>
                   </div>
