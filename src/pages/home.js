@@ -9,9 +9,13 @@ import 'react-html5video/dist/styles.css';
 import gcxLogo from '../assets/img/gcx-eng-logo.png'
 import gcxLogoFR from '../assets/img/gcx-fr-logo.png'
 
-import stepOneEn from '../assets/img/stepOneEn.png'
-import stepTwoEn from '../assets/img/stepTwoEn.png'
-import stepThreeEn from '../assets/img/stepThreeEn.png'
+import stepOneEn from '../assets/img/steps1_EN.png'
+import stepTwoEn from '../assets/img/steps2_EN.png'
+import stepThreeEn from '../assets/img/steps3_EN.png'
+
+import stepOneFr from '../assets/img/steps1_FR.png'
+import stepTwoFr from '../assets/img/steps2_FR.png'
+import stepThreeFr from '../assets/img/steps3_FR.png'
 
 import teaserVideo from '../assets/video/Gcxchange teaser 6_EN.mp4';
 import teaserVideoVTT from '../assets/video/WEBVTT.vtt';
@@ -69,7 +73,7 @@ class Home extends React.Component {
                   <div className="step-section">
                     <h2  className="display-4" dangerouslySetInnerHTML={{__html: lang.step1.heading}} />
                     <p className="lead" dangerouslySetInnerHTML={{__html: lang.step1.paragraph1}} />
-                    <img className="mb-5" src={stepOneEn} alt="" />
+                    <img className="mb-5" src={this.props.lang === "en-us" ? stepOneEn : stepOneFr} alt="" />
                     <hr />
                   </div>
                   <div className="step-section">
@@ -77,7 +81,7 @@ class Home extends React.Component {
                     <p className="lead" dangerouslySetInnerHTML={{__html: lang.step2.paragraph1}} />
                     <p className="lead" dangerouslySetInnerHTML={{__html: lang.step2.paragraph2}} />
                     <p className="lead" dangerouslySetInnerHTML={{__html: lang.step2.paragraph3}} />
-                    <img className="mb-5" src={stepTwoEn} alt="" />
+                    <img className="mb-5" src={this.props.lang === "en-us" ? stepTwoEn : stepTwoFr} alt="" />
                     <hr />
                   </div>
                   <div className="step-section">
@@ -85,7 +89,7 @@ class Home extends React.Component {
                     <p className="lead" dangerouslySetInnerHTML={{__html: lang.step3.paragraph1}} />
                     <p className="lead" dangerouslySetInnerHTML={{__html: lang.step3.paragraph2}} />
                     <p className="lead" dangerouslySetInnerHTML={{__html: lang.step3.paragraph3}} />
-                    <img src={stepThreeEn} alt="" />
+                    <img src={this.props.lang === "en-us" ? stepThreeEn : stepThreeFr} alt="" />
                     <p className="lead" dangerouslySetInnerHTML={{__html: lang.step3.paragraph4}} />
                     <p className="lead mb-5" dangerouslySetInnerHTML={{__html: lang.step3.paragraph5}} />
                     <hr />
