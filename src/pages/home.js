@@ -1,5 +1,5 @@
 import React, {Fragment} from 'react'
-import { Container, Row, Col, Button } from 'reactstrap';
+import { Container, Row, Col, Form, FormGroup, Label, Input, Button, Card } from 'reactstrap';
 import {Helmet} from "react-helmet";
 import {Link} from "react-router-dom";
 
@@ -27,6 +27,18 @@ import govCandaEn from '../assets/img/gouv_BLANC_EN-01.png';
 import i18n from '../i18n/lang';
 
 class Home extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      agreed: false
+    };
+  }
+
+  hasToggled(){
+    this.setState(prevState => ({
+      agreed: !prevState.agreed
+    }));
+  }
   render() {
 
     var lang = i18n[this.props.lang];
@@ -90,10 +102,51 @@ class Home extends React.Component {
                     <p className="lead mb-5" dangerouslySetInnerHTML={{__html: lang.step3.paragraph5}} />
                     <hr />
                   </div>
-                  <div className="text-center">
-                    <Button className="mt-5 mb-5 CTA" color="primary" size="lg" href={lang.hero.link} target="_blank">
-                      {lang.hero.ctabutton}
-                    </Button>
+                </Col>
+              </Row>
+            </Container>
+          </section>
+          <section>
+            <Container>
+              <Row>
+                <Col>
+                    <div className="step-section">
+                      <div>
+                        <h2  className="display-4" >
+                          Activate <span className="highlight">my</span> account
+                        </h2>
+                        <p className="lead">
+                          Before activating your account, you must review and accept the terms of use.
+                        </p>
+                      </div>
+                      <Form className="pb-5 pt-5">
+                        <Card className="form-card" body>
+                          <FormGroup check className=" terms-form">
+                            <Label check>
+                              <Input onClick={() => this.hasToggled()} type="checkbox" />{' '}
+                              I accept the <a href="#">terms of use</a>
+                            </Label>
+                          </FormGroup>
+                          <div className="text-center">
+                            <Button
+                              disabled={!this.state.agreed}
+                              className="mt-5 mb-5 CTA"
+                              color="primary" size="lg"
+                              href={lang.hero.link}
+                              target="_blank"
+                              onClick={(e) => {console.log("click")}}
+                              aria-describedby="checkCheck"
+                            >
+                              {lang.hero.ctabutton}
+                            </Button>
+                          </div>
+                          <div>
+                            <p id="checkCheck" className="text-muted">
+                              Please review checkbox to progress
+                            </p>
+                          </div>
+                        </Card>
+                      </Form>
                   </div>
                 </Col>
               </Row>
