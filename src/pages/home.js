@@ -161,11 +161,8 @@ class Home extends React.Component {
               <Col md="12" className="mb-5">
                 <div className="text-center">
                   <h2 className="mb-4">{lang.footer.heading}</h2>
-                  <div className="mb-3">
-                    <a href={lang.footer.linkHref}>{lang.footer.linkText}</a>
-                  </div>
                   <p className="mb-0">{lang.footer.goc}</p>
-                  <a href="mailto:gcxchange-gcechange@tbs-sct.gc.ca">gcxchange-gcechange@tbs-sct.gc.ca</a>
+                  <a href="mailto:solution-soutien@gcx-gce.gc.ca">solution-soutien@gcx-gce.gc.ca</a>
                 </div>
               </Col>
               <Col md="12" className="footer-imgs">
