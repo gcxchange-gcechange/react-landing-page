@@ -2,6 +2,7 @@ import 'react-app-polyfill/ie11';
 
 import React from 'react'
 import ReactDOM from 'react-dom'
+import {Helmet} from "react-helmet";
 
 // Your top level component
 import App from './App'
@@ -21,6 +22,20 @@ if (typeof document !== 'undefined') {
     renderMethod(
       <div>
         <Comp />
+        <Helmet>
+          <script
+            async
+            src="https://www.googletagmanager.com/gtag/js?id=G-3ENE72JQV2"
+          />
+          <script>
+              {`window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+          
+            gtag('config', 'G-3ENE72JQV2');
+          `}
+                </script>
+        </Helmet>
       </div>,
       target
     )
