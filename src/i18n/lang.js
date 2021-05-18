@@ -5,7 +5,7 @@ const Lang = {
             h1: 'You\'re <span class="highlight">so</span> close!',
             subtitle: 'It\'s time to get you onboarded onto gcxchange, the new platform for GC-wide communication and collaboration.  Review the steps below and once you’re ready, click the green “Activate your account” button at the bottom to kickstart the account activation process.',
             ctabutton: 'Activate your account',
-            link: 'https://myaccess.microsoft.com/@tbssctdev.onmicrosoft.com#/access-packages/5211fd69-07b9-499d-ab67-10d80d6107aa',
+            link: process.env.REACT_APP_ACCESS_PACKAGE_EN,
         },
         step1: {
             heading: 'Step <span class="highlight">one</span>',
@@ -50,7 +50,7 @@ const Lang = {
             h1: 'Vous y <span class="highlight">êtes</span> presque!',
             subtitle: 'Le moment est venu de vous intégrer à gcéchange, la nouvelle plateforme de communication et de collaboration à l’échelle du gouvernement du Canada (GC). Passez en revue les étapes à suivre ci-dessous et, une fois que vous êtes prêt, cliquez sur le bouton vert « Activez votre compte » au bas de la page pour lancer le processus d’activation du compte.',
             ctabutton: 'Activez votre compte',
-            link: 'https://myaccess.microsoft.com/@tbssctdev.onmicrosoft.com#/access-packages/ee46bb0c-394a-4914-9fbe-04a0d7bb594d',
+            link: process.env.REACT_APP_ACCESS_PACKAGE_FR,
         },
         step1: {
             heading: '<span class="highlight">Première</span> étape',
