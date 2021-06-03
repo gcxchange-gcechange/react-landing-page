@@ -91,7 +91,6 @@ class Home extends React.Component {
                     <p className="lead" dangerouslySetInnerHTML={{__html: lang.step3.paragraph3}} />
                     <img src={this.props.lang === "en-us" ? stepThreeEn : stepThreeFr} alt="" />
                     <p className="lead" dangerouslySetInnerHTML={{__html: lang.step3.paragraph4}} />
-                    <p className="lead mb-5" dangerouslySetInnerHTML={{__html: lang.step3.paragraph5}} />
                     <hr />
                   </div>
                   <div className="text-center">
@@ -103,57 +102,6 @@ class Home extends React.Component {
               </Row>
             </Container>
           </section>
-          <section className="onboarding-section">
-            <Container className="pb-2">
-              <Row>
-                <Col>
-                  <div className="text-center">
-                    <div className="mb-5">
-                      {this.props.lang === 'en-us' ? 
-                        <Video
-                          controls={['PlayPause', 'Seek', 'Time', 'Captions', 'Volume', 'Fullscreen']}
-                          poster={teaserVideoPoster}
-                          copy={{
-                            play: lang.onboarding.videoPlay,
-                            pause: lang.onboarding.videoPause,
-                            mute: lang.onboarding.videoMute,
-                            unmute: lang.onboarding.videoUnmute,
-                            volume: lang.onboarding.videoVolume,
-                            fullscreen: lang.onboarding.videoFullscreen,
-                            seek: lang.onboarding.videoSeek,
-                            captions: lang.onboarding.videoCaptions,
-                          }}
-                        >
-                          <source src={teaserVideo} type="video/mp4" />
-                          <track label="English" kind="subtitles" srcLang="en" src={teaserVideoVTT} default />
-                        </Video>
-                      :
-                        <Video
-                          controls={['PlayPause', 'Seek', 'Time', 'Captions', 'Volume', 'Fullscreen']}
-                          poster={teaserVideoPosterFR}
-                          copy={{
-                            play: lang.onboarding.videoPlay,
-                            pause: lang.onboarding.videoPause,
-                            mute: lang.onboarding.videoMute,
-                            unmute: lang.onboarding.videoUnmute,
-                            volume: lang.onboarding.videoVolume,
-                            fullscreen: lang.onboarding.videoFullscreen,
-                            seek: lang.onboarding.videoSeek,
-                            captions: lang.onboarding.videoCaptions,
-                          }}
-                        >
-                          <source src={teaserVideoFR} type="video/mp4" />
-                          <track label="Français" kind="subtitles" srcLang="fr" src={teaserVideoVTTFR} default />
-                        </Video>
-                      }
-                    </div>
-                    <p className="lead">{lang.onboarding.paragraph}</p>
-                  </div>
-                </Col>
-              </Row>
-            </Container>
-          </section>
-
         </main>
         <footer>
           <Container>
