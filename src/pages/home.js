@@ -99,7 +99,9 @@ class Home extends React.Component {
                     </Button>
                   </div>
                   <div className="pb-3">
-                    <p className="lead" dangerouslySetInnerHTML={{__html: lang.step3.paragraph5}} />
+                    <div className="text-center">
+                      <p className="lead" dangerouslySetInnerHTML={{ __html: lang.step3.paragraph5 }} />
+                    </div>
                   </div>
                 </Col>
               </Row>
