@@ -20,9 +20,10 @@ const Lang = {
         step3: {
             heading: 'Step <span class="highlight">three</span>',
             paragraph1: 'Check your email.',
-            paragraph2: 'You\'ll receive two emails. The first one you\'ll get is the "You\'re in" message. This is the important one. It\'s where you\'ll find the <strong>Click here to get started</strong> link that will bring you to the gcxchange homepage.',
+            paragraph2: 'You will receive a "You\'re in" email message. What does this entail? Exactly what it says – you’re in! From this email, you’ll be able to select the Get started link which will bring you to the gcxchange homepage. Exciting times.',
             paragraph3: 'But don\'t click it yet, the system needs a few minutes (5 minutes tops) to complete the activation. Patience is a virtue, and the reward is that when you finally do click the link, you\'ll be in right away.',
             paragraph4: 'If you got a "That didn\'t work" message when you clicked the link, don’t panic. The system just needs a bit more time to activate your account. Wait a few more minutes then refresh the page.',
+            paragraph5: 'If you need support in the meantime, please feel free to get in touch with our <a href="mailto:solution-soutien@gcx-gce.gc.ca">support team</a>.',
         },
         onboarding: {
             paragraph: 'While you\'re waiting, why not watch this video introducing you to your new sidekick, gcxchange.',
@@ -64,9 +65,10 @@ const Lang = {
         step3: {
             heading: '<span class="highlight">Troisième</span> étape ',
             paragraph1: 'Vérifiez votre boîte de réception.',
-            paragraph2: 'Vous recevrez deux courriels. Le premier message que vous recevrez est le suivant : « Vous y êtes arrivé! ». Celui-ci est le plus important. C’est celui qui vous fournira le lien <strong>Cliquez ici pour commencer</strong> qui vous mènera à la page d’accueil de gcéchange.',
+            paragraph2: 'Vous allez recevoir un courriel intitulé « Vous y êtes ». Qu’est ce que ça veut dire? Que vous y êtes! Grâce à ce courriel, vous pourrez cliquer sur le lien Commencer qui vous amènera à la page d’accueil de gcéchange.',
             paragraph3: 'Toutefois, attendez avant de cliquer — le système a besoin de quelques minutes (au plus cinq minutes) pour terminer l’activation. La patience est mère de toutes les vertus, et la récompense, c’est que lorsque vous cliquerez finalement sur le lien, vous y serez déjà.',
             paragraph4: 'Si vous recevez le message « Ça n’a pas marché » après avoir cliqué sur le lien, ne paniquez pas. Le système a tout simplement besoin d’un peu plus de temps pour activer votre compte. Attendez encore quelques minutes, puis actualisez la page.',
+            paragraph5: 'Si vous avez besoin d’aide entre-temps, n’hésitez pas à communiquer avec notre <a href="mailto:solution-soutien@gcx-gce.gc.ca">équipe de soutien</a>.',
         },
         onboarding: {
             paragraph: 'Pendant que vous attendez, pourquoi ne pas regarder cette vidéo qui vous présente votre nouveau compagnon, gcéchange?',

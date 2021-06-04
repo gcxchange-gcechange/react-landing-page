@@ -98,6 +98,9 @@ class Home extends React.Component {
                       {lang.hero.ctabutton}
                     </Button>
                   </div>
+                  <div className="pb-3">
+                    <p className="lead" dangerouslySetInnerHTML={{__html: lang.step3.paragraph5}} />
+                  </div>
                 </Col>
               </Row>
             </Container>
