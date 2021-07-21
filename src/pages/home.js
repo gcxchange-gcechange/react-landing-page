@@ -1,11 +1,19 @@
 import React, {Fragment} from 'react'
-import { Container, Row, Col, Button } from 'reactstrap';
+import { Container, Row, Col, Button, Form, FormGroup, Collapse } from 'reactstrap';
+import { TextField } from '@fluentui/react/lib/TextField';
+import { Dropdown } from '@fluentui/react/lib/Dropdown';
+import { Checkbox, Stack } from '@fluentui/react';
+import { initializeIcons } from '@fluentui/react/lib/Icons';
+
 import {Helmet} from "react-helmet";
 import {Link} from "react-router-dom";
+
+// import { sp } from "@pnp/sp/presets/all";
 
 import { DefaultPlayer as Video } from 'react-html5video';
 import 'react-html5video/dist/styles.css';
 
+import logo from '../assets/gcx-gce.png'
 import gcxLogo from '../assets/img/gcx-eng-logo.png'
 import gcxLogoFR from '../assets/img/gcx-fr-logo.png'
 
@@ -29,8 +37,88 @@ import Canada from '../assets/img/Canada-blanc-01.png';
 import govCandaEn from '../assets/img/gouv_BLANC_EN-01.png';
 
 import i18n from '../i18n/lang';
+import { getDepartTest, getDomains } from '../services/DepartmentService';
 
+initializeIcons();
+/*
+(async () => {
+  sp.setup({
+    sp: {
+      headers: {
+        Accept: "application/json;odata=verbose",
+      },
+      baseUrl: ""
+    },
+  });
+  
+  const w = await sp.web.get();
+  console.log(w);
+})();
+*/
 class Home extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isOpen: false,
+      isInitLoad: true,
+      emailInput: '',
+      yesCloudEmail: false,
+      cloudEmail: '',
+      department: '',
+      departList: [],
+    };
+    this.toggle = this.toggle.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
+    this.checkEmail = this.checkEmail.bind(this);
+  }
+
+  
+  toggle () {
+    this.setState({
+      isOpen: !this.state.isOpen,
+    });
+  }
+
+  onSubmit () {
+    console.log('SUBMIT FUNCTION');
+  }
+
+  componentDidMount () {
+    // Grab the sharepoint list here on mount
+    // initialize department lists
+    let departs = [];
+    getDepartTest().then(e => {
+      if(e) {
+        e.map((field) => {
+          departs.push({
+            key: field.fields.RG_x0020_Code,
+            text: field.fields.Legal_x0020_Title,
+          })
+        })
+      }
+      console.log(departs);
+      this.setState({
+        departList: departs,
+      })
+    })
+    // initialize domain list
+    getDomains().then(d => {
+      console.log(d);
+    })
+    console.log('MOUNTED!');
+    // on success set initload state false
+  }
+
+  checkEmail (email) {
+    if (email.includes('@')) {
+      // console.log('I am going to start checking')
+      let domain = email.split('@');
+      console.log(domain[1]);
+      // compare email domain to our list object
+
+      // get domain and update department value?
+    }
+  }
   render() {
 
     var lang = i18n[this.props.lang];
@@ -51,83 +139,89 @@ class Home extends React.Component {
                     <h1 className="sr-only">{lang.title}</h1>
                     {this.props.lang === "en-us" ? <Link className="ml-auto" to="/accueil" lang="fr-ca">Français</Link> : <Link className="ml-auto" to="/home" lang="en-us">English</Link> }
                   </nav>
-                  <div className="text-center">
-                    {this.props.lang === "en-us" ?
-                      <img className="logo-img" src={gcxLogo} alt="gcxchange" />
-                    :
-                      <img className="logo-img" src={gcxLogoFR} alt="gcéchange" />
-                    }
-                    <div className="mb-5 heading-zone text-center d-block">
-                      <h2 className="display-2 pb-3" dangerouslySetInnerHTML={{__html: lang.hero.h1}} />
-                      <p className="mt-1 lead">{lang.hero.subtitle}</p>
-                    </div>
+                  <div className="form-holder">
+                    <Row className="row-holder">
+                      <Col md="5">
+                      <img className="logo-img" src={logo} alt="gcéchange" />
+                      <Form
+                        className="form-padding"
+                        onSubmit={(e) => {
+                          e.preventDefault();
+                          this.onSubmit()
+                        }}  
+                      >
+                        <div>
+                          REGISTER
+                        </div>
+                        <TextField
+                          required
+                          label="EMAIL"
+                          onChange={(e) => {
+                            this.checkEmail(e.target.value);
+                            // console.log(e.target.value);
+                          }}
+                        />
+                        <Checkbox
+                          label="Is this email the same as teams or something?"
+                          defaultChecked
+                          onChange={this.toggle}
+                          className="input-padding"
+                        />
+                        <Collapse isOpen={this.state.isOpen}>
+                          <TextField
+                            label="CLOUD EMAIL"
+                            onChange={(e) => {
+                              this.checkEmail(e.target.value);
+                              // console.log(e.target.value);
+                            }}
+                          />
+                        </Collapse>
+                        <Dropdown
+                          required
+                          label="DEPARTMENTS"
+                          options={this.state.departList}
+                          onChange={(e, o) => {
+                            // Set the department state
+                            console.log(o);
+                            this.setState({
+                              department: o.key,
+                            });
+                          }}
+                        />
+                        <input className="input-padding" type="submit" value="REGISTER" />
+                        <div>
+                          having issues? here is a mailto link
+                        </div>
+                      </Form>
+                      </Col>
+                      <Col md="7" className="info-holder">
+                        <div className="info-content">
+                          <div>
+                            <h2>Placeholder Title</h2>
+                            <p>Placeholder body text</p>
+                          </div>
+                          <div>
+                            <h3>Placeholder Title</h3>
+                            <p>Placeholder body text</p>
+                          </div>
+                          <div>
+                            <h3>Placeholder Title</h3>
+                            <p>Placeholder body text</p>
+                          </div>
+                          <div>
+                            <h3>Placeholder Title</h3>
+                            <p>Placeholder body text</p>
+                          </div>  
+                        </div>
+                        
+                      </Col>
+                    </Row>
                   </div>
                 </Col>
               </Row>
             </Container>
           </section>
-          <section>
-            <Container>
-              <Row>
-                <Col>
-                  <div className="step-section">
-                    <h2  className="display-4" dangerouslySetInnerHTML={{__html: lang.step1.heading}} />
-                    <p className="lead" dangerouslySetInnerHTML={{__html: lang.step1.paragraph1}} />
-                    <img className="mb-5" src={this.props.lang === "en-us" ? stepOneEn : stepOneFr} alt="" />
-                    <hr />
-                  </div>
-                  <div className="step-section">
-                    <h2  className="display-4" dangerouslySetInnerHTML={{__html: lang.step2.heading}} />
-                    <p className="lead" dangerouslySetInnerHTML={{__html: lang.step2.paragraph1}} />
-                    <p className="lead" dangerouslySetInnerHTML={{__html: lang.step2.paragraph2}} />
-                    <p className="lead" dangerouslySetInnerHTML={{__html: lang.step2.paragraph3}} />
-                    <img className="mb-5" src={this.props.lang === "en-us" ? stepTwoEn : stepTwoFr} alt="" />
-                    <hr />
-                  </div>
-                  <div className="step-section">
-                    <h2  className="display-4" dangerouslySetInnerHTML={{__html: lang.step3.heading}} />
-                    <p className="lead" dangerouslySetInnerHTML={{__html: lang.step3.paragraph1}} />
-                    <p className="lead" dangerouslySetInnerHTML={{__html: lang.step3.paragraph2}} />
-                    <p className="lead" dangerouslySetInnerHTML={{__html: lang.step3.paragraph3}} />
-                    <img src={this.props.lang === "en-us" ? stepThreeEn : stepThreeFr} alt="" />
-                    <p className="lead" dangerouslySetInnerHTML={{__html: lang.step3.paragraph4}} />
-                    <hr />
-                  </div>
-                  <div className="text-center">
-                    <Button className="mt-5 mb-5 CTA" color="primary" size="lg" href={lang.hero.link} target="_blank">
-                      {lang.hero.ctabutton}
-                    </Button>
-                  </div>
-                  <div className="pb-3">
-                    <div className="text-center">
-                      <p className="lead" dangerouslySetInnerHTML={{ __html: lang.step3.paragraph5 }} />
-                    </div>
-                  </div>
-                </Col>
-              </Row>
-            </Container>
-          </section>
-        </main>
-        <footer>
-          <Container>
-            <Row>
-              <Col md="12" className="mb-5">
-                <div className="text-center">
-                  <h2 className="mb-4">{lang.footer.heading}</h2>
-                  <p className="mb-0">{lang.footer.goc}</p>
-                  <a href="mailto:solution-soutien@gcx-gce.gc.ca">solution-soutien@gcx-gce.gc.ca</a>
-                </div>
-              </Col>
-              <Col md="12" className="footer-imgs">
-                <div className="d-flex align-items-center ">
-                  <img className="goc-canada" src={govCandaEn} alt={lang.footer.goc} />
-                  <img className="ml-auto" src={Canada} alt={lang.footer.symbol} />
-                </div>
-              </Col>
-            </Row>
-          </Container>
-        </footer>
-      
+        </main>      
       </Fragment>
     );
   }

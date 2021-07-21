@@ -2,12 +2,13 @@
   /*scroll-behavior: smooth;*/
 }
 
-body {
+body, html {
   font-weight: 300;
   font-size: 16px;
   margin: 0;
   padding: 0;
   font-family: "Segoe UI", "Segoe UI Web (West European)", "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+  height: 100%;
 }
 
 a {
@@ -49,16 +50,17 @@ img {
 }
 
 .logo-img {
-  max-width: 500px;
+  max-width: 300px;
   width: 100%;
 }
 
 .cta-hero {
   background-color: #f2f2f2;
   background-image: url(./assets/img/splashPage.jpg);
+  height:100vh;
   background-position: center;
   background-size: cover;
-  padding: 60px 0 80px;
+  padding: 40px 0 40px;
   color: #1a406a;
 }
 
@@ -67,6 +69,14 @@ img {
   margin: 0 auto;
 }
 
+.info-holder {
+  background-color: #EFF6FC;
+}
+.info-content {
+  width: 75%;
+  margin: 0 auto;
+  margin-top: 15px;
+}
 .highlight {
   color: #266ef2;
 }
@@ -176,6 +186,25 @@ footer a:hover {
   height: auto;
 }
 
+.form-holder {
+  background-color: white;
+  margin-top: 15px;
+  box-shadow: 0 1.6px 3.6px 0 rgb(0 0 0 / 13%), 0 0.3px 0.9px 0 rgb(0 0 0 / 11%);
+  border-radius: 8px;
+  height: 75vh;
+}
+
+.row-holder {
+  height: 100%;
+}
+
+.form-padding {
+  padding: 15% 5%;
+}
+
+.input-padding {
+  margin-top: 10px;
+}
 @media (max-width: 870px) {
   .footer-imgs .d-flex {
     display: block !important;
