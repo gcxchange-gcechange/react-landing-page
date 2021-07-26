@@ -6,7 +6,7 @@ import {
   Route
 } from "react-router-dom";
 
-import Home from "./pages/Home";
+import Home from "./pages/home";
 import LanguageSelect from "./pages/LanguageSelect";
 
 import './App.css'

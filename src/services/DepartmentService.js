@@ -10,8 +10,14 @@ export async function getDomains() {
 }
 
 export async function getDepartTest() {
-  // put department API here
-  const response = await fetch('')
+    // put department API here
+    const response = await fetch(process.env.REACT_APP_DEV_DEPART_URL, {
+        method: 'POST',
+        headers: {
+            'x-functions-key': process.env.REACT_APP_DEV_DEPART_KEY,
+            'Content-Type': 'application/json'
+        }
+    })  
   return await response.json();
 }
 // TODO put the the send function here
