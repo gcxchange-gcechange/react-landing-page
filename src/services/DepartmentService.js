@@ -1,16 +1,9 @@
-var getDomainURL = '';
-var getDepartmentURL = '';
-var getListFunctionKey = '';
-var sendUserURL = '';
-var sendUserFunctionKey = '';
-
 export async function getDomains() {
-  console.log(getDomainURL);
   // put domain API
-  const response = await fetch(getDomainURL, {
+  const response = await fetch(process.env.REACT_APP_DEV_DOMAIN_URL, {
     method: 'POST',
     headers: {
-        'x-functions-key': getListFunctionKey,
+        'x-functions-key': process.env.REACT_APP_DEV_DOMAIN_KEY,
         'Content-Type':'application/json'
     }}).then((data) => {
       return data
@@ -24,10 +17,10 @@ export async function getDomains() {
 
 export async function getDepartTest() {
   // put department API here
-  const response = await fetch(getDepartmentURL, {
+  const response = await fetch(process.env.REACT_APP_DEV_DEPART_URL, {
     method: 'POST',
     headers: {
-        'x-functions-key': getListFunctionKey,
+        'x-functions-key': process.env.REACT_APP_DEV_DEPART_KEY,
         'Content-Type':'application/json'
     }}).then((data) => {
       return data
@@ -40,10 +33,10 @@ export async function getDepartTest() {
 }
 
 export async function sendUser(user) {
-  const test = await fetch(sendUserURL, {
+  const test = await fetch(process.env.REACT_APP_DEV_SEND_URL, {
     method: 'POST',
     headers: {
-        'x-functions-key': sendUserFunctionKey,
+        'x-functions-key': process.env.REACT_APP_DEV_SEND_KEY,
         'Content-Type':'application/json'
     },
     body:JSON.stringify(user)

@@ -7,7 +7,7 @@ import {
 } from "react-router-dom";
 import "@fontsource/montserrat";
 
-import Home from "./pages/Home";
+import Home from "./pages/home";
 import LanguageSelect from "./pages/LanguageSelect";
 import Process from "./pages/Process";
 
