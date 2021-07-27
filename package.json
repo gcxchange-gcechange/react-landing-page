@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@fluentui/react": "^8.23.2",
+    "@fontsource/montserrat": "^4.5.0",
     "@pnp/common": "^2.7.0",
     "@pnp/graph": "^2.7.0",
     "@pnp/logging": "^2.7.0",

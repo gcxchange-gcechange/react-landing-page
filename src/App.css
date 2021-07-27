@@ -7,7 +7,7 @@ body, html {
   font-size: 16px;
   margin: 0;
   padding: 0;
-  font-family: "Segoe UI", "Segoe UI Web (West European)", "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+  font-family: "Montserrat", "Segoe UI", "Segoe UI Web (West European)", "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif !important;
   height: 100%;
 }
 
@@ -71,12 +71,36 @@ img {
 
 .info-holder {
   background-color: #EFF6FC;
+  height: 635px;
+  border-radius: 25px 0 0 25px;
 }
 .info-content {
   width: 75%;
   margin: 0 auto;
   margin-top: 15px;
+  text-align: center;
 }
+.info-header {
+  font-size: 30px;
+  font-weight: 600;
+  margin-bottom: 25px;
+}
+.info-sub {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 25px;
+}
+.info-list {
+  list-style: none;
+}
+
+.info-highlight {
+  color: #0078D4;
+}
+.info-img {
+  width: 260px;
+}
+
 .highlight {
   color: #266ef2;
 }
@@ -190,19 +214,60 @@ footer a:hover {
   background-color: white;
   margin-top: 15px;
   box-shadow: 0 1.6px 3.6px 0 rgb(0 0 0 / 13%), 0 0.3px 0.9px 0 rgb(0 0 0 / 11%);
-  border-radius: 8px;
-  height: 75vh;
+  border-radius: 25px;
+  height: 635px;
 }
 
 .row-holder {
-  height: 100%;
+  margin: 0 !important;
 }
 
 .form-padding {
-  padding: 15% 5%;
+  padding: 5% 5% !important;
+}
+
+.form-title {
+  font-size: 26px;
+  font-weight: bold;
+  color: #1A406A;
+  margin-bottom: 35px;
 }
 
 .input-padding {
+  margin-top: 10px;
+}
+
+.input-helper-text {
+  font-size: 13px;
+}
+
+.input-helper-text.valid {
+  color: rgb(16, 124, 16);
+}
+
+.canada-fip{
+  width: 200px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.submit-btn {
+  background-color: #0078D4 !important;
+  border-color: #0078D4 !important;
+  border-radius: 10px;
+  color: white;
+  width: 100%;
+  padding: 8px;
+}
+.submit-btn:disabled,
+.submit-btn[disabled] {
+  background-color:rgb(243, 242, 241) !important;
+  border: 1px solid rgb(243, 242, 241) !important;
+  color: rgb(102, 102, 102) !important;
+}
+
+.help-holder{
   margin-top: 10px;
 }
 @media (max-width: 870px) {

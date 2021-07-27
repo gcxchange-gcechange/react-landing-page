@@ -3,10 +3,11 @@ import { Container, Row, Col, Button, Form, FormGroup, Collapse } from 'reactstr
 import { TextField } from '@fluentui/react/lib/TextField';
 import { Dropdown } from '@fluentui/react/lib/Dropdown';
 import { Checkbox, Stack } from '@fluentui/react';
+import { Spinner, SpinnerSize } from '@fluentui/react/lib/Spinner';
 import { initializeIcons } from '@fluentui/react/lib/Icons';
 
 import {Helmet} from "react-helmet";
-import {Link} from "react-router-dom";
+import {Link, Redirect} from "react-router-dom";
 
 // import { sp } from "@pnp/sp/presets/all";
 
@@ -17,55 +18,38 @@ import logo from '../assets/gcx-gce.png'
 import gcxLogo from '../assets/img/gcx-eng-logo.png'
 import gcxLogoFR from '../assets/img/gcx-fr-logo.png'
 
-import stepOneEn from '../assets/img/steps1_EN.png'
-import stepTwoEn from '../assets/img/steps2_EN.png'
-import stepThreeEn from '../assets/img/steps3_EN.png'
-
-import stepOneFr from '../assets/img/steps1_FR.png'
-import stepTwoFr from '../assets/img/steps2_FR.png'
-import stepThreeFr from '../assets/img/steps3_FR.png'
-
-import teaserVideo from '../assets/video/Gcxchange teaser 6_EN.mp4';
-import teaserVideoVTT from '../assets/video/WEBVTT.vtt';
-import teaserVideoPoster from '../assets/video/videoPosterEn.jpg';
-
-import teaserVideoFR from '../assets/video/Gcxchange teaser 7_FR.mp4';
-import teaserVideoVTTFR from '../assets/video/WEBVTT - FR.vtt';
-import teaserVideoPosterFR from '../assets/video/videoPosterFr.jpg';
-
-import Canada from '../assets/img/Canada-blanc-01.png';
-import govCandaEn from '../assets/img/gouv_BLANC_EN-01.png';
+import Canada from '../assets/img/FIP_BIL_couleurs-04.png';
+import govCandaEn from '../assets/img/FIP_BIL_couleurs-03.png';
+import govCanadaFr from '../assets/img/FIP_BIL_couleurs-05.png';
+import heroImage from '../assets/img/hero-img.png';
 
 import i18n from '../i18n/lang';
-import { getDepartTest, getDomains } from '../services/DepartmentService';
+import { getDepartTest, getDomains, sendUser } from '../services/DepartmentService';
 
 initializeIcons();
-/*
-(async () => {
-  sp.setup({
-    sp: {
-      headers: {
-        Accept: "application/json;odata=verbose",
-      },
-      baseUrl: ""
-    },
-  });
-  
-  const w = await sp.web.get();
-  console.log(w);
-})();
-*/
+const iconProps = { iconName: 'Accept' };
+
+function capitalizeFirstLetter(string) {
+  var caps = string[0].toUpperCase() + string.slice(1);
+  var removeNums = caps.replace(/[0-9]/g, '');
+  return removeNums;
+}
+
 class Home extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       isOpen: false,
-      isInitLoad: true,
+      isInitLoad: true, // Change this to true!
       emailInput: '',
       yesCloudEmail: false,
       cloudEmail: '',
       department: '',
-      departList: [],
+      departList: [{key: '00007', text: 'TESTING'},],
+      domainList: [{key: '00007', dom: 'test.gc.ca'},],
+      isEmailDomainValid: false,
+      isCloudDomainValid: false,
+      isValid: false,
     };
     this.toggle = this.toggle.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
@@ -80,13 +64,36 @@ class Home extends React.Component {
   }
 
   onSubmit () {
-    console.log('SUBMIT FUNCTION');
+    let emailWork = this.state.emailInput;
+    let emailCloud = (this.state.cloudEmail ? this.state.cloudEmail : this.state.emailInput);
+    let department = this.state.department.key;
+    let splitEmail = emailWork.split('@');
+    let firstName = capitalizeFirstLetter(splitEmail[0].split('.')[0]);
+    let lastName = capitalizeFirstLetter(splitEmail[0].split('.')[1]);
+    sendUser({
+      EmailWork: emailWork,
+      EmailCloud: emailCloud,
+      FirstName: firstName,
+      LastName: lastName,
+      Department: department,
+    }).then(data => {
+      if(data) {
+        if(data.status === 200){
+          this.setState({
+            isValid: true,
+          })
+        } else {
+          console.log('Something went wrong');
+        }
+      }
+    })
   }
 
   componentDidMount () {
     // Grab the sharepoint list here on mount
     // initialize department lists
     let departs = [];
+    let domains = [];
     getDepartTest().then(e => {
       if(e) {
         e.map((field) => {
@@ -96,29 +103,68 @@ class Home extends React.Component {
           })
         })
       }
-      console.log(departs);
       this.setState({
         departList: departs,
       })
     })
     // initialize domain list
     getDomains().then(d => {
-      console.log(d);
+      if(d) {
+        d.map((domain) => {
+          domains.push({
+            key: domain.fields.RG_x0020_Code,
+            dom: domain.fields.GoCDomain,
+          })
+        })
+      }
+      console.log(domains);
+      this.setState({
+        domainList: domains,
+        isInitLoad: false,
+      })
     })
     console.log('MOUNTED!');
     // on success set initload state false
   }
 
-  checkEmail (email) {
+  checkEmail (email, mailType) {
     if (email.includes('@')) {
       // console.log('I am going to start checking')
       let domain = email.split('@');
-      console.log(domain[1]);
       // compare email domain to our list object
-
-      // get domain and update department value?
+      if(this.state.domainList.length != 0) {
+        this.state.domainList.map((domState) => {
+          if(domState.dom === domain[1]) {
+            if(mailType === 'email'){
+              this.setState({
+                department: {key: domState.key},
+                isEmailDomainValid: true,
+                emailInput: email,
+              })
+            } else {
+              this.setState({
+                isCloudDomainValid: true,
+                cloudEmail: email,
+              })
+            }
+          } /* else {
+            if(mailType === 'email'){
+              console.log('NOPE');
+              this.setState({
+                isEmailDomainValid: false,
+              })
+            } else {
+              this.setState({
+                isCloudDomainValid: false,
+              })
+            }
+            
+          } */
+        })
+      }
     }
   }
+
   render() {
 
     var lang = i18n[this.props.lang];
@@ -141,79 +187,95 @@ class Home extends React.Component {
                   </nav>
                   <div className="form-holder">
                     <Row className="row-holder">
-                      <Col md="5">
-                      <img className="logo-img" src={logo} alt="gcéchange" />
-                      <Form
-                        className="form-padding"
-                        onSubmit={(e) => {
-                          e.preventDefault();
-                          this.onSubmit()
-                        }}  
-                      >
-                        <div>
-                          REGISTER
+                      <Col md="6" className="info-holder">
+                        <img className="goc-canada" src={govCandaEn} alt={lang.footer.goc} />
+                        <div className="info-content">
+                          <img className="info-img" src={heroImage} alt="" />
+                          <h1 className="info-header">gc<span className="info-highlight">x</span>change is here</h1>
+                          <p className="info-sub">Say hello to the Government of Canada's new digital workspace. With one simple sign-on you can:</p>
+                          <ul className="info-list">
+                            <li><span className="info-highlight">collaborate</span> with public servants</li>
+                            <li><span className="info-highlight">stay in touch</span> with what</li>
+                            <li><span className="info-highlight">access information</span> that matters</li>
+                            <li><span className="info-highlight">share</span> your content with the GC community</li>
+                          </ul> 
                         </div>
-                        <TextField
-                          required
-                          label="EMAIL"
-                          onChange={(e) => {
-                            this.checkEmail(e.target.value);
-                            // console.log(e.target.value);
-                          }}
-                        />
-                        <Checkbox
-                          label="Is this email the same as teams or something?"
-                          defaultChecked
-                          onChange={this.toggle}
-                          className="input-padding"
-                        />
-                        <Collapse isOpen={this.state.isOpen}>
+                      </Col>
+                      <Col md="6" className="form-padding">
+                      <img className="logo-img" src={logo} alt="gcéchange" />
+                      {this.state.isInitLoad ? <Spinner size={SpinnerSize.large} className="form-padding" label="Loading" ariaLive="assertive" /> :
+                        <Form
+                          onSubmit={(e) => {
+                            e.preventDefault();
+                            this.onSubmit()
+                          }}  
+                        >
+                          <div className="form-title">
+                            Resgister
+                          </div>
                           <TextField
-                            label="CLOUD EMAIL"
+                            required
+                            label="Departmental email address"
                             onChange={(e) => {
-                              this.checkEmail(e.target.value);
+                              this.checkEmail(e.target.value, 'email');
                               // console.log(e.target.value);
                             }}
+                            iconProps={this.state.isEmailDomainValid && iconProps}
                           />
-                        </Collapse>
-                        <Dropdown
-                          required
-                          label="DEPARTMENTS"
-                          options={this.state.departList}
-                          onChange={(e, o) => {
-                            // Set the department state
-                            console.log(o);
-                            this.setState({
-                              department: o.key,
-                            });
-                          }}
-                        />
-                        <input className="input-padding" type="submit" value="REGISTER" />
-                        <div>
-                          having issues? here is a mailto link
-                        </div>
-                      </Form>
-                      </Col>
-                      <Col md="7" className="info-holder">
-                        <div className="info-content">
-                          <div>
-                            <h2>Placeholder Title</h2>
-                            <p>Placeholder body text</p>
+                          {this.state.isEmailDomainValid ? 
+                            <span className="input-helper-text valid">
+                              Valid email domain!
+                            </span> :
+                            <span className="input-helper-text">
+                              Please enter a valid gc email
+                            </span>
+                          }
+                          <Checkbox
+                            label="Is this email is also my cloud ID"
+                            defaultChecked
+                            onChange={this.toggle}
+                            className="input-padding"
+                          />
+                          <Collapse isOpen={this.state.isOpen}>
+                            <TextField
+                              label="Cloud ID Email Address"
+                              onChange={(e) => {
+                                this.checkEmail(e.target.value, 'cloud');
+                                // console.log(e.target.value);
+                              }}
+                              iconProps={this.state.isCloudDomainValid && iconProps}
+                            />
+                            {this.state.isCloudDomainValid ? 
+                            <span className="input-helper-text valid">
+                              Valid email domain!
+                            </span> :
+                            <span className="input-helper-text">
+                              Please enter a valid gc email
+                            </span>
+                          }
+                          </Collapse>
+                          <Dropdown
+                            required
+                            label="Department"
+                            options={this.state.departList}
+                            onChange={(e, o) => {
+                              // Set the department state
+                              console.log(o);
+                              this.setState({
+                                department: o,
+                              });
+                              console.log(this.state.department);
+                            }}
+                            selectedKey={this.state.department ? this.state.department.key : undefined}
+                          />
+                          <input className="input-padding submit-btn" disabled={!this.state.isEmailDomainValid} type="submit" value="Register" />
+                          <div className="help-holder">
+                            Having issues? <a href="#">Contact our help desk</a>
                           </div>
-                          <div>
-                            <h3>Placeholder Title</h3>
-                            <p>Placeholder body text</p>
-                          </div>
-                          <div>
-                            <h3>Placeholder Title</h3>
-                            <p>Placeholder body text</p>
-                          </div>
-                          <div>
-                            <h3>Placeholder Title</h3>
-                            <p>Placeholder body text</p>
-                          </div>  
-                        </div>
-                        
+                        </Form>
+                      }
+                      {this.state.isValid && <Redirect to="/process" />}
+                      <img className="ml-auto canada-fip" src={Canada} alt={lang.footer.symbol} />
                       </Col>
                     </Row>
                   </div>

@@ -5,9 +5,11 @@ import {
   Switch,
   Route
 } from "react-router-dom";
+import "@fontsource/montserrat";
 
 import Home from "./pages/Home";
 import LanguageSelect from "./pages/LanguageSelect";
+import Process from "./pages/Process";
 
 import './App.css'
 
@@ -25,6 +27,9 @@ function App() {
               </Route>
               <Route exact path="/accueil">
                 <Home lang="fr-ca" />
+              </Route>
+              <Route exact path="/process">
+                <Process />
               </Route>
               <Route exact path="/">
                 <LanguageSelect />
