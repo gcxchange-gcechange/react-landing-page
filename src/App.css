@@ -75,7 +75,7 @@ img {
   border-radius: 25px 0 0 25px;
 }
 .info-content {
-  width: 85%;
+  width: 90%;
   margin: 0 auto;
   margin-top: 15px;
   text-align: center;
@@ -89,6 +89,7 @@ img {
   font-size: 18px;
   font-weight: 600;
   margin-bottom: 25px;
+  padding: 0 55px;
 }
 .info-list {
   list-style: none;
@@ -97,6 +98,11 @@ img {
 
 .info-highlight {
   color: #0078D4;
+}
+
+.info-list .info-highlight {
+  font-weight: 600;
+  font-size: 16px;
 }
 .info-img {
   width: 260px;
@@ -231,7 +237,8 @@ footer a:hover {
   font-size: 26px;
   font-weight: bold;
   color: #1A406A;
-  margin-bottom: 35px;
+  margin-bottom: 30px;
+  margin-top: 15px;
 }
 
 .input-padding {

@@ -136,6 +136,9 @@ class Home extends React.Component {
       let domain = email.split('@');
       // compare email domain to our list object
       if(this.state.domainList.length != 0) {
+        this.setState({
+          isEmailDomainValid: false,
+        })
         this.state.domainList.map((domState) => {
           if(domState.dom === domain[1]) {
             if(mailType === 'email'){

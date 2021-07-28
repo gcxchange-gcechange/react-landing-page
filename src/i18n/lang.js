@@ -12,8 +12,8 @@ const Lang = {
         },
         form: {
             emailLabel: 'Departmental email address (Required) ',
-            cloudEmailCheck: 'Do you have a second work email?',
-            cloudHelper: 'I am the helper text',
+            cloudEmailCheck: 'Do you have a second work email? (Cloud email)',
+            cloudHelper: 'I am the helper text that explains why we need cloud email',
             cloudLabel: 'Second email address',
             departmentLabel: 'Department',
             submitBtn: 'Register',
