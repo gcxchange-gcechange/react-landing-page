@@ -7,9 +7,10 @@ import {
 } from "react-router-dom";
 import "@fontsource/montserrat";
 
-import Home from "./pages/home";
+import Home from "./pages/Home";
 import LanguageSelect from "./pages/LanguageSelect";
-import Process from "./pages/Process";
+import ProcessEn from "./pages/ProcessEn";
+import ProcessFr from "./pages/ProcessFr";
 
 import './App.css'
 
@@ -28,8 +29,10 @@ function App() {
               <Route exact path="/accueil">
                 <Home lang="fr-ca" />
               </Route>
-              <Route exact path="/process">
-                <Process />
+              <Route exact path="/en/process">
+                <ProcessEn />
+              </Route><Route exact path="/fr/process">
+                <ProcessFr />
               </Route>
               <Route exact path="/">
                 <LanguageSelect />

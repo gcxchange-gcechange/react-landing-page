@@ -71,11 +71,11 @@ img {
 
 .info-holder {
   background-color: #EFF6FC;
-  height: 635px;
+  height: 650px;
   border-radius: 25px 0 0 25px;
 }
 .info-content {
-  width: 75%;
+  width: 85%;
   margin: 0 auto;
   margin-top: 15px;
   text-align: center;
@@ -92,6 +92,7 @@ img {
 }
 .info-list {
   list-style: none;
+  font-size: 14px;
 }
 
 .info-highlight {
@@ -215,7 +216,7 @@ footer a:hover {
   margin-top: 15px;
   box-shadow: 0 1.6px 3.6px 0 rgb(0 0 0 / 13%), 0 0.3px 0.9px 0 rgb(0 0 0 / 11%);
   border-radius: 25px;
-  height: 635px;
+  height: 650px;
 }
 
 .row-holder {
@@ -252,6 +253,19 @@ footer a:hover {
   right: 0;
 }
 
+.cloud-helper {
+  margin-top: -6px;
+}
+
+.process-title {
+  font-size: 30px;
+}
+.process-holder {
+  width: 50%;
+  margin: 15px auto;
+  height: 500px !important;
+  padding: 5%;
+}
 .submit-btn {
   background-color: #0078D4 !important;
   border-color: #0078D4 !important;

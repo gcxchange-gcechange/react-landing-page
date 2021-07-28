@@ -4,7 +4,9 @@ import { TextField } from '@fluentui/react/lib/TextField';
 import { Dropdown } from '@fluentui/react/lib/Dropdown';
 import { Checkbox, Stack } from '@fluentui/react';
 import { Spinner, SpinnerSize } from '@fluentui/react/lib/Spinner';
+import { TooltipHost } from '@fluentui/react/lib/Tooltip';
 import { initializeIcons } from '@fluentui/react/lib/Icons';
+import { IconButton } from '@fluentui/react/lib/Button';
 
 import {Helmet} from "react-helmet";
 import {Link, Redirect} from "react-router-dom";
@@ -28,6 +30,7 @@ import { getDepartTest, getDomains, sendUser } from '../services/DepartmentServi
 
 initializeIcons();
 const iconProps = { iconName: 'Accept' };
+const helpIcon = { iconName: 'Help' };
 
 function capitalizeFirstLetter(string) {
   var caps = string[0].toUpperCase() + string.slice(1);
@@ -191,13 +194,13 @@ class Home extends React.Component {
                         <img className="goc-canada" src={govCandaEn} alt={lang.footer.goc} />
                         <div className="info-content">
                           <img className="info-img" src={heroImage} alt="" />
-                          <h1 className="info-header">gc<span className="info-highlight">x</span>change is here</h1>
-                          <p className="info-sub">Say hello to the Government of Canada's new digital workspace. With one simple sign-on you can:</p>
+                          <h1 className="info-header" dangerouslySetInnerHTML={{__html: lang.hero.h1}} />
+                          <p className="info-sub">{lang.hero.subtitle}</p>
                           <ul className="info-list">
-                            <li><span className="info-highlight">collaborate</span> with public servants</li>
-                            <li><span className="info-highlight">stay in touch</span> with what</li>
-                            <li><span className="info-highlight">access information</span> that matters</li>
-                            <li><span className="info-highlight">share</span> your content with the GC community</li>
+                            <li dangerouslySetInnerHTML={{__html: lang.hero.list1}} />
+                            <li dangerouslySetInnerHTML={{__html: lang.hero.list2}} />
+                            <li dangerouslySetInnerHTML={{__html: lang.hero.list3}} />
+                            <li dangerouslySetInnerHTML={{__html: lang.hero.list4}} />
                           </ul> 
                         </div>
                       </Col>
@@ -211,11 +214,11 @@ class Home extends React.Component {
                           }}  
                         >
                           <div className="form-title">
-                            Resgister
+                            {lang.form.submitBtn}
                           </div>
                           <TextField
                             required
-                            label="Departmental email address"
+                            label={lang.form.emailLabel}
                             onChange={(e) => {
                               this.checkEmail(e.target.value, 'email');
                               // console.log(e.target.value);
@@ -230,15 +233,24 @@ class Home extends React.Component {
                               Please enter a valid gc email
                             </span>
                           }
-                          <Checkbox
-                            label="Is this email is also my cloud ID"
-                            defaultChecked
-                            onChange={this.toggle}
-                            className="input-padding"
-                          />
+                          <div className="input-padding d-flex">
+                            <Checkbox
+                              label={lang.form.cloudEmailCheck}
+                              onChange={this.toggle}
+                            />
+                            <div className="cloud-helper">
+                              <TooltipHost
+                                id="toolTipID"
+                                content={lang.form.cloudHelper}
+                              >
+                                <IconButton iconProps={helpIcon} aria-describedby="toolTipID" ariaLabel="Emoji" />
+                              </TooltipHost>  
+                            </div>
+                          </div>
+                          
                           <Collapse isOpen={this.state.isOpen}>
                             <TextField
-                              label="Cloud ID Email Address"
+                              label={lang.form.cloudLabel}
                               onChange={(e) => {
                                 this.checkEmail(e.target.value, 'cloud');
                                 // console.log(e.target.value);
@@ -256,7 +268,7 @@ class Home extends React.Component {
                           </Collapse>
                           <Dropdown
                             required
-                            label="Department"
+                            label={lang.form.departmentLabel}
                             options={this.state.departList}
                             onChange={(e, o) => {
                               // Set the department state
@@ -268,13 +280,11 @@ class Home extends React.Component {
                             }}
                             selectedKey={this.state.department ? this.state.department.key : undefined}
                           />
-                          <input className="input-padding submit-btn" disabled={!this.state.isEmailDomainValid} type="submit" value="Register" />
-                          <div className="help-holder">
-                            Having issues? <a href="#">Contact our help desk</a>
-                          </div>
+                          <input className="input-padding submit-btn" disabled={!this.state.isEmailDomainValid} type="submit" value={lang.form.submitBtn} />
+                          <div className="help-holder" dangerouslySetInnerHTML={{__html: lang.form.help}} />
                         </Form>
                       }
-                      {this.state.isValid && <Redirect to="/process" />}
+                      {this.state.isValid && <Redirect to={(this.props.lang === 'fr-ca') ? '/fr/process' : '/en/process'} />}
                       <img className="ml-auto canada-fip" src={Canada} alt={lang.footer.symbol} />
                       </Col>
                     </Row>
