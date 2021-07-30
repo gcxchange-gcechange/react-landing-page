@@ -51,6 +51,7 @@ class Home extends React.Component {
       departList: [{key: '00007', text: 'TESTING'},],
       domainList: [{key: '00007', dom: 'test.gc.ca'},],
       isEmailDomainValid: false,
+      isCanadaEmail: false,
       isCloudDomainValid: false,
       isValid: false,
     };
@@ -102,7 +103,7 @@ class Home extends React.Component {
         e.map((field) => {
           departs.push({
             key: field.fields.RG_x0020_Code,
-            text: field.fields.Legal_x0020_Title,
+            text: (this.props.lang === 'fr-ca') ? field.fields.Appellation_x0020_l_x00e9_gale : field.fields.Legal_x0020_Title,
           })
         })
       }
@@ -120,7 +121,6 @@ class Home extends React.Component {
           })
         })
       }
-      console.log(domains);
       this.setState({
         domainList: domains,
         isInitLoad: false,
@@ -136,9 +136,26 @@ class Home extends React.Component {
       let domain = email.split('@');
       // compare email domain to our list object
       if(this.state.domainList.length != 0) {
-        this.setState({
-          isEmailDomainValid: false,
-        })
+        if(mailType === 'email'){
+          this.setState({
+            isEmailDomainValid: false,
+            isCanadaEmail: false,
+          })
+          if(domain[1] === 'canada.ca'){
+            this.setState({
+              isCanadaEmail: true,
+            })
+          }
+        } else {
+          this.setState({
+            isCloudDomainValid: false,
+          })
+          if(domain[1] === 'canada.ca'){
+            this.setState({
+              isCloudDomainValid: true,
+            })
+          }
+        }
         this.state.domainList.map((domState) => {
           if(domState.dom === domain[1]) {
             if(mailType === 'email'){
@@ -153,19 +170,7 @@ class Home extends React.Component {
                 cloudEmail: email,
               })
             }
-          } /* else {
-            if(mailType === 'email'){
-              console.log('NOPE');
-              this.setState({
-                isEmailDomainValid: false,
-              })
-            } else {
-              this.setState({
-                isCloudDomainValid: false,
-              })
-            }
-            
-          } */
+          }
         })
       }
     }
@@ -194,7 +199,7 @@ class Home extends React.Component {
                   <div className="form-holder">
                     <Row className="row-holder">
                       <Col md="6" className="info-holder">
-                        <img className="goc-canada" src={govCandaEn} alt={lang.footer.goc} />
+                        <img className="goc-canada" src={(this.props.lang === 'fr-ca')? govCanadaFr : govCandaEn} alt={lang.footer.goc} />
                         <div className="info-content">
                           <img className="info-img" src={heroImage} alt="" />
                           <h1 className="info-header" dangerouslySetInnerHTML={{__html: lang.hero.h1}} />
@@ -209,7 +214,7 @@ class Home extends React.Component {
                       </Col>
                       <Col md="6" className="form-padding">
                       <img className="logo-img" src={logo} alt="gcéchange" />
-                      {this.state.isInitLoad ? <Spinner size={SpinnerSize.large} className="form-padding" label="Loading" ariaLive="assertive" /> :
+                      {this.state.isInitLoad ? <Spinner size={SpinnerSize.large} className="form-padding" label={lang.form.loading} ariaLive="assertive" /> :
                         <Form
                           onSubmit={(e) => {
                             e.preventDefault();
@@ -222,52 +227,38 @@ class Home extends React.Component {
                           <TextField
                             required
                             label={lang.form.emailLabel}
+                            ariaDescribedBy="emailHelperText"
+                            placeholder={lang.form.emailPlaceholder}
                             onChange={(e) => {
                               this.checkEmail(e.target.value, 'email');
                               // console.log(e.target.value);
                             }}
                             iconProps={this.state.isEmailDomainValid && iconProps}
                           />
-                          {this.state.isEmailDomainValid ? 
-                            <span className="input-helper-text valid">
-                              Valid email domain!
-                            </span> :
-                            <span className="input-helper-text">
-                              Please enter a valid gc email
+                          {
+                            this.state.isCanadaEmail &&
+                            <span id="emailHelperText" className="input-helper-text">
+                              Must be a departmental email, not @canada.ca
                             </span>
                           }
-                          <div className="input-padding d-flex">
+                          <div className="input-padding">
                             <Checkbox
                               label={lang.form.cloudEmailCheck}
                               onChange={this.toggle}
                             />
-                            <div className="cloud-helper">
-                              <TooltipHost
-                                id="toolTipID"
-                                content={lang.form.cloudHelper}
-                              >
-                                <IconButton iconProps={helpIcon} aria-describedby="toolTipID" ariaLabel="Emoji" />
-                              </TooltipHost>  
-                            </div>
                           </div>
                           
                           <Collapse isOpen={this.state.isOpen}>
                             <TextField
                               label={lang.form.cloudLabel}
+                              ariaDescribedBy="cloudHelperText"
+                              placeholder={lang.form.cloudPlaceholder}
                               onChange={(e) => {
                                 this.checkEmail(e.target.value, 'cloud');
                                 // console.log(e.target.value);
                               }}
                               iconProps={this.state.isCloudDomainValid && iconProps}
                             />
-                            {this.state.isCloudDomainValid ? 
-                            <span className="input-helper-text valid">
-                              Valid email domain!
-                            </span> :
-                            <span className="input-helper-text">
-                              Please enter a valid gc email
-                            </span>
-                          }
                           </Collapse>
                           <Dropdown
                             required

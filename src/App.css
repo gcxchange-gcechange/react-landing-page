@@ -45,6 +45,10 @@ img {
   margin-top: 40px;
 }
 
+.splash-page.process-splash{
+  padding-top: 45px;
+}
+
 .lang-select a {
   color: #1a406a;
 }
@@ -71,13 +75,13 @@ img {
 
 .info-holder {
   background-color: #EFF6FC;
-  height: 650px;
+  height: 675px;
   border-radius: 25px 0 0 25px;
 }
 .info-content {
   width: 90%;
   margin: 0 auto;
-  margin-top: 15px;
+  margin-top: 5px;
   text-align: center;
 }
 .info-header {
@@ -105,7 +109,7 @@ img {
   font-size: 16px;
 }
 .info-img {
-  width: 260px;
+  width: 300px;
 }
 
 .highlight {
@@ -222,7 +226,7 @@ footer a:hover {
   margin-top: 15px;
   box-shadow: 0 1.6px 3.6px 0 rgb(0 0 0 / 13%), 0 0.3px 0.9px 0 rgb(0 0 0 / 11%);
   border-radius: 25px;
-  height: 650px;
+  height: 675px;
 }
 
 .row-holder {
@@ -242,7 +246,7 @@ footer a:hover {
 }
 
 .input-padding {
-  margin-top: 10px;
+  margin-top: 12px;
 }
 
 .input-helper-text {
@@ -269,9 +273,16 @@ footer a:hover {
 }
 .process-holder {
   width: 50%;
-  margin: 15px auto;
-  height: 500px !important;
-  padding: 5%;
+  margin: 0 auto;
+  height: 525px !important;
+  padding: 3%;
+}
+.process-holder .gcx-logo {
+  margin-top: 0px !important;
+}
+
+.process-holder a {
+  white-space: nowrap;
 }
 .submit-btn {
   background-color: #0078D4 !important;
