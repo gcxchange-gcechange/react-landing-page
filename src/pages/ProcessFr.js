@@ -1,6 +1,5 @@
 import React from 'react'
 
-import {Link} from "react-router-dom";
 import {Helmet} from "react-helmet";
 import gcxLogo from '../assets/gcx-gce.png'
 import processingImage from '../assets/img/processing-img.png';

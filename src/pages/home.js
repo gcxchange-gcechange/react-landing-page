@@ -1,24 +1,17 @@
 import React, {Fragment} from 'react'
-import { Container, Row, Col, Button, Form, FormGroup, Collapse } from 'reactstrap';
+import { Container, Row, Col, Form, Collapse } from 'reactstrap';
 import { TextField } from '@fluentui/react/lib/TextField';
 import { Dropdown } from '@fluentui/react/lib/Dropdown';
-import { Checkbox, Stack } from '@fluentui/react';
+import { Checkbox } from '@fluentui/react';
 import { Spinner, SpinnerSize } from '@fluentui/react/lib/Spinner';
-import { TooltipHost } from '@fluentui/react/lib/Tooltip';
 import { initializeIcons } from '@fluentui/react/lib/Icons';
-import { IconButton } from '@fluentui/react/lib/Button';
 
 import {Helmet} from "react-helmet";
 import {Link, Redirect} from "react-router-dom";
 
-// import { sp } from "@pnp/sp/presets/all";
-
-import { DefaultPlayer as Video } from 'react-html5video';
 import 'react-html5video/dist/styles.css';
 
 import logo from '../assets/gcx-gce.png'
-import gcxLogo from '../assets/img/gcx-eng-logo.png'
-import gcxLogoFR from '../assets/img/gcx-fr-logo.png'
 
 import Canada from '../assets/img/FIP_BIL_couleurs-04.png';
 import govCandaEn from '../assets/img/FIP_BIL_couleurs-03.png';
@@ -30,9 +23,9 @@ import { getDepartTest, getDomains, sendUser } from '../services/DepartmentServi
 
 initializeIcons();
 const iconProps = { iconName: 'Accept' };
-const helpIcon = { iconName: 'Help' };
 
 function capitalizeFirstLetter(string) {
+  // Format names
   var caps = string[0].toUpperCase() + string.slice(1);
   var removeNums = caps.replace(/[0-9]/g, '');
   return removeNums;
@@ -43,7 +36,7 @@ class Home extends React.Component {
     super(props);
     this.state = {
       isOpen: false,
-      isInitLoad: true, // Change this to true!
+      isInitLoad: true,
       emailInput: '',
       yesCloudEmail: false,
       cloudEmail: '',
@@ -126,21 +119,19 @@ class Home extends React.Component {
         isInitLoad: false,
       })
     })
-    console.log('MOUNTED!');
-    // on success set initload state false
   }
 
   checkEmail (email, mailType) {
     if (email.includes('@')) {
-      // console.log('I am going to start checking')
       let domain = email.split('@');
       // compare email domain to our list object
-      if(this.state.domainList.length != 0) {
+      if(this.state.domainList.length !== 0) {
         if(mailType === 'email'){
           this.setState({
             isEmailDomainValid: false,
             isCanadaEmail: false,
           })
+          // Check if the user is trying to put a canada.ca email
           if(domain[1] === 'canada.ca'){
             this.setState({
               isCanadaEmail: true,
@@ -231,14 +222,13 @@ class Home extends React.Component {
                             placeholder={lang.form.emailPlaceholder}
                             onChange={(e) => {
                               this.checkEmail(e.target.value, 'email');
-                              // console.log(e.target.value);
                             }}
                             iconProps={this.state.isEmailDomainValid && iconProps}
                           />
                           {
                             this.state.isCanadaEmail &&
                             <span id="emailHelperText" className="input-helper-text">
-                              Must be a departmental email, not @canada.ca
+                              {lang.form.emailHelperText}
                             </span>
                           }
                           <div className="input-padding">
@@ -255,7 +245,6 @@ class Home extends React.Component {
                               placeholder={lang.form.cloudPlaceholder}
                               onChange={(e) => {
                                 this.checkEmail(e.target.value, 'cloud');
-                                // console.log(e.target.value);
                               }}
                               iconProps={this.state.isCloudDomainValid && iconProps}
                             />
@@ -270,7 +259,6 @@ class Home extends React.Component {
                               this.setState({
                                 department: o,
                               });
-                              console.log(this.state.department);
                             }}
                             selectedKey={this.state.department ? this.state.department.key : undefined}
                           />

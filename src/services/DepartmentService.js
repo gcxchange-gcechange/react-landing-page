@@ -1,5 +1,5 @@
 export async function getDomains() {
-  // put domain API
+  // get list of domains
   const response = await fetch(process.env.REACT_APP_DEV_DOMAIN_URL, {
     method: 'POST',
     headers: {
@@ -16,7 +16,7 @@ export async function getDomains() {
 }
 
 export async function getDepartTest() {
-  // put department API here
+  // get list of departments
   const response = await fetch(process.env.REACT_APP_DEV_DEPART_URL, {
     method: 'POST',
     headers: {
