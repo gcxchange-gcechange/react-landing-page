@@ -252,6 +252,7 @@ class Home extends React.Component {
                           <Dropdown
                             required
                             label={lang.form.departmentLabel}
+                            placeholder={lang.form.departmentPlaceholder}
                             options={this.state.departList}
                             onChange={(e, o) => {
                               // Set the department state

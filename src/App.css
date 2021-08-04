@@ -13,7 +13,7 @@ body, html {
 
 a {
   text-decoration: none;
-  color: #108db8;
+  color: #0078D4 !important;
   font-weight: bold;
 }
 
@@ -50,7 +50,7 @@ img {
 }
 
 .lang-select a {
-  color: #1a406a;
+  color: #1a406a !important;
 }
 
 .logo-img {
@@ -101,12 +101,13 @@ img {
 }
 
 .info-highlight {
-  color: #0078D4;
+  color: #266ef2;
 }
 
 .info-list .info-highlight {
   font-weight: 600;
   font-size: 16px;
+  color: #1a406a !important;
 }
 .info-img {
   width: 300px;
