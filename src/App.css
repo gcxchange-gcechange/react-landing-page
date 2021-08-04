@@ -13,7 +13,7 @@ body, html {
 
 a {
   text-decoration: none;
-  color: #0078D4 !important;
+  color: #0078D4;
   font-weight: bold;
 }
 
@@ -302,6 +302,9 @@ footer a:hover {
 
 .help-holder{
   margin-top: 10px;
+}
+.help-holder a {
+  color: #0078D4;
 }
 @media (max-width: 870px) {
   .footer-imgs .d-flex {
