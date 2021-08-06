@@ -2,7 +2,7 @@ import React, {Fragment} from 'react'
 import { Container, Row, Col, Form, Collapse } from 'reactstrap';
 import { TextField } from '@fluentui/react/lib/TextField';
 import { Dropdown } from '@fluentui/react/lib/Dropdown';
-import { Checkbox } from '@fluentui/react';
+import { Checkbox, MessageBar, MessageBarType, } from '@fluentui/react';
 import { Spinner, SpinnerSize } from '@fluentui/react/lib/Spinner';
 import { initializeIcons } from '@fluentui/react/lib/Icons';
 
@@ -26,9 +26,15 @@ const iconProps = { iconName: 'Accept' };
 
 function capitalizeFirstLetter(string) {
   // Format names
-  var caps = string[0].toUpperCase() + string.slice(1);
-  var removeNums = caps.replace(/[0-9]/g, '');
-  return removeNums;
+  // If the email isn't in the proper format return 'N/A'
+  if(string){
+    var caps = string[0].toUpperCase() + string.slice(1);
+    var removeNums = caps.replace(/[0-9]/g, '');
+    return removeNums; 
+  } else {
+    return 'N/A';
+  }
+  
 }
 
 class Home extends React.Component {
@@ -47,6 +53,7 @@ class Home extends React.Component {
       isCanadaEmail: false,
       isCloudDomainValid: false,
       isValid: false,
+      backendError: false,
     };
     this.toggle = this.toggle.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
@@ -80,6 +87,9 @@ class Home extends React.Component {
             isValid: true,
           })
         } else {
+          this.setState({
+            backendError: true,
+          })
           console.log('Something went wrong');
         }
       }
@@ -263,6 +273,15 @@ class Home extends React.Component {
                             }}
                             selectedKey={this.state.department ? this.state.department.key : undefined}
                           />
+                          {(this.state.backendError && 
+                            <MessageBar
+                              className="input-padding"
+                              messageBarType={MessageBarType.error}
+                              isMultiline={false}
+                            >
+                              {lang.form.backendError}
+                            </MessageBar>
+                          )}
                           <input className="input-padding submit-btn" disabled={!this.state.isEmailDomainValid} type="submit" value={lang.form.submitBtn} />
                           <div className="help-holder" dangerouslySetInnerHTML={{__html: lang.form.help}} />
                         </Form>

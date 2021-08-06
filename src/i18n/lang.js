@@ -22,6 +22,7 @@ const Lang = {
             departmentPlaceholder: 'Select an option',
             submitBtn: 'Register',
             help: 'Need help? <a href="mailto:support-soutien@gcx-gce.gc.ca">Contact our help desk</a>',
+            backendError: 'There was an error. Please try again later',
         },
         process: {
             title: 'Sit tight, we’re almost finished setting up your account! You’ll be getting an email from us soon. ',
@@ -58,6 +59,7 @@ const Lang = {
             departmentPlaceholder: 'Choisir une option',
             submitBtn: 'S\'inscrire',
             help: 'Besoin d\'aide? <a href="mailto:support-soutien@gcx-gce.gc.ca">Contactez notre service d\'assistance</a>',
+            backendError: 'Un problème est survenu; veuillez réessayer plus tard.',
         },
         process: {
             title: 'Attendez patiemment, nous avons presque fini de configurer votre compte! Vous recevrez bientôt un courriel de notre part.',

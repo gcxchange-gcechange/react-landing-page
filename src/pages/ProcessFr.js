@@ -7,7 +7,7 @@ import processingImage from '../assets/img/processing-img.png';
 const ProcessFr = () => (
   <main lang="fr" className="text-center splash-page process-splash">
     <Helmet>
-      <title>Processing Request</title>
+      <title>Attendez patiemment, nous avons presque fini de configurer votre compte! Vous recevrez bientôt un courriel de notre part.</title>
     </Helmet>
     <div className="process-holder form-holder">
       <img className="gcx-logo" src={gcxLogo} alt="gcxchange | gcéchange" />
