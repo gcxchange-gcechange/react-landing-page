@@ -1,6 +1,6 @@
 const Lang = {
     "en-us": {
-        title: 'gcxchange - Activate your account',
+        title: 'gcxchange - Register',
         hero: {
             h1: 'gc<span class="info-highlight">x</span>change is here',
             subtitle: 'Say hello to the Government of Canada’s new digital workspace. With one simple sign-on, you can:',
@@ -37,7 +37,7 @@ const Lang = {
         },
     },
     "fr-ca": {
-        title: 'gcéchange - Activez votre compte',
+        title: 'gcéchange - S\'inscrire',
         hero: {
             h1: 'gc<span className="info-highlight">é</span>change est arrivé',
             subtitle: 'Venez découvrir le nouvel espace de travail numérique du gouvernement du Canada. En une seule ouverture de session, vous pouvez : ',

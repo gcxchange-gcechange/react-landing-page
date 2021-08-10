@@ -110,6 +110,8 @@ class Home extends React.Component {
           })
         })
       }
+      // sort alphabetical
+      departs.sort((a, b) => { if(a.text < b.text) { return -1; } if(a.text > b.text) { return 1; } return 0; })
       this.setState({
         departList: departs,
       })
@@ -228,19 +230,13 @@ class Home extends React.Component {
                           <TextField
                             required
                             label={lang.form.emailLabel}
-                            ariaDescribedBy="emailHelperText"
                             placeholder={lang.form.emailPlaceholder}
                             onChange={(e) => {
                               this.checkEmail(e.target.value, 'email');
                             }}
                             iconProps={this.state.isEmailDomainValid && iconProps}
+                            errorMessage={this.state.isCanadaEmail ? lang.form.emailHelperText : ""}
                           />
-                          {
-                            this.state.isCanadaEmail &&
-                            <span id="emailHelperText" className="input-helper-text">
-                              {lang.form.emailHelperText}
-                            </span>
-                          }
                           <div className="input-padding">
                             <Checkbox
                               label={lang.form.cloudEmailCheck}
