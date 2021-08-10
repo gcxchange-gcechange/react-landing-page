@@ -11,6 +11,7 @@ import Home from "./pages/Home";
 import LanguageSelect from "./pages/LanguageSelect";
 import ProcessEn from "./pages/ProcessEn";
 import ProcessFr from "./pages/ProcessFr";
+import Maintenance from "./pages/Maintenance";
 
 import './App.css'
 
@@ -35,7 +36,11 @@ function App() {
                 <ProcessFr />
               </Route>
               <Route exact path="/">
-                <LanguageSelect />
+                {process.env.REACT_APP_MAINTENANCE_MODE ?
+                  <Maintenance />
+                  :
+                  <LanguageSelect />
+                }
               </Route>
             </Switch>
           </Router>

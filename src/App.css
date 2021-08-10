@@ -21,7 +21,8 @@ img {
   max-width: 100%;
 }
 
-.splash-page {
+.splash-page,
+.maintenance-page {
   background-color: #f2f2f2;
   color: #1a406a;
   height:100vh;
@@ -39,7 +40,8 @@ img {
   margin: -100px 0 0 -275px;
 }
 
-.splash-page .gcx-logo {
+.splash-page .gcx-logo,
+.maintenance-page .gcx-logo {
   width: 100%;
   max-width:400px;
   margin-top: 40px;
