@@ -5,9 +5,12 @@ import {
   Switch,
   Route
 } from "react-router-dom";
+import "@fontsource/montserrat";
 
 import Home from "./pages/Home";
 import LanguageSelect from "./pages/LanguageSelect";
+import ProcessEn from "./pages/ProcessEn";
+import ProcessFr from "./pages/ProcessFr";
 import Maintenance from "./pages/Maintenance";
 
 import './App.css'
@@ -26,6 +29,11 @@ function App() {
               </Route>
               <Route exact path="/accueil">
                 <Home lang="fr-ca" />
+              </Route>
+              <Route exact path="/en/process">
+                <ProcessEn />
+              </Route><Route exact path="/fr/process">
+                <ProcessFr />
               </Route>
               <Route exact path="/">
                 {process.env.REACT_APP_MAINTENANCE_MODE ?
