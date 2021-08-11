@@ -278,7 +278,7 @@ class Home extends React.Component {
                               {lang.form.backendError}
                             </MessageBar>
                           )}
-                          <input className="input-padding submit-btn" disabled={!this.state.isEmailDomainValid} type="submit" value={lang.form.submitBtn} />
+                          <input className="input-padding submit-btn" disabled={(!this.state.isEmailDomainValid || !this.state.department) ? true : false} type="submit" value={lang.form.submitBtn} />
                           <div className="help-holder" dangerouslySetInnerHTML={{__html: lang.form.help}} />
                         </Form>
                       }
