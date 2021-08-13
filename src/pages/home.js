@@ -160,7 +160,8 @@ class Home extends React.Component {
           }
         }
         this.state.domainList.map((domState) => {
-          if(domState.dom === domain[1]) {
+            if (domState.dom === domain[1]) {
+                console.log("domstate " + domState.dom + " domain " + domain[1])
             if(mailType === 'email'){
               this.setState({
                 department: {key: domState.key},
