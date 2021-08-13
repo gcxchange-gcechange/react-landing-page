@@ -167,6 +167,7 @@ class Home extends React.Component {
                 isEmailDomainValid: true,
                 emailInput: email,
               })
+                console.log("depat key" + domState.key)
             } else {
               this.setState({
                 isCloudDomainValid: true,
