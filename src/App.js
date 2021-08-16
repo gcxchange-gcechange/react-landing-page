@@ -36,7 +36,7 @@ function App() {
                 <ProcessFr />
               </Route>
               <Route exact path="/">
-                {process.env.REACT_APP_MAINTENANCE_MODE ?
+                {process.env.REACT_APP_MAINTENANCE_MODE == "true" ?
                   <Maintenance />
                   :
                   <LanguageSelect />
