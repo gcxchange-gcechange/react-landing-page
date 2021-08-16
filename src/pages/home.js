@@ -121,7 +121,7 @@ class Home extends React.Component {
       if(d) {
         d.map((domain) => {
           domains.push({
-            key: domain.fields.RG_x0020_Code2,
+            key: domain.fields.RG_x0020_Code,
             dom: domain.fields.GoCDomain,
           })
         })
