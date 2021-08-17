@@ -12,7 +12,7 @@ class Resources extends React.Component {
 
     constructor() {
         //super(state);
-        super(props, state);
+        super();
         this.state = { blobsWeFound: [], containerUrl: "" }
     }
 
