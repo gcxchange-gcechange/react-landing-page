@@ -7,11 +7,12 @@ import {
 } from "react-router-dom";
 import "@fontsource/montserrat";
 
-import Home from "./pages/Home";
+import Home from "./pages/home";
 import LanguageSelect from "./pages/LanguageSelect";
 import ProcessEn from "./pages/ProcessEn";
 import ProcessFr from "./pages/ProcessFr";
 import Maintenance from "./pages/Maintenance";
+import Toolkit  from "./pages/ResourcesEn";
 
 import './App.css'
 
@@ -34,6 +35,9 @@ function App() {
                 <ProcessEn />
               </Route><Route exact path="/fr/process">
                 <ProcessFr />
+              </Route>
+              <Route exact path="/en/toolkit">
+                <Toolkit  />
               </Route>
               <Route exact path="/">
                 {process.env.REACT_APP_MAINTENANCE_MODE == "true" ?
