@@ -12,7 +12,7 @@ import LanguageSelect from "./pages/LanguageSelect";
 import ProcessEn from "./pages/ProcessEn";
 import ProcessFr from "./pages/ProcessFr";
 import Maintenance from "./pages/Maintenance";
-import Toolkit  from "./pages/ResourcesEn";
+import ToolkitEn  from "./pages/ToolkitEn";
 
 import './App.css'
 
@@ -37,7 +37,7 @@ function App() {
                 <ProcessFr />
               </Route>
               <Route exact path="/en/toolkit">
-                <Toolkit  />
+                <ToolkitEn  />
               </Route>
               <Route exact path="/">
                 {process.env.REACT_APP_MAINTENANCE_MODE == "true" ?
