@@ -2,7 +2,7 @@ import React from 'react'
 
 import gcxLogo from '../assets/gcx-gce.png'
 
-const Resources = () => (
+const ToolkitEn = () => (
     <main className="text-center">
         <div className="content">
         <img className="gcx-logo" src={gcxLogo} alt="gcxchange | gcéchange" />
@@ -16,4 +16,4 @@ const Resources = () => (
     </main>
 )
 
-export default Resources;
+export default ToolkitEn;
