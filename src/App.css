@@ -176,6 +176,64 @@ footer a:hover {
   height: auto;
 }
 
+/* TOOLKIT STYLES */
+
+.toolkit-container {
+  text-align: center;
+  font-size: 18px;
+  color: #03426e;
+}
+.toolkit-row-holder {
+  margin: 0 auto;
+  width: 50%;
+  text-align: center;
+  padding: 145px 0px;
+}
+
+.bg-toolkit-head {
+  background-color: #ebebeb;
+}
+
+.toolkit-info-box {
+  margin: 0 auto;
+  text-align: left;
+  width: 50%;
+  padding: 55px 0px;
+}
+
+.toolkit-info-box h2 {
+  margin-bottom: 35px;
+  font-weight: lighter;
+  font-size: 26px;
+}
+
+.bg-toolkit-highlight {
+  background-color: #dde7f6;
+}
+.toolkit-display-header {
+  font-size: 48px;
+  font-weight: lighter;
+  color: black;
+  margin-bottom: 45px;
+}
+
+.toolkit-text-holder {
+  width: 70%;
+  margin: 0 auto;
+}
+.toolkit-hr { 
+  border-bottom: #c5c5c5 solid 2px;
+  width: 200px;
+}
+.toolkit-highlight {
+  color: #266ef2;
+}
+
+.toolkit-bold {
+  color: #03426e;
+  font-weight: bold;
+}
+
 @media (max-width: 870px) {
   .footer-imgs .d-flex {
     display: block !important;
