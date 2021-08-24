@@ -9,6 +9,7 @@ import {
 import Home from "./pages/Home";
 import LanguageSelect from "./pages/LanguageSelect";
 import ToolkitEn from "./pages/ToolkitEn";
+import ToolkitFr from "./pages/ToolkitFr";
 
 import './App.css'
 
@@ -29,6 +30,9 @@ function App() {
               </Route>
               <Route exact path="/en/toolkit">
                 <ToolkitEn  />
+              </Route>
+              <Route exact path="/fr/toolkit">
+                <ToolkitFr />
               </Route>
               <Route exact path="/">
                 <LanguageSelect />

@@ -4,14 +4,14 @@ import gcxLogo from '../assets/gcx-gce.png';
 import Canada from '../assets/img/Canada-blanc-01.png';
 import govCandaEn from '../assets/img/gouv_BLANC_EN-01.png';
 
-const ToolkitEn = () => (
+const ToolkitFr = () => (
     <div>
     <main className="toolkit-container">
         <Container fluid>
             <Row className="bg-toolkit-head">
                 <div className="head-container">
                     <nav className="d-flex lang-select">
-                        <a className="ml-auto" href="/fr/toolkit">Français</a>
+                        <a className="ml-auto" href="/en/toolkit">English</a>
                     </nav>
                     <img className="gcx-logo" src={gcxLogo} alt="gcxchange | gcéchange" />
                     <hr />
@@ -320,18 +320,18 @@ const ToolkitEn = () => (
         </Container>
     </main>
     <footer>
-        <Container>
-            <Row>
-              <Col md="12" className="footer-imgs">
-                <div className="d-flex align-items-center ">
-                  <img className="goc-canada" src={govCandaEn} alt="" />
-                  <img className="ml-auto goc-canada" src={Canada} alt="" />
-                </div>
-              </Col>
-            </Row>
-          </Container>
+      <Container>
+        <Row>
+          <Col md="12" className="footer-imgs">
+            <div className="d-flex align-items-center ">
+              <img className="goc-canada" src={govCandaEn} alt="" />
+              <img className="ml-auto goc-canada" src={Canada} alt="" />
+            </div>
+          </Col>
+        </Row>
+      </Container>
     </footer>
     </div>
 )
 
-export default ToolkitEn;
+export default ToolkitFr;

@@ -172,7 +172,7 @@ footer a:hover {
 }
 
 .goc-canada {
-  max-width:340px;
+  max-width:300px;
   height: auto;
 }
 
@@ -332,6 +332,27 @@ footer a:hover {
 }
 .toolkit-accordion .chevron:after{
   background: #03426e !important;
+}
+
+#resource-holder {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+.resource-row {
+  background-image: url(./assets/img/toolkit-bg.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.resource-text {
+  width: 65%;
+  margin: 25px auto;
+
+}
+
+.toolkit-accordion-item button{
+  color: #03426e !important;
 }
 /*
 .chevron.right:before {
