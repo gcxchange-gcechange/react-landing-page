@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container, Row, Col, UncontrolledCollapse, Button } from 'reactstrap';
+import { Container, Row, Col, UncontrolledCollapse, Button, Table } from 'reactstrap';
 import gcxLogo from '../assets/gcx-gce.png'
 
 const ToolkitEn = () => (
@@ -7,17 +7,21 @@ const ToolkitEn = () => (
     <main className="toolkit-container">
         <Container fluid>
             <Row className="bg-toolkit-head">
-                <div className="toolkit-row-holder">
+                <div className="head-container">
+                    <nav className="d-flex lang-select">
+                        <a className="ml-auto" href="/fr/toolkit">Français</a>
+                    </nav>
                     <img className="gcx-logo" src={gcxLogo} alt="gcxchange | gcéchange" />
-                    <h1 className="">gc<span className="toolkit-highlight">x</span>change toolkit</h1>
+                    <hr />
+                    <h1>gc<span className="toolkit-highlight">x</span>change toolkit</h1>
                     <div>
-                        <a href="#resource-holder" className="btn btn-primary btn-lg mt-3">I am an anchor that looks like a button</a>
+                        <a href="#resource-holder" className="btn btn-primary btn-lg mt-3">Get communications products</a>
                     </div> 
                 </div>  
             </Row>
             <Row>
                 <div className="toolkit-row-holder">
-                    <h2 className="toolkit-display-header">What is gcxchange</h2>
+                    <h2 className="toolkit-display-header">What is gc<span className="toolkit-highlight">x</span>change?</h2>
                     <div className="toolkit-text-holder">
                     gc<span className="toolkit-highlight">x</span>change = a modern platform that will keep employees <span className="toolkit-bold">up to date</span> with what’s happening <span className="toolkit-bold">across the GC</span> and allow them to <span className="toolkit-bold">collaborate</span> with people beyond their organization... <span className="toolkit-bold">all in one place</span>.
                     </div>
@@ -29,20 +33,74 @@ const ToolkitEn = () => (
                     <Row>
                         <Col>
                             <ul>
-                                <li>Collaborate with other employees and with the outside world using Microsoft Teams</li>
-                                <li>
-                                    Co-author documents with other public servants from other departments
+                                <li className="d-flex">
+                                    <div class="mr-3 mt-3">
+                                        <span class="chevron right"></span>
+                                    </div>
+                                    <div>
+                                        <span className="toolkit-bold">Collaborate with other employees</span> and with the outside world using Microsoft Teams
+                                    </div>
                                 </li>
-                                <li>Create or join cross-departmental communities</li>
-                                <li>Have group discussions/direct messages with colleagues across the GC</li>
+                                <li className="d-flex">
+                                    <div class="mr-3 mt-3">
+                                        <span class="chevron right"></span>    
+                                    </div>
+                                    <div>
+                                        <span className="toolkit-bold">Co-author documents</span> with other public servants from other departments    
+                                    </div>
+                                </li>
+                                <li className="d-flex">
+                                    <div class="mr-3 mt-3">
+                                        <span class="chevron right"></span>
+                                    </div>
+                                    <div>
+                                        Create or join <span className="toolkit-bold">cross-departmental communities</span>
+                                    </div>
+                                </li>
+                                <li className="d-flex">
+                                    <div class="mr-3 mt-3">
+                                        <span class="chevron right"></span>
+                                    </div>
+                                    <div>
+                                        <span className="toolkit-bold">Have group discussions/direct messages</span> with colleagues across the GC
+                                    </div>
+                                </li>
                             </ul>
                         </Col>
                         <Col>
                             <ul>
-                                <li>Thing 1</li>
-                                <li>Thing 1</li>
-                                <li>Thing 1</li>
-                                <li>Thing 1</li>
+                                <li className="d-flex">
+                                    <div class="mr-3 mt-3">
+                                        <span class="chevron right"></span>
+                                    </div>
+                                    <div>
+                                        <span className="toolkit-bold">View departmental and GC-wide</span> communications    
+                                    </div>
+                                </li>
+                                <li className="d-flex">
+                                    <div class="mr-3 mt-3">
+                                        <span class="chevron right"></span>
+                                    </div>
+                                    <div>
+                                        View content and information that is <span className="toolkit-bold">personalized for you</span>    
+                                    </div>
+                                </li>
+                                <li className="d-flex">
+                                    <div class="mr-3 mt-3">
+                                        <span class="chevron right"></span>
+                                    </div>
+                                    <div>
+                                        Access <span className="toolkit-bold">GC-wide corporate tools</span> like pay and careers    
+                                    </div> 
+                                </li>
+                                <li className="d-flex">
+                                    <div class="mr-3 mt-3">
+                                        <span class="chevron right"></span>
+                                    </div>
+                                    <div>
+                                        Access your <span className="toolkit-bold">department’s current intranet</span> easily through Gcxchange    
+                                    </div>
+                                </li>
                             </ul>
                         </Col>    
                     </Row>
@@ -87,43 +145,171 @@ const ToolkitEn = () => (
                         <Col>
                             <div className="toolkit-accordion">
                                 <div className="toolkit-accordion-item">
-                                    <Button id="comms-plan" className="toolkit-accordion-button">Communications plan</Button>
+                                    <Button color="link" id="comms-plan" className="toolkit-accordion-button d-flex" ><div className="mr-3"><span class="chevron right"></span></div><div>Communications plan</div></Button>
                                     <UncontrolledCollapse toggler="#comms-plan">
-                                        Hello?!
+                                        <Table>
+                                            <thead>
+                                                <tr>
+                                                    <th>File Title</th>
+                                                    <th>Download</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        TEST
+                                                    </td>
+                                                    <td>
+                                                        TEST DOWNLOAD!
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </Table>
                                     </UncontrolledCollapse>  
                                 </div>
                                 <div className="toolkit-accordion-item">
-                                    <Button id="comms-products" className="toolkit-accordion-button">Communications products</Button>
+                                    <Button color="link" id="comms-products" className="toolkit-accordion-button d-flex"><div className="mr-3"><span class="chevron right mr-3"></span></div><div>Communications products</div></Button>
                                     <UncontrolledCollapse toggler="#comms-products">
-                                        Hello again?!
+                                        <Table>
+                                            <thead>
+                                                <tr>
+                                                    <th>File Title</th>
+                                                    <th>Download</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        TEST
+                                                    </td>
+                                                    <td>
+                                                        TEST DOWNLOAD!
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </Table>
                                     </UncontrolledCollapse>  
                                 </div>
-                                <div className="toolkit-accordion-item" className="toolkit-accordion-button">
-                                    <Button id="design-branding">Design and branding</Button>
+                                <div className="toolkit-accordion-item">
+                                    <Button color="link" id="design-branding" className="d-flex"><div className="mr-3"><span class="chevron right mr-3"></span></div><div>Design and branding</div></Button>
                                     <UncontrolledCollapse toggler="#design-branding">
-                                        Hello again?!
+                                        <Table>
+                                            <thead>
+                                                <tr>
+                                                    <th>File Title</th>
+                                                    <th>Download</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        TEST
+                                                    </td>
+                                                    <td>
+                                                        TEST DOWNLOAD!
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </Table>
                                     </UncontrolledCollapse>  
-                                </div>    
+                                </div>
+                                <div className="toolkit-accordion-item">
+                                    <Button color="link" id="social-media" className="toolkit-accordion-button d-flex" ><div className="mr-3"><span class="chevron right"></span></div><div>Social Media</div></Button>
+                                    <UncontrolledCollapse toggler="#social-media">
+                                        <Table>
+                                            <thead>
+                                                <tr>
+                                                    <th>File Title</th>
+                                                    <th>Download</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        TEST
+                                                    </td>
+                                                    <td>
+                                                        TEST DOWNLOAD!
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </Table>
+                                    </UncontrolledCollapse>  
+                                </div>
                             </div>
+                            
                         </Col>
                         <Col>
-                            <div>
-                                <Button id="promotional-videos">Promotional videos</Button>
-                                <UncontrolledCollapse toggler="#promotional-videos">
-                                    Hello?!
-                                </UncontrolledCollapse>  
-                            </div>
-                            <div>
-                                <Button id="depart-calendar">Departmental onboarding calendar</Button>
-                                <UncontrolledCollapse toggler="#depart-calendar">
-                                    Hello again?!
-                                </UncontrolledCollapse>  
-                            </div>
-                            <div>
-                                <Button id="backgrounder">Backgrounder presentation</Button>
-                                <UncontrolledCollapse toggler="#backgrounder">
-                                    Hello again?!
-                                </UncontrolledCollapse>  
+                            <div className="toolkit-accordion">
+                                <div className="toolkit-accordion-item">
+                                    <Button color="link" id="promotional-videos" className="d-flex"><div className="mr-3"><span class="chevron right mr-3"></span></div><div>Promotional videos</div></Button>
+                                    <UncontrolledCollapse toggler="#promotional-videos">
+                                        <Table>
+                                            <thead>
+                                                <tr>
+                                                    <th>File Title</th>
+                                                    <th>Download</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        TEST
+                                                    </td>
+                                                    <td>
+                                                        TEST DOWNLOAD!
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </Table>
+                                    </UncontrolledCollapse>  
+                                </div>
+                                <div className="toolkit-accordion-item">
+                                    <Button color="link" id="depart-calendar" className="d-flex"><div className="mr-3"><span class="chevron right mr-3"></span></div>Departmental onboarding calendar<div></div></Button>
+                                    <UncontrolledCollapse toggler="#depart-calendar">
+                                        <Table>
+                                            <thead>
+                                                <tr>
+                                                    <th>File Title</th>
+                                                    <th>Download</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        TEST
+                                                    </td>
+                                                    <td>
+                                                        TEST DOWNLOAD!
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </Table>
+                                    </UncontrolledCollapse>  
+                                </div>
+                                <div className="toolkit-accordion-item">
+                                    <Button color="link" id="backgrounder" className="d-flex"><div className="mr-3"><span class="chevron right mr-3"></span></div>Backgrounder presentation<div></div></Button>
+                                    <UncontrolledCollapse toggler="#backgrounder">
+                                        <Table>
+                                            <thead>
+                                                <tr>
+                                                    <th>File Title</th>
+                                                    <th>Download</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        TEST
+                                                    </td>
+                                                    <td>
+                                                        TEST DOWNLOAD!
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </Table>
+                                    </UncontrolledCollapse>  
+                                </div>    
                             </div>
                         </Col>
                     </Row>
