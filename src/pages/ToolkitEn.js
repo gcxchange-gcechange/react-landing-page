@@ -159,10 +159,18 @@ const ToolkitEn = () => (
                                             <tbody>
                                                 <tr>
                                                     <td>
-                                                        TEST
+                                                        Community page setup EN
                                                     </td>
                                                     <td>
-                                                        TEST DOWNLOAD!
+                                                        <a href="https://sttoolkitprodstd.blob.core.windows.net/gcxchange/community%20page%20setup%20EN.pdf?sp=r&st=2021-08-25T12:39:08Z&se=2026-08-25T20:39:08Z&spr=https&sv=2020-08-04&sr=b&sig=%2BXBdWD7nNUtDmpq7XSGk7%2FNusU6LtOR3I9S%2BFD2lIrQ%3D" download>Download</a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        GCTools to gcxchange EN
+                                                    </td>
+                                                    <td>
+                                                        <a href="https://sttoolkitprodstd.blob.core.windows.net/gcxchange/GCTools%20to%20gcxchange%20EN.pdf?sp=r&st=2021-08-25T13:35:20Z&se=2026-08-25T21:35:20Z&spr=https&sv=2020-08-04&sr=b&sig=YjzelrVIAt%2BbOmM5LnLmBC7XBmd1JXPTZPyLOlhEXnY%3D" download>Download</a>
                                                     </td>
                                                 </tr>
                                             </tbody>
@@ -182,10 +190,18 @@ const ToolkitEn = () => (
                                             <tbody>
                                                 <tr>
                                                     <td>
-                                                        TEST
+                                                        gcxchange communications implementation plan EN 
                                                     </td>
                                                     <td>
-                                                        TEST DOWNLOAD!
+                                                        <a href="https://sttoolkitprodstd.blob.core.windows.net/gcxchange/gcxchange%20communications%20implementation%20plan%20EN.pdf?sp=r&st=2021-08-25T13:38:02Z&se=2026-08-25T21:38:02Z&spr=https&sv=2020-08-04&sr=b&sig=aRbbrgftbFM7j4exODN2PYaqFQTPXECTGqrKbtyX45w%3D" download>Download</a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        gcxchange onboarding steps EN 
+                                                    </td>
+                                                    <td>
+                                                        <a href="https://sttoolkitprodstd.blob.core.windows.net/gcxchange/gcxchange%20onboarding%20steps%20EN.pdf?sp=r&st=2021-08-25T13:38:37Z&se=2026-08-25T21:38:37Z&spr=https&sv=2020-08-04&sr=b&sig=DUCPTKnmXQ3veg028g6zuYBgVmoD77Xwu8RlLsHG4lk%3D" download>Download</a>
                                                     </td>
                                                 </tr>
                                             </tbody>
@@ -205,10 +221,82 @@ const ToolkitEn = () => (
                                             <tbody>
                                                 <tr>
                                                     <td>
-                                                        TEST
+                                                        gcxchange styleguide EN
                                                     </td>
                                                     <td>
-                                                        TEST DOWNLOAD!
+                                                        <a href="https://sttoolkitprodstd.blob.core.windows.net/gcxchange/gcxchange%20styleguide%20EN.jpg?sp=r&st=2021-08-25T13:39:08Z&se=2026-08-25T21:39:08Z&spr=https&sv=2020-08-04&sr=b&sig=UzY4lIcq%2B4dyqXBwruBLQejUnXPi8O7SyIjumAQ3kow%3D" download>Download</a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        gcxchange_illustration_books_BIL
+                                                    </td>
+                                                    <td>
+                                                        <a href="https://sttoolkitprodstd.blob.core.windows.net/gcxchange/gcxchange_illustration_books_BIL.png?sp=r&st=2021-08-25T13:40:08Z&se=2026-08-25T21:40:08Z&spr=https&sv=2020-08-04&sr=b&sig=20Ymg7f9M1%2Br5szHastl9cMvTItYB7YqhDlrW4kBO94%3D" download>Download</a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        gcxchange_illustration_contact_BIL 
+                                                    </td>
+                                                    <td>
+                                                        <a href="https://sttoolkitprodstd.blob.core.windows.net/gcxchange/gcxchange_illustration_contact_BIL.png?sp=r&st=2021-08-25T13:40:22Z&se=2026-08-25T21:40:22Z&spr=https&sv=2020-08-04&sr=b&sig=CzK496lpKejTtFVerorHLJhCGFZHBh0wpOTFl%2BgU4Vw%3D" download>Download</a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        gcxchange_illustration_contact2_BIL
+                                                    </td>
+                                                    <td>
+                                                        <a href="https://sttoolkitprodstd.blob.core.windows.net/gcxchange/gcxchange_illustration_contact2_BIL.png?sp=r&st=2021-08-25T13:40:34Z&se=2026-08-25T21:40:34Z&spr=https&sv=2020-08-04&sr=b&sig=ZOsmrXr%2BfCZoIzRvvxxb%2FTZTSR0xIUuO1JJ2w2fsXQI%3D" download>Download</a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        gcxchange_illustration_devices_BIL 
+                                                    </td>
+                                                    <td>
+                                                        <a href="https://sttoolkitprodstd.blob.core.windows.net/gcxchange/gcxchange_illustration_devices_BIL.png?sp=r&st=2021-08-25T13:41:09Z&se=2026-08-25T21:41:09Z&spr=https&sv=2020-08-04&sr=b&sig=IIylNR7CQ3GQjr8s6ia6UVgzqKmBdkqS0H4ZQHeyWAQ%3D" download>Download</a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        gcxchange_illustration_discussion_BIL
+                                                    </td>
+                                                    <td>
+                                                        <a href="https://sttoolkitprodstd.blob.core.windows.net/gcxchange/gcxchange_illustration_discussion_BIL.png?sp=r&st=2021-08-25T13:41:26Z&se=2026-08-25T21:41:26Z&spr=https&sv=2020-08-04&sr=b&sig=9M%2BDGb9GZTD%2BTqmOXDYHnjlGFXWc1aLyZUdF5LJG%2BoE%3D" download>Download</a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        gcxchange_illustration_laptop_BIL 
+                                                    </td>
+                                                    <td>
+                                                        <a href="https://sttoolkitprodstd.blob.core.windows.net/gcxchange/gcxchange_illustration_laptop_BIL.png?sp=r&st=2021-08-25T13:41:48Z&se=2026-08-25T21:41:48Z&spr=https&sv=2020-08-04&sr=b&sig=KSBd4TJF130XZCLT0wZG8YsdhX3P3e1%2FRPBJnyVHmf0%3D" download>Download</a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        gcxchange_illustration_lookingfor_BIL
+                                                    </td>
+                                                    <td>
+                                                        <a href="https://sttoolkitprodstd.blob.core.windows.net/gcxchange/gcxchange_illustration_lookingfor_BIL.png?sp=r&st=2021-08-25T13:42:01Z&se=2026-08-25T21:42:01Z&spr=https&sv=2020-08-04&sr=b&sig=Zf950hTiR3sgjJ1yA74Qc2k%2BDbJd9WrW9xhBeY3afDU%3D" download>Download</a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        gcxchange_illustration_orgchart_BIL
+                                                    </td>
+                                                    <td>
+                                                        <a href="https://sttoolkitprodstd.blob.core.windows.net/gcxchange/gcxchange_illustration_orgchart_BIL.png?sp=r&st=2021-08-25T13:42:15Z&se=2026-08-25T21:42:15Z&spr=https&sv=2020-08-04&sr=b&sig=032LrETnDRXgVSX%2Fdr7tdIx6rO99sHoarBO4mZy8OAg%3D" download>Download</a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        gcxchange_illustration_writting_BIL 
+                                                    </td>
+                                                    <td>
+                                                        <a href="https://sttoolkitprodstd.blob.core.windows.net/gcxchange/gcxchange_illustration_writting_BIL.png?sp=r&st=2021-08-25T13:42:30Z&se=2026-08-25T21:42:30Z&spr=https&sv=2020-08-04&sr=b&sig=S9V7RvUNTp5hmq%2BUpIGhar%2Frcqk9KCiGpBl000H21m0%3D" download>Download</a>
                                                     </td>
                                                 </tr>
                                             </tbody>
@@ -228,10 +316,10 @@ const ToolkitEn = () => (
                                             <tbody>
                                                 <tr>
                                                     <td>
-                                                        TEST
+                                                        gcxchange Twitter generic video EN 
                                                     </td>
                                                     <td>
-                                                        TEST DOWNLOAD!
+                                                        <a href="https://sttoolkitprodstd.blob.core.windows.net/gcxchange/gcxchange%20Twitter%20generic%20video%20EN.mp4?sp=r&st=2021-08-25T13:39:38Z&se=2026-08-25T21:39:38Z&spr=https&sv=2020-08-04&sr=b&sig=jhUQnUT52YgI3pJWRiBulLqbQxe8JXvA6xVTBeghBvQ%3D" download>Download</a>
                                                     </td>
                                                 </tr>
                                             </tbody>
@@ -256,10 +344,18 @@ const ToolkitEn = () => (
                                             <tbody>
                                                 <tr>
                                                     <td>
-                                                        TEST
+                                                        Video - gcxchange promo video EN
                                                     </td>
                                                     <td>
-                                                        TEST DOWNLOAD!
+                                                        <a href="https://sttoolkitprodstd.blob.core.windows.net/gcxchange/Video%20-%20gcxchange%20promo%20video%20EN.mp4?sp=r&st=2021-08-25T13:42:45Z&se=2026-08-25T21:42:45Z&spr=https&sv=2020-08-04&sr=b&sig=MXcpQ8l4PMyDUMFuwxKo4egqNMoQodanm1i3ZInJzOU%3D" download>Download</a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        Video - gcxchange teaser EN
+                                                    </td>
+                                                    <td>
+                                                        <a href="https://sttoolkitprodstd.blob.core.windows.net/gcxchange/Video%20-%20gcxchange%20teaser%20EN.mp4?sp=r&st=2021-08-25T13:42:57Z&se=2026-08-25T21:42:57Z&spr=https&sv=2020-08-04&sr=b&sig=QSEVVfY%2F8%2FGYTdifY3OW1hv0OKYySDrqXUaS%2Bob6%2FX8%3D" download>Download</a>
                                                     </td>
                                                 </tr>
                                             </tbody>
@@ -279,10 +375,10 @@ const ToolkitEn = () => (
                                             <tbody>
                                                 <tr>
                                                     <td>
-                                                        TEST
+                                                        Department Onboarding Calendar BIL 
                                                     </td>
                                                     <td>
-                                                        TEST DOWNLOAD!
+                                                        <a href="https://sttoolkitprodstd.blob.core.windows.net/gcxchange/Department%20Onboarding%20Calendar%20BIL.xlsx?sp=r&st=2021-08-25T12:55:06Z&se=2026-08-25T20:55:06Z&spr=https&sv=2020-08-04&sr=b&sig=KKOUL0sJ7kCbodQfQeb7VAF1UdyFmErpNHJzwC8RLqU%3D" download>Download</a>
                                                     </td>
                                                 </tr>
                                             </tbody>
@@ -315,6 +411,9 @@ const ToolkitEn = () => (
                             </div>
                         </Col>
                     </Row>
+                    <div>
+                        <a href="#" className="btn btn-primary">Download All</a>
+                    </div>
                 </div>
             </Row>
         </Container>
