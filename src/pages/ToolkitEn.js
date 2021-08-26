@@ -100,7 +100,7 @@ const ToolkitEn = () => (
                                         <span class="chevron right"></span>
                                     </div>
                                     <div>
-                                        Access your <span className="toolkit-bold">department’s current intranet</span> easily through Gcxchange    
+                                        Access your <span className="toolkit-bold">department’s current intranet</span> easily through gcxchange    
                                     </div>
                                 </li>
                             </ul>
@@ -112,7 +112,7 @@ const ToolkitEn = () => (
                 <div className="toolkit-row-holder">
                     <h2 className="toolkit-display-header">When can I get on gc<span className="toolkit-highlight">x</span>change?</h2>
                     <div className="toolkit-text-holder">
-                        <span className="toolkit-bold">Good news! Onboarding to Gcxchange has already begun.</span> Departments and agencies are being onboarded according to this strategically designed timeline.
+                        <span className="toolkit-bold">Good news! Onboarding to gcxchange has already begun.</span> Departments and agencies are being onboarded according to this strategically designed timeline.
                     </div>
                 </div>
             </Row>
@@ -120,8 +120,11 @@ const ToolkitEn = () => (
             <Row>
                 <div className="toolkit-row-holder">
                     <h2 className="toolkit-display-header">What about the GCTools?</h2>
+                    <div className="toolkit-text-holder mb-3">
+                        <span className="toolkit-bold">Yes, the rumours are true. gcxchange will replace all of the GCTools,</span> including GCintranet, GCconnex, GCdirectory, GCpedia, and eventually, GCcollab.
+                    </div>
                     <div className="toolkit-text-holder">
-                        <span className="toolkit-bold">Yes, the rumours are true. Gcxchange will replace all of the GCTools,</span> including GCintranet, GCconnex, GCdirectory, GCpedia, and eventually, GCcollab.
+                        But have no fear—the tools will be phased out slowly over the next two years and will continue to run until all public servants have access to gcxchange. Plenty of time for users to re-visit existing content and bring it over to gcxchange as they see fit. It’s an opportunity to start fresh on a blank canvas!
                     </div>
                 </div>
             </Row>
@@ -130,7 +133,7 @@ const ToolkitEn = () => (
                 <div className="toolkit-row-holder">
                     <h2 className="toolkit-display-header">Communications products</h2>
                     <div className="toolkit-text-holder">
-                        We want to see Gcxchange become the <span className="toolkit-bold">official digital workspace for all GC employees,</span> where we can seamlessly connect no matter what department or agency we’re from!
+                        We want to see gcxchange become the <span className="toolkit-bold">official digital workspace for all GC employees,</span> where we can seamlessly connect no matter what department or agency we’re from!
                     </div>
                     <div className="toolkit-text-holder">
                         We need <span className="toolkit-bold">your</span> help to make this vision a reality!
