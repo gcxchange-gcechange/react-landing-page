@@ -1,8 +1,21 @@
 import React from 'react'
 import { Container, Row, Col, UncontrolledCollapse, Button, Table } from 'reactstrap';
+import FileDownload from 'js-file-download';
+import Axios from 'axios';
 import gcxLogo from '../assets/gcx-gce.png';
 import Canada from '../assets/img/Canada-blanc-01.png';
 import govCandaEn from '../assets/img/gouv_BLANC_EN-01.png';
+
+const downloadlink = (url) => {
+    const title = url.split('net/toolkit/').pop().split("?")[0];
+    Axios({
+    url: url,
+    method: 'GET',
+    responseType: 'blob', // Important
+    }).then((response) => {
+        FileDownload(response.data, title);
+    });
+}
 
 const ToolkitFr = () => (
     <div>
@@ -162,18 +175,28 @@ const ToolkitFr = () => (
                                             <tbody>
                                                 <tr>
                                                     <td>
-                                                        community page setup FR
+                                                        community page setup
                                                     </td>
                                                     <td>
-                                                        <a href="https://sttoolkitprodstd.blob.core.windows.net/gcxchange/community%20page%20setup%20FR.pdf?sp=r&st=2021-08-25T12:49:23Z&se=2026-08-25T20:49:23Z&spr=https&sv=2020-08-04&sr=b&sig=aXayX1ZzPkQn3mLTHfvgUdLDHU%2B7tct0XV5LA8i29W4%3D" Télécharger>Télécharger</a>
+                                                        <Button
+                                                            onClick={downloadlink("https://sttoolkitprodstd.blob.core.windows.net/gcxchange/community%20page%20setup%20FR.pdf?sp=r&st=2021-08-25T12:49:23Z&se=2026-08-25T20:49:23Z&spr=https&sv=2020-08-04&sr=b&sig=aXayX1ZzPkQn3mLTHfvgUdLDHU%2B7tct0XV5LA8i29W4%3D")}
+                                                            color="link"
+                                                        >
+                                                            Télécharger
+                                                        </Button>
                                                     </td>
                                                 </tr>
                                                 <tr>
                                                     <td>
-                                                        GCTools to gcxchange FR
+                                                        GCTools to gcxchange
                                                     </td>
                                                     <td>
-                                                        <a href="https://sttoolkitprodstd.blob.core.windows.net/gcxchange/GCTools%20to%20gcxchange%20FR.pdf?sp=r&st=2021-08-25T13:35:55Z&se=2026-08-25T21:35:55Z&spr=https&sv=2020-08-04&sr=b&sig=CImL9IkKlHZNtcRFNZN4OF2QsmPUNaLCxPUugAKjQEc%3D" Télécharger>Télécharger</a>
+                                                        <Button
+                                                            onClick={downloadlink("https://sttoolkitprodstd.blob.core.windows.net/gcxchange/GCTools%20to%20gcxchange%20FR.pdf?sp=r&st=2021-08-25T13:35:55Z&se=2026-08-25T21:35:55Z&spr=https&sv=2020-08-04&sr=b&sig=CImL9IkKlHZNtcRFNZN4OF2QsmPUNaLCxPUugAKjQEc%3D")}
+                                                            color="link"
+                                                        >
+                                                            Télécharger
+                                                        </Button>
                                                     </td>
                                                 </tr>
                                             </tbody>
@@ -193,18 +216,28 @@ const ToolkitFr = () => (
                                             <tbody>
                                                 <tr>
                                                     <td>
-                                                        gcxchange communications implementation plan FR 
+                                                        gcxchange communications implementation plan 
                                                     </td>
                                                     <td>
-                                                        <a href="https://sttoolkitprodstd.blob.core.windows.net/gcxchange/gcxchange%20communications%20implementation%20plan%20FR.pdf?sp=r&st=2021-08-25T13:38:20Z&se=2026-08-25T21:38:20Z&spr=https&sv=2020-08-04&sr=b&sig=O3CFcwVWDxpK901OD2sYf4lSF02zNXE%2FfPLKkCz8Gn8%3D" Télécharger>Télécharger</a>
+                                                        <Button
+                                                            onClick={downloadlink("https://sttoolkitprodstd.blob.core.windows.net/gcxchange/gcxchange%20communications%20implementation%20plan%20FR.pdf?sp=r&st=2021-08-25T13:38:20Z&se=2026-08-25T21:38:20Z&spr=https&sv=2020-08-04&sr=b&sig=O3CFcwVWDxpK901OD2sYf4lSF02zNXE%2FfPLKkCz8Gn8%3D")}
+                                                            color="link"
+                                                        >
+                                                            Télécharger
+                                                        </Button>
                                                     </td>
                                                 </tr>
                                                 <tr>
                                                     <td>
-                                                        gcxchange onboarding steps FR
+                                                        gcxchange onboarding steps
                                                     </td>
                                                     <td>
-                                                        <a href="https://sttoolkitprodstd.blob.core.windows.net/gcxchange/gcxchange%20onboarding%20steps%20FR.pdf?sp=r&st=2021-08-25T13:38:53Z&se=2026-08-25T21:38:53Z&spr=https&sv=2020-08-04&sr=b&sig=D7NTI4Aen%2BiRecKxLgJi%2BP4Q63IVgzKS%2FwTrF5oPHPQ%3D" Télécharger>Télécharger</a>
+                                                        <Button
+                                                            onClick={downloadlink("https://sttoolkitprodstd.blob.core.windows.net/gcxchange/gcxchange%20onboarding%20steps%20FR.pdf?sp=r&st=2021-08-25T13:38:53Z&se=2026-08-25T21:38:53Z&spr=https&sv=2020-08-04&sr=b&sig=D7NTI4Aen%2BiRecKxLgJi%2BP4Q63IVgzKS%2FwTrF5oPHPQ%3D")}
+                                                            color="link"
+                                                        >
+                                                            Télécharger
+                                                        </Button>
                                                     </td>
                                                 </tr>
                                             </tbody>
@@ -224,82 +257,132 @@ const ToolkitFr = () => (
                                             <tbody>
                                                 <tr>
                                                     <td>
-                                                        gcxchange styleguide FR
+                                                        gcxchange styleguide
                                                     </td>
                                                     <td>
-                                                        <a href="https://sttoolkitprodstd.blob.core.windows.net/gcxchange/gcxchange%20styleguide%20FR.jpg?sp=r&st=2021-08-25T13:39:23Z&se=2026-08-25T21:39:23Z&spr=https&sv=2020-08-04&sr=b&sig=pfb%2B2U8rAYFbpufSsQY6SKoYjQvsZjw9lIHbOrlUcYo%3D" Télécharger>Télécharger</a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        gcxchange_illustration_books_BIL
-                                                    </td>
-                                                    <td>
-                                                        <a href="https://sttoolkitprodstd.blob.core.windows.net/gcxchange/gcxchange_illustration_books_BIL.png?sp=r&st=2021-08-25T13:40:08Z&se=2026-08-25T21:40:08Z&spr=https&sv=2020-08-04&sr=b&sig=20Ymg7f9M1%2Br5szHastl9cMvTItYB7YqhDlrW4kBO94%3D" Télécharger>Télécharger</a>
+                                                        <Button
+                                                            onClick={downloadlink("https://sttoolkitprodstd.blob.core.windows.net/gcxchange/gcxchange%20styleguide%20FR.jpg?sp=r&st=2021-08-25T13:39:23Z&se=2026-08-25T21:39:23Z&spr=https&sv=2020-08-04&sr=b&sig=pfb%2B2U8rAYFbpufSsQY6SKoYjQvsZjw9lIHbOrlUcYo%3D")}
+                                                            color="link"
+                                                        >
+                                                            Télécharger
+                                                        </Button>
                                                     </td>
                                                 </tr>
                                                 <tr>
                                                     <td>
-                                                        gcxchange_illustration_contact_BIL 
+                                                        gcxchange_illustration_books
                                                     </td>
                                                     <td>
-                                                        <a href="https://sttoolkitprodstd.blob.core.windows.net/gcxchange/gcxchange_illustration_contact_BIL.png?sp=r&st=2021-08-25T13:40:22Z&se=2026-08-25T21:40:22Z&spr=https&sv=2020-08-04&sr=b&sig=CzK496lpKejTtFVerorHLJhCGFZHBh0wpOTFl%2BgU4Vw%3D" Télécharger>Télécharger</a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        gcxchange_illustration_contact2_BIL
-                                                    </td>
-                                                    <td>
-                                                        <a href="https://sttoolkitprodstd.blob.core.windows.net/gcxchange/gcxchange_illustration_contact2_BIL.png?sp=r&st=2021-08-25T13:40:34Z&se=2026-08-25T21:40:34Z&spr=https&sv=2020-08-04&sr=b&sig=ZOsmrXr%2BfCZoIzRvvxxb%2FTZTSR0xIUuO1JJ2w2fsXQI%3D" Télécharger>Télécharger</a>
+                                                        <Button
+                                                            onClick={downloadlink("https://sttoolkitprodstd.blob.core.windows.net/gcxchange/gcxchange_illustration_books_BIL.png?sp=r&st=2021-08-25T13:40:08Z&se=2026-08-25T21:40:08Z&spr=https&sv=2020-08-04&sr=b&sig=20Ymg7f9M1%2Br5szHastl9cMvTItYB7YqhDlrW4kBO94%3D")}
+                                                            color="link"
+                                                        >
+                                                            Télécharger
+                                                        </Button>
                                                     </td>
                                                 </tr>
                                                 <tr>
                                                     <td>
-                                                        gcxchange_illustration_devices_BIL 
+                                                        gcxchange_illustration_contact 
                                                     </td>
                                                     <td>
-                                                        <a href="https://sttoolkitprodstd.blob.core.windows.net/gcxchange/gcxchange_illustration_devices_BIL.png?sp=r&st=2021-08-25T13:41:09Z&se=2026-08-25T21:41:09Z&spr=https&sv=2020-08-04&sr=b&sig=IIylNR7CQ3GQjr8s6ia6UVgzqKmBdkqS0H4ZQHeyWAQ%3D" Télécharger>Télécharger</a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        gcxchange_illustration_discussion_BIL
-                                                    </td>
-                                                    <td>
-                                                        <a href="https://sttoolkitprodstd.blob.core.windows.net/gcxchange/gcxchange_illustration_discussion_BIL.png?sp=r&st=2021-08-25T13:41:26Z&se=2026-08-25T21:41:26Z&spr=https&sv=2020-08-04&sr=b&sig=9M%2BDGb9GZTD%2BTqmOXDYHnjlGFXWc1aLyZUdF5LJG%2BoE%3D" Télécharger>Télécharger</a>
+                                                        <Button
+                                                            onClick={downloadlink("https://sttoolkitprodstd.blob.core.windows.net/gcxchange/gcxchange_illustration_contact_BIL.png?sp=r&st=2021-08-25T13:40:22Z&se=2026-08-25T21:40:22Z&spr=https&sv=2020-08-04&sr=b&sig=CzK496lpKejTtFVerorHLJhCGFZHBh0wpOTFl%2BgU4Vw%3D")}
+                                                            color="link"
+                                                        >
+                                                            Télécharger
+                                                        </Button>
                                                     </td>
                                                 </tr>
                                                 <tr>
                                                     <td>
-                                                        gcxchange_illustration_laptop_BIL 
+                                                        gcxchange_illustration_contact2
                                                     </td>
                                                     <td>
-                                                        <a href="https://sttoolkitprodstd.blob.core.windows.net/gcxchange/gcxchange_illustration_laptop_BIL.png?sp=r&st=2021-08-25T13:41:48Z&se=2026-08-25T21:41:48Z&spr=https&sv=2020-08-04&sr=b&sig=KSBd4TJF130XZCLT0wZG8YsdhX3P3e1%2FRPBJnyVHmf0%3D" Télécharger>Télécharger</a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        gcxchange_illustration_lookingfor_BIL
-                                                    </td>
-                                                    <td>
-                                                        <a href="https://sttoolkitprodstd.blob.core.windows.net/gcxchange/gcxchange_illustration_lookingfor_BIL.png?sp=r&st=2021-08-25T13:42:01Z&se=2026-08-25T21:42:01Z&spr=https&sv=2020-08-04&sr=b&sig=Zf950hTiR3sgjJ1yA74Qc2k%2BDbJd9WrW9xhBeY3afDU%3D" Télécharger>Télécharger</a>
+                                                        <Button
+                                                            onClick={downloadlink("https://sttoolkitprodstd.blob.core.windows.net/gcxchange/gcxchange_illustration_contact2_BIL.png?sp=r&st=2021-08-25T13:40:34Z&se=2026-08-25T21:40:34Z&spr=https&sv=2020-08-04&sr=b&sig=ZOsmrXr%2BfCZoIzRvvxxb%2FTZTSR0xIUuO1JJ2w2fsXQI%3D")}
+                                                            color="link"
+                                                        >
+                                                            Télécharger
+                                                        </Button>
                                                     </td>
                                                 </tr>
                                                 <tr>
                                                     <td>
-                                                        gcxchange_illustration_orgchart_BIL
+                                                        gcxchange_illustration_devices
                                                     </td>
                                                     <td>
-                                                        <a href="https://sttoolkitprodstd.blob.core.windows.net/gcxchange/gcxchange_illustration_orgchart_BIL.png?sp=r&st=2021-08-25T13:42:15Z&se=2026-08-25T21:42:15Z&spr=https&sv=2020-08-04&sr=b&sig=032LrETnDRXgVSX%2Fdr7tdIx6rO99sHoarBO4mZy8OAg%3D" Télécharger>Télécharger</a>
+                                                        <Button
+                                                            onClick={downloadlink("https://sttoolkitprodstd.blob.core.windows.net/gcxchange/gcxchange_illustration_devices_BIL.png?sp=r&st=2021-08-25T13:41:09Z&se=2026-08-25T21:41:09Z&spr=https&sv=2020-08-04&sr=b&sig=IIylNR7CQ3GQjr8s6ia6UVgzqKmBdkqS0H4ZQHeyWAQ%3D" )}
+                                                            color="link"
+                                                        >
+                                                            Télécharger
+                                                        </Button>
                                                     </td>
                                                 </tr>
                                                 <tr>
                                                     <td>
-                                                        gcxchange_illustration_writting_BIL 
+                                                        gcxchange_illustration_discussion
                                                     </td>
                                                     <td>
-                                                        <a href="https://sttoolkitprodstd.blob.core.windows.net/gcxchange/gcxchange_illustration_writting_BIL.png?sp=r&st=2021-08-25T13:42:30Z&se=2026-08-25T21:42:30Z&spr=https&sv=2020-08-04&sr=b&sig=S9V7RvUNTp5hmq%2BUpIGhar%2Frcqk9KCiGpBl000H21m0%3D" Télécharger>Télécharger</a>
+                                                        <Button
+                                                            onClick={downloadlink("https://sttoolkitprodstd.blob.core.windows.net/gcxchange/gcxchange_illustration_discussion_BIL.png?sp=r&st=2021-08-25T13:41:26Z&se=2026-08-25T21:41:26Z&spr=https&sv=2020-08-04&sr=b&sig=9M%2BDGb9GZTD%2BTqmOXDYHnjlGFXWc1aLyZUdF5LJG%2BoE%3D")}
+                                                            color="link"
+                                                        >
+                                                            Télécharger
+                                                        </Button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        gcxchange_illustration_laptop
+                                                    </td>
+                                                    <td>
+                                                        <Button
+                                                            onClick={downloadlink("https://sttoolkitprodstd.blob.core.windows.net/gcxchange/gcxchange_illustration_laptop_BIL.png?sp=r&st=2021-08-25T13:41:48Z&se=2026-08-25T21:41:48Z&spr=https&sv=2020-08-04&sr=b&sig=KSBd4TJF130XZCLT0wZG8YsdhX3P3e1%2FRPBJnyVHmf0%3D")}
+                                                            color="link"
+                                                        >
+                                                            Télécharger
+                                                        </Button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        gcxchange_illustration_lookingfor
+                                                    </td>
+                                                    <td>
+                                                        <Button
+                                                            onClick={downloadlink("https://sttoolkitprodstd.blob.core.windows.net/gcxchange/gcxchange_illustration_lookingfor_BIL.png?sp=r&st=2021-08-25T13:42:01Z&se=2026-08-25T21:42:01Z&spr=https&sv=2020-08-04&sr=b&sig=Zf950hTiR3sgjJ1yA74Qc2k%2BDbJd9WrW9xhBeY3afDU%3D")}
+                                                            color="link"
+                                                        >
+                                                            Télécharger
+                                                        </Button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        gcxchange_illustration_orgchart
+                                                    </td>
+                                                    <td>
+                                                        <Button
+                                                            onClick={downloadlink("https://sttoolkitprodstd.blob.core.windows.net/gcxchange/gcxchange_illustration_orgchart_BIL.png?sp=r&st=2021-08-25T13:42:15Z&se=2026-08-25T21:42:15Z&spr=https&sv=2020-08-04&sr=b&sig=032LrETnDRXgVSX%2Fdr7tdIx6rO99sHoarBO4mZy8OAg%3D")}
+                                                            color="link"
+                                                        >
+                                                            Télécharger
+                                                        </Button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        gcxchange_illustration_writting
+                                                    </td>
+                                                    <td>
+                                                        <Button
+                                                            onClick={downloadlink("https://sttoolkitprodstd.blob.core.windows.net/gcxchange/gcxchange_illustration_writting_BIL.png?sp=r&st=2021-08-25T13:42:30Z&se=2026-08-25T21:42:30Z&spr=https&sv=2020-08-04&sr=b&sig=S9V7RvUNTp5hmq%2BUpIGhar%2Frcqk9KCiGpBl000H21m0%3D")}
+                                                            color="link"
+                                                        >
+                                                            Télécharger
+                                                        </Button>
                                                     </td>
                                                 </tr>
                                             </tbody>
@@ -319,10 +402,15 @@ const ToolkitFr = () => (
                                             <tbody>
                                                 <tr>
                                                     <td>
-                                                        gcxchange Twitter generic video FR
+                                                        gcxchange Twitter generic video
                                                     </td>
                                                     <td>
-                                                        <a href="https://sttoolkitprodstd.blob.core.windows.net/gcxchange/gcxchange%20Twitter%20generic%20video%20FR.mp4?sp=r&st=2021-08-25T13:39:55Z&se=2026-08-25T21:39:55Z&spr=https&sv=2020-08-04&sr=b&sig=2bd7zyXQNSeb7WaxLwTkH5mxhOIUD7TwbTjBWhP%2BgTk%3D" Télécharger>Télécharger</a>
+                                                        <Button
+                                                            onClick={downloadlink("https://sttoolkitprodstd.blob.core.windows.net/gcxchange/gcxchange%20Twitter%20generic%20video%20FR.mp4?sp=r&st=2021-08-25T13:39:55Z&se=2026-08-25T21:39:55Z&spr=https&sv=2020-08-04&sr=b&sig=2bd7zyXQNSeb7WaxLwTkH5mxhOIUD7TwbTjBWhP%2BgTk%3D")}
+                                                            color="link"
+                                                        >
+                                                            Télécharger
+                                                        </Button>
                                                     </td>
                                                 </tr>
                                             </tbody>
@@ -347,10 +435,15 @@ const ToolkitFr = () => (
                                             <tbody>
                                                 <tr>
                                                     <td>
-                                                        Video - gcxchange teaser FR
+                                                        Video - gcxchange teaser
                                                     </td>
                                                     <td>
-                                                        <a href="https://sttoolkitprodstd.blob.core.windows.net/gcxchange/Video%20-%20gcxchange%20teaser%20FR.mp4?sp=r&st=2021-08-25T13:43:09Z&se=2026-08-25T21:43:09Z&spr=https&sv=2020-08-04&sr=b&sig=3fRs6oZ7ow5MFcd2s5W3Ft4sTbbPxaJRocLP1vXTN0U%3D" Télécharger>Télécharger</a>
+                                                        <Button
+                                                            onClick={downloadlink("https://sttoolkitprodstd.blob.core.windows.net/gcxchange/Video%20-%20gcxchange%20teaser%20FR.mp4?sp=r&st=2021-08-25T13:43:09Z&se=2026-08-25T21:43:09Z&spr=https&sv=2020-08-04&sr=b&sig=3fRs6oZ7ow5MFcd2s5W3Ft4sTbbPxaJRocLP1vXTN0U%3D")}
+                                                            color="link"
+                                                        >
+                                                            Télécharger
+                                                        </Button>
                                                     </td>
                                                 </tr>
                                             </tbody>
@@ -370,10 +463,15 @@ const ToolkitFr = () => (
                                             <tbody>
                                                 <tr>
                                                     <td>
-                                                        Department Onboarding Calendar BIL 
+                                                        Department Onboarding Calendar
                                                     </td>
                                                     <td>
-                                                        <a href="https://sttoolkitprodstd.blob.core.windows.net/gcxchange/Department%20Onboarding%20Calendar%20BIL.xlsx?sp=r&st=2021-08-25T12:55:06Z&se=2026-08-25T20:55:06Z&spr=https&sv=2020-08-04&sr=b&sig=KKOUL0sJ7kCbodQfQeb7VAF1UdyFmErpNHJzwC8RLqU%3D" Télécharger>Télécharger</a>
+                                                        <Button
+                                                            onClick={downloadlink("https://sttoolkitprodstd.blob.core.windows.net/gcxchange/Department%20Onboarding%20Calendar%20BIL.xlsx?sp=r&st=2021-08-25T12:55:06Z&se=2026-08-25T20:55:06Z&spr=https&sv=2020-08-04&sr=b&sig=KKOUL0sJ7kCbodQfQeb7VAF1UdyFmErpNHJzwC8RLqU%3D")}
+                                                            color="link"
+                                                        >
+                                                            Télécharger
+                                                        </Button>
                                                     </td>
                                                 </tr>
                                             </tbody>
@@ -408,6 +506,14 @@ const ToolkitFr = () => (
                     </Row>
                     <div>
                         <a href="#" className="btn btn-primary" Télécharger>Tout Télécharger</a>
+                    </div>
+                </div>
+            </Row>
+            <Row>
+                <div className="toolkit-row-holder">
+                    <h2 className="toolkit-display-header">Pas encore inscrit?</h2>
+                    <div className="toolkit-text-holder">
+                        <a href="/" className="btn btn-primary btn-lg">Inscrivez-vouse maintenant!</a>
                     </div>
                 </div>
             </Row>
