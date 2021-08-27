@@ -7,7 +7,7 @@ import Canada from '../assets/img/Canada-blanc-01.png';
 import govCandaEn from '../assets/img/gouv_BLANC_EN-01.png';
 
 const downloadlink = (url) => {
-    const title = url.split('net/toolkit/').pop().split("?")[0];
+    const title = url.split('net/gcxchange/').pop().split("?")[0];
     Axios({
     url: url,
     method: 'GET',
