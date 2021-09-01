@@ -336,8 +336,7 @@ footer a:hover {
 }
 
 #resource-holder {
-  padding-left: 40px;
-  padding-right: 40px;
+  padding: 100px 40px;
 }
 .resource-row {
   background-image: url(./assets/img/toolkit-bg.png);
