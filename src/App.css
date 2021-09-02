@@ -309,6 +309,11 @@ footer a:hover {
 .help-holder a {
   color: #0078D4;
 }
+.goc-canada {
+  max-width:300px;
+  height: auto;
+}
+
 /* TOOLKIT STYLES */
 
 .toolkit-container {
@@ -320,11 +325,38 @@ footer a:hover {
   margin: 0 auto;
   width: 50%;
   text-align: center;
-  padding: 145px 0px;
+  padding: 65px 0px;
 }
 
 .bg-toolkit-head {
   background-color: #ebebeb;
+  
+}
+
+.head-container {
+  margin: 0 auto;
+  width: 50%;
+  text-align: center;
+  padding: 75px 0px;
+}
+
+.bg-toolkit-head h1 {
+  font-size: 72px;
+  margin: 45px 0px;
+  font-weight: normal;
+}
+
+.bg-toolkit-head img {
+  width:475px;
+  margin-bottom: 35px;
+}
+
+.bg-toolkit-head a {
+  line-height: 1 !important;
+}
+.bg-toolkit-head hr {
+  border: 2px solid white;
+  width: 200px;
 }
 
 .toolkit-info-box {
@@ -338,6 +370,14 @@ footer a:hover {
   margin-bottom: 35px;
   font-weight: lighter;
   font-size: 26px;
+}
+
+.toolkit-info-box ul {
+  list-style: none;
+}
+
+.toolkit-info-box ul li {
+  margin-bottom: 35px;
 }
 
 .bg-toolkit-highlight {
@@ -366,6 +406,107 @@ footer a:hover {
   color: #03426e;
   font-weight: bold;
 }
+
+.toolkit-accordion {
+  text-align: left;
+  margin-top: 45px;
+  margin-left: 30px;
+}
+.toolkit-accordion-item{
+  margin-bottom: 30px;
+}
+
+/*
+.chevron::before {
+	border-style: solid;
+	border-width: 0.25em 0.25em 0 0;
+	content: '';
+	display: inline-block;
+	height: 0.45em;
+	left: 0.15em;
+	position: relative;
+	top: 0.15em;
+	transform: rotate(-45deg);
+	vertical-align: top;
+	width: 0.45em;
+}
+
+*/
+
+.chevron {
+  position: absolute;
+  text-align: center;
+  padding: 12px;
+  margin-bottom: 4px;
+  height: 30px;
+  width: 25px;
+  transform: rotate(270deg);
+}
+.chevron:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 15%;
+  width: 50%;
+  transform: skew(0deg, 16deg);
+}
+.toolkit-info-box .chevron:before{
+  background: white !important;
+}
+.toolkit-accordion .chevron:before{
+  background: #03426e !important;
+}
+.chevron:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 15%;
+  width: 50%;
+  transform: skew(0deg, -16deg);
+}
+.toolkit-info-box .chevron:after {
+  background: white !important;
+}
+.toolkit-accordion .chevron:after{
+  background: #03426e !important;
+}
+
+#resource-holder {
+  padding: 100px 40px;
+}
+.resource-row {
+  background-image: url(./assets/img/toolkit-bg.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.resource-text {
+  width: 95%;
+  margin: 25px auto;
+
+}
+
+.toolkit-accordion-item button{
+  color: #03426e !important;
+}
+
+.toolkit-accordion-item table .btn-link {
+  font-weight: bold;
+}
+/*
+.chevron.right:before {
+	left: 0;
+	transform: rotate(45deg);
+}
+
+.chevron.right:after {
+	left: 0;
+	transform: rotate(45deg);
+}
+*/
 
 @media (max-width: 870px) {
   .footer-imgs .d-flex {
