@@ -54,6 +54,8 @@ class Home extends React.Component {
       isCloudDomainValid: false,
       isValid: false,
       backendError: false,
+      emailMatch: false,
+      confirmEmail: '',
     };
     this.toggle = this.toggle.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
@@ -239,6 +241,27 @@ class Home extends React.Component {
                             iconProps={this.state.isEmailDomainValid && iconProps}
                             errorMessage={this.state.isCanadaEmail ? lang.form.emailHelperText : ""}
                           />
+                          <TextField
+                            required
+                            label="CONFIRM DEPARTMENTAL EMAIL"
+                            onChange={(e) => {
+                              console.log(`Input: ${e.target.value}`);
+                              console.log(`Email state: ${this.state.emailInput}`);
+                              this.setState({
+                                confirmEmail: e.target.value,
+                              });
+                              if (e.target.value === this.state.emailInput) {
+                                this.setState({
+                                  emailMatch: true,
+                                });
+                              } else {
+                                this.setState({
+                                  emailMatch: false,
+                                });
+                              }
+                            }}
+                            errorMessage={(!this.state.emailMatch && this.state.confirmEmail.length > 0) && "NO MATCH"}
+                          />
                           <div className="input-padding">
                             <Checkbox
                               label={lang.form.cloudEmailCheck}
@@ -280,7 +303,7 @@ class Home extends React.Component {
                               {lang.form.backendError}
                             </MessageBar>
                           )}
-                          <input className="input-padding submit-btn" disabled={(!this.state.isEmailDomainValid || !this.state.department) ? true : false} type="submit" value={lang.form.submitBtn} />
+                          <input className="input-padding submit-btn" disabled={(!this.state.isEmailDomainValid || !this.state.department || !this.state.emailMatch) ? true : false} type="submit" value={lang.form.submitBtn} />
                           <div className="help-holder" dangerouslySetInnerHTML={{__html: lang.form.help}} />
                         </Form>
                       }
