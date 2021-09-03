@@ -54,6 +54,7 @@ class Home extends React.Component {
       isCloudDomainValid: false,
       isValid: false,
       backendError: false,
+      backendMsg: '',
     };
     this.toggle = this.toggle.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
@@ -82,14 +83,24 @@ class Home extends React.Component {
       Department: department,
     }).then(data => {
       if(data) {
-        if(data.status === 200){
+        if(data.status && data.status === 200){
           this.setState({
             isValid: true,
-          })
+          });
         } else {
-          this.setState({
-            backendError: true,
-          })
+          var lang = i18n[this.props.lang];
+          if(data.includes("already registered")) {
+            this.setState({
+              backendError: true,
+              backendMsg: lang.form.backendErrorUserRegistered
+            });
+          } else {
+            this.setState({
+              backendError: true,
+              backendMsg: lang.form.backendError
+            });
+          }
+          
           console.log('Something went wrong');
         }
       }
@@ -277,7 +288,9 @@ class Home extends React.Component {
                               messageBarType={MessageBarType.error}
                               isMultiline={false}
                             >
-                              {lang.form.backendError}
+                              <span 
+                                dangerouslySetInnerHTML={{__html: this.state.backendMsg }}
+                              />
                             </MessageBar>
                           )}
                           <input className="input-padding submit-btn" disabled={(!this.state.isEmailDomainValid || !this.state.department) ? true : false} type="submit" value={lang.form.submitBtn} />

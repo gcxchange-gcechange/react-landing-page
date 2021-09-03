@@ -140,6 +140,10 @@ img {
   font-weight: 400;
 }
 
+.ms-MessageBar-innerText a {
+  color: #0056b3;
+}
+
 .step-area {
   padding: 80px 0;
 }

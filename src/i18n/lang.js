@@ -23,6 +23,7 @@ const Lang = {
             submitBtn: 'Register',
             help: 'Need help? <a href="mailto:support-soutien@gcx-gce.gc.ca">Contact our help desk</a>',
             backendError: 'There was an error. Please try again later',
+            backendErrorUserRegistered: 'Email already registered. <a href="https://gcxgce.sharepoint.com">Visit gcxchange</a>',
         },
         process: {
             title: 'Sit tight, we’re almost finished setting up your account! You’ll be getting an email from us soon. ',
@@ -60,6 +61,7 @@ const Lang = {
             submitBtn: 'S\'inscrire',
             help: 'Besoin d\'aide? <a href="mailto:support-soutien@gcx-gce.gc.ca">Contactez notre service d\'assistance</a>',
             backendError: 'Un problème est survenu; veuillez réessayer plus tard.',
+            backendErrorUserRegistered: 'Email already registered. <a href="https://gcxgce.sharepoint.com/SitePages/fr/Home.aspx">Visit gcéchange</a>',
         },
         process: {
             title: 'Attendez patiemment, nous avons presque fini de configurer votre compte! Vous recevrez bientôt un courriel de notre part.',
