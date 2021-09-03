@@ -186,7 +186,7 @@ const ToolkitFr = () => (
                                     </UncontrolledCollapse>  
                                 </div>
                                 <div className="toolkit-accordion-item">
-                                    <Button color="link" id="comms-products" className="toolkit-accordion-button d-flex"><div className="mr-3"><span class="chevron right mr-3"></span></div><div>Produits de communication</div></Button>
+                                    <Button color="link" id="comms-products" className="toolkit-accordion-button d-flex"><div className="mr-3"><span class="chevron right mr-3"></span></div><div>Documents d'accompagnement</div></Button>
                                     <UncontrolledCollapse toggler="#comms-products">
                                         <Table>
                                             <thead>
@@ -198,10 +198,10 @@ const ToolkitFr = () => (
                                             <tbody>
                                                 <tr>
                                                     <td>
-                                                        Produits de communication 
+                                                        Documents d'accompagnement
                                                     </td>
                                                     <td>
-                                                        <a href="https://sttoolkitprodstd.blob.core.windows.net/gcxchange/communications%20products%20_%20produits%20de%20communication-20210901T152222Z-001.zip?sp=r&st=2021-09-01T17:59:27Z&se=2025-09-02T01:59:27Z&spr=https&sv=2020-08-04&sr=b&sig=dAhRNGcQJyppSsXrPFC2%2FBYxHWBqmBvonSEKNwOzF4o%3D">Télécharger <span className="sr-only">Produits de communication</span></a>
+                                                        <a href="https://sttoolkitprodstd.blob.core.windows.net/gcxchange/communications%20products%20_%20produits%20de%20communication-20210901T152222Z-001.zip?sp=r&st=2021-09-01T17:59:27Z&se=2025-09-02T01:59:27Z&spr=https&sv=2020-08-04&sr=b&sig=dAhRNGcQJyppSsXrPFC2%2FBYxHWBqmBvonSEKNwOzF4o%3D">Télécharger <span className="sr-only">Documents d'accompagnement</span></a>
                                                     </td>
                                                 </tr>
                                             </tbody>

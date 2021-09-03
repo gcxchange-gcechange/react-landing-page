@@ -186,7 +186,7 @@ const ToolkitEn = () => (
                                     </UncontrolledCollapse>  
                                 </div>
                                 <div className="toolkit-accordion-item">
-                                    <Button color="link" id="comms-products" className="toolkit-accordion-button d-flex"><div className="mr-3"><span class="chevron right mr-3"></span></div><div>Communications products</div></Button>
+                                    <Button color="link" id="comms-products" className="toolkit-accordion-button d-flex"><div className="mr-3"><span class="chevron right mr-3"></span></div><div>Supporting Documents</div></Button>
                                     <UncontrolledCollapse toggler="#comms-products">
                                         <Table>
                                             <thead>
@@ -198,10 +198,10 @@ const ToolkitEn = () => (
                                             <tbody>
                                                 <tr>
                                                     <td>
-                                                        Communications products
+                                                        Supporting Documents
                                                     </td>
                                                     <td>
-                                                        <a href="https://sttoolkitprodstd.blob.core.windows.net/gcxchange/communications%20products%20_%20produits%20de%20communication-20210901T152222Z-001.zip?sp=r&st=2021-09-01T17:59:27Z&se=2025-09-02T01:59:27Z&spr=https&sv=2020-08-04&sr=b&sig=dAhRNGcQJyppSsXrPFC2%2FBYxHWBqmBvonSEKNwOzF4o%3D">Download <span className="sr-only">Communications products</span></a>
+                                                        <a href="https://sttoolkitprodstd.blob.core.windows.net/gcxchange/communications%20products%20_%20produits%20de%20communication-20210901T152222Z-001.zip?sp=r&st=2021-09-01T17:59:27Z&se=2025-09-02T01:59:27Z&spr=https&sv=2020-08-04&sr=b&sig=dAhRNGcQJyppSsXrPFC2%2FBYxHWBqmBvonSEKNwOzF4o%3D">Download <span className="sr-only">Supporting Documents</span></a>
                                                     </td>
                                                 </tr>
                                             </tbody>
