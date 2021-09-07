@@ -260,6 +260,7 @@ class Home extends React.Component {
                                 });
                               }
                             }}
+                            iconProps={this.state.emailMatch && iconProps}
                             errorMessage={(!this.state.emailMatch && this.state.confirmEmail.length > 0) && lang.form.confirmEmailHelperText}
                           />
                           <div className="input-padding">
