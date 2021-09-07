@@ -243,7 +243,7 @@ class Home extends React.Component {
                           />
                           <TextField
                             required
-                            label="CONFIRM DEPARTMENTAL EMAIL"
+                            label={lang.form.confirmEmail}
                             onChange={(e) => {
                               console.log(`Input: ${e.target.value}`);
                               console.log(`Email state: ${this.state.emailInput}`);
@@ -260,7 +260,7 @@ class Home extends React.Component {
                                 });
                               }
                             }}
-                            errorMessage={(!this.state.emailMatch && this.state.confirmEmail.length > 0) && "NO MATCH"}
+                            errorMessage={(!this.state.emailMatch && this.state.confirmEmail.length > 0) && lang.form.confirmEmailHelperText}
                           />
                           <div className="input-padding">
                             <Checkbox
