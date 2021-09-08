@@ -237,6 +237,15 @@ class Home extends React.Component {
                             placeholder={lang.form.emailPlaceholder}
                             onChange={(e) => {
                               this.checkEmail(e.target.value, 'email');
+                              if (e.target.value === this.state.confirmEmail) {
+                                this.setState({
+                                  emailMatch: true,
+                                })
+                              } else {
+                                this.setState({
+                                  emailMatch: false,
+                                })
+                              }
                             }}
                             iconProps={this.state.isEmailDomainValid && iconProps}
                             errorMessage={this.state.isCanadaEmail ? lang.form.emailHelperText : ""}
@@ -245,8 +254,6 @@ class Home extends React.Component {
                             required
                             label={lang.form.confirmEmail}
                             onChange={(e) => {
-                              console.log(`Input: ${e.target.value}`);
-                              console.log(`Email state: ${this.state.emailInput}`);
                               this.setState({
                                 confirmEmail: e.target.value,
                               });
