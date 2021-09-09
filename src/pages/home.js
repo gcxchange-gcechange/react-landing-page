@@ -286,7 +286,7 @@ class Home extends React.Component {
                             <MessageBar
                               className="input-padding"
                               messageBarType={MessageBarType.error}
-                              isMultiline={false}
+                              isMultiline={true}
                             >
                               <span 
                                 dangerouslySetInnerHTML={{__html: this.state.backendMsg }}
