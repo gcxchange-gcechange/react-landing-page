@@ -55,6 +55,8 @@ class Home extends React.Component {
       isValid: false,
       backendError: false,
       backendMsg: '',
+      emailMatch: false,
+      confirmEmail: '',
     };
     this.toggle = this.toggle.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
@@ -246,9 +248,38 @@ class Home extends React.Component {
                             placeholder={lang.form.emailPlaceholder}
                             onChange={(e) => {
                               this.checkEmail(e.target.value, 'email');
+                              if (e.target.value === this.state.confirmEmail) {
+                                this.setState({
+                                  emailMatch: true,
+                                })
+                              } else {
+                                this.setState({
+                                  emailMatch: false,
+                                })
+                              }
                             }}
                             iconProps={this.state.isEmailDomainValid && iconProps}
                             errorMessage={this.state.isCanadaEmail ? lang.form.emailHelperText : ""}
+                          />
+                          <TextField
+                            required
+                            label={lang.form.confirmEmail}
+                            onChange={(e) => {
+                              this.setState({
+                                confirmEmail: e.target.value,
+                              });
+                              if (e.target.value === this.state.emailInput) {
+                                this.setState({
+                                  emailMatch: true,
+                                });
+                              } else {
+                                this.setState({
+                                  emailMatch: false,
+                                });
+                              }
+                            }}
+                            iconProps={this.state.emailMatch && iconProps}
+                            errorMessage={(!this.state.emailMatch && this.state.confirmEmail.length > 0) && lang.form.confirmEmailHelperText}
                           />
                           <div className="input-padding">
                             <Checkbox
@@ -293,7 +324,7 @@ class Home extends React.Component {
                               />
                             </MessageBar>
                           )}
-                          <input className="input-padding submit-btn" disabled={(!this.state.isEmailDomainValid || !this.state.department) ? true : false} type="submit" value={lang.form.submitBtn} />
+                          <input className="input-padding submit-btn" disabled={(!this.state.isEmailDomainValid || !this.state.department || !this.state.emailMatch) ? true : false} type="submit" value={lang.form.submitBtn} />
                           <div className="help-holder" dangerouslySetInnerHTML={{__html: lang.form.help}} />
                         </Form>
                       }
