@@ -41,10 +41,12 @@ export async function sendUser(user) {
     },
     body:JSON.stringify(user)
   })
-  // .then(res => {return res})
-  .then((data) => {
-     console.log(data);
-     return data
+  .then(res => {
+      if(res.status === 200) {
+        return res;
+      } else {
+        return res.text()
+      }
   })
   .catch((error) => {
       console.error(error);
