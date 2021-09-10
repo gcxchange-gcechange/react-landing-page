@@ -178,12 +178,7 @@ const ToolkitFr = () => (
                                                         Plan de communication
                                                     </td>
                                                     <td>
-                                                        <Button
-                                                            onClick={downloadlink("https://sttoolkitprodstd.blob.core.windows.net/gcxchange/communication%20plan%20_%20plan%20de%20communication-20210901T151658Z-001.zip?sp=r&st=2021-09-01T17:40:02Z&se=2025-09-02T01:40:02Z&spr=https&sv=2020-08-04&sr=b&sig=A%2FITnZndZ6RPJzbgHxj6oCDkD8tyD7pdua4l8c6UIRM%3D")}
-                                                            color="link"
-                                                        >
-                                                            Télécharger <span className="sr-only">Plan de communication</span>
-                                                        </Button>
+                                                        <a href="https://sttoolkitprodstd.blob.core.windows.net/gcxchange/communication%20plan%20_%20plan%20de%20communication-20210901T151658Z-001.zip?sp=r&st=2021-09-01T17:40:02Z&se=2025-09-02T01:40:02Z&spr=https&sv=2020-08-04&sr=b&sig=A%2FITnZndZ6RPJzbgHxj6oCDkD8tyD7pdua4l8c6UIRM%3D">Télécharger <span className="sr-only">Plan de communication</span></a>
                                                     </td>
                                                 </tr>
                                             </tbody>
@@ -191,7 +186,7 @@ const ToolkitFr = () => (
                                     </UncontrolledCollapse>  
                                 </div>
                                 <div className="toolkit-accordion-item">
-                                    <Button color="link" id="comms-products" className="toolkit-accordion-button d-flex"><div className="mr-3"><span class="chevron right mr-3"></span></div><div>Produits de communication</div></Button>
+                                    <Button color="link" id="comms-products" className="toolkit-accordion-button d-flex"><div className="mr-3"><span class="chevron right mr-3"></span></div><div>Documents d'accompagnement</div></Button>
                                     <UncontrolledCollapse toggler="#comms-products">
                                         <Table>
                                             <thead>
@@ -203,15 +198,10 @@ const ToolkitFr = () => (
                                             <tbody>
                                                 <tr>
                                                     <td>
-                                                        Produits de communication 
+                                                        Documents d'accompagnement
                                                     </td>
                                                     <td>
-                                                        <Button
-                                                            onClick={downloadlink("https://sttoolkitprodstd.blob.core.windows.net/gcxchange/communications%20products%20_%20produits%20de%20communication-20210901T152222Z-001.zip?sp=r&st=2021-09-01T17:59:27Z&se=2025-09-02T01:59:27Z&spr=https&sv=2020-08-04&sr=b&sig=dAhRNGcQJyppSsXrPFC2%2FBYxHWBqmBvonSEKNwOzF4o%3D")}
-                                                            color="link"
-                                                        >
-                                                            Télécharger <span className="sr-only">Produits de communication</span>
-                                                        </Button>
+                                                        <a href="https://sttoolkitprodstd.blob.core.windows.net/gcxchange/communications%20products%20_%20produits%20de%20communication-20210901T152222Z-001.zip?sp=r&st=2021-09-01T17:59:27Z&se=2025-09-02T01:59:27Z&spr=https&sv=2020-08-04&sr=b&sig=dAhRNGcQJyppSsXrPFC2%2FBYxHWBqmBvonSEKNwOzF4o%3D">Télécharger <span className="sr-only">Documents d'accompagnement</span></a>
                                                     </td>
                                                 </tr>
                                             </tbody>
@@ -234,12 +224,7 @@ const ToolkitFr = () => (
                                                         Conception et image de marque
                                                     </td>
                                                     <td>
-                                                        <Button
-                                                            onClick={downloadlink("https://sttoolkitprodstd.blob.core.windows.net/gcxchange/design%20%26%20branding%20_%20design%20et%20image%20de%20marque%20-20210901T152450Z-001.zip?sp=r&st=2021-09-01T17:39:02Z&se=2025-09-02T01:39:02Z&spr=https&sv=2020-08-04&sr=b&sig=hc8JoePEUGQC1w6GQz3xxWMN3ektcgbrn34AFwisFjo%3D")}
-                                                            color="link"
-                                                        >
-                                                            Télécharger <span className="sr-only">Conception et image de marque</span>
-                                                        </Button>
+                                                        <a href="https://sttoolkitprodstd.blob.core.windows.net/gcxchange/design%20%26%20branding%20_%20design%20et%20image%20de%20marque%20-20210901T152450Z-001.zip?sp=r&st=2021-09-01T17:39:02Z&se=2025-09-02T01:39:02Z&spr=https&sv=2020-08-04&sr=b&sig=hc8JoePEUGQC1w6GQz3xxWMN3ektcgbrn34AFwisFjo%3D">Télécharger <span className="sr-only">Conception et image de marque</span></a>
                                                     </td>
                                                 </tr>
                                             </tbody>
@@ -267,12 +252,7 @@ const ToolkitFr = () => (
                                                         Médias sociaux
                                                     </td>
                                                     <td>
-                                                        <Button
-                                                            onClick={downloadlink("https://sttoolkitprodstd.blob.core.windows.net/gcxchange/social%20media%20_%20m%C3%A9dias%20sociaux%20-20210901T152523Z-001.zip?sp=r&st=2021-09-01T17:42:41Z&se=2025-09-02T01:42:41Z&spr=https&sv=2020-08-04&sr=b&sig=BdkVmSPmOVanCgpVVSWFajJfFKbmFX008ZnnUMCz%2BUc%3D")}
-                                                            color="link"
-                                                        >
-                                                            Télécharger <span className="sr-only">Médias sociaux</span>
-                                                        </Button>
+                                                        <a href="https://sttoolkitprodstd.blob.core.windows.net/gcxchange/social%20media%20_%20m%C3%A9dias%20sociaux%20-20210901T152523Z-001.zip?sp=r&st=2021-09-01T17:42:41Z&se=2025-09-02T01:42:41Z&spr=https&sv=2020-08-04&sr=b&sig=BdkVmSPmOVanCgpVVSWFajJfFKbmFX008ZnnUMCz%2BUc%3D">Télécharger <span className="sr-only">Médias sociaux</span></a>
                                                     </td>
                                                 </tr>
                                             </tbody>
@@ -295,12 +275,7 @@ const ToolkitFr = () => (
                                                         Vidéos promotionnelles
                                                     </td>
                                                     <td>
-                                                        <Button
-                                                            onClick={downloadlink("https://sttoolkitprodstd.blob.core.windows.net/gcxchange/promotional%20videos%20_%20vid%C3%A9os%20promotionnelles%20-20210901T152520Z-001.zip?sp=r&st=2021-09-01T17:41:53Z&se=2025-09-02T01:41:53Z&spr=https&sv=2020-08-04&sr=b&sig=yujfNxfflcOlsEOi%2FrdVkxffBwWrePn5MrWJ2dQJvTo%3D")}
-                                                            color="link"
-                                                        >
-                                                            Télécharger <span className="sr-only">Vidéos promotionnelles</span>
-                                                        </Button>
+                                                        <a href="https://sttoolkitprodstd.blob.core.windows.net/gcxchange/promotional%20videos%20_%20vid%C3%A9os%20promotionnelles%20-20210901T152520Z-001.zip?sp=r&st=2021-09-01T17:41:53Z&se=2025-09-02T01:41:53Z&spr=https&sv=2020-08-04&sr=b&sig=yujfNxfflcOlsEOi%2FrdVkxffBwWrePn5MrWJ2dQJvTo%3D">Télécharger <span className="sr-only">Vidéos promotionnelles</span></a>
                                                     </td>
                                                 </tr>
                                             </tbody>
@@ -323,12 +298,7 @@ const ToolkitFr = () => (
                                                         Calendrier d’intégration des ministères
                                                     </td>
                                                     <td>
-                                                        <Button
-                                                            onClick={downloadlink("https://sttoolkitprodstd.blob.core.windows.net/gcxchange/department%20onboarding%20_%20embarquement%20des%20minist%C3%A8res-20210901T152433Z-001.zip?sp=r&st=2021-09-01T17:38:17Z&se=2025-09-02T01:38:17Z&spr=https&sv=2020-08-04&sr=b&sig=FAk%2BsWw8zLFEWNlFWaEc2SkhjgVnmgbTUiMRlEIoOnY%3D")}
-                                                            color="link"
-                                                        >
-                                                            Télécharger <span className="sr-only">Calendrier d’intégration des ministères</span>
-                                                        </Button>
+                                                        <a href="https://sttoolkitprodstd.blob.core.windows.net/gcxchange/department%20onboarding%20_%20embarquement%20des%20minist%C3%A8res-20210901T152433Z-001.zip?sp=r&st=2021-09-01T17:38:17Z&se=2025-09-02T01:38:17Z&spr=https&sv=2020-08-04&sr=b&sig=FAk%2BsWw8zLFEWNlFWaEc2SkhjgVnmgbTUiMRlEIoOnY%3D">Télécharger <span className="sr-only">Calendrier d’intégration des ministères</span></a>
                                                     </td>
                                                 </tr>
                                             </tbody>
