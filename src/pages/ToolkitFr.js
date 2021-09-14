@@ -283,7 +283,7 @@ const ToolkitFr = () => (
                                     </UncontrolledCollapse>  
                                 </div>
                                 <div className="toolkit-accordion-item">
-                                    <Button color="link" id="depart-calendar" className="d-flex"><div className="mr-3"><span class="chevron right mr-3"></span></div>Calendrier d’intégration des ministères<div></div></Button>
+                                        <Button color="link" id="depart-calendar" className="d-flex"><div className="mr-3"><span class="chevron right mr-3"></span></div>Embarquement des ministères<div></div></Button>
                                     <UncontrolledCollapse toggler="#depart-calendar">
                                         <Table>
                                             <thead>
