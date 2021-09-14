@@ -295,10 +295,10 @@ const ToolkitEn = () => (
                                             <tbody>
                                                 <tr>
                                                     <td>
-                                                        Department Onboarding Calendar
+                                                        Department onboarding
                                                     </td>
                                                     <td>
-                                                        <a href="https://sttoolkitprodstd.blob.core.windows.net/gcxchange/department%20onboarding%20_%20embarquement%20des%20minist%C3%A8res-20210901T152433Z-001.zip?sp=r&st=2021-09-01T17:38:17Z&se=2025-09-02T01:38:17Z&spr=https&sv=2020-08-04&sr=b&sig=FAk%2BsWw8zLFEWNlFWaEc2SkhjgVnmgbTUiMRlEIoOnY%3D">Download <span className="sr-only">Department Onboarding Calendar</span></a>
+                                                        <a href="https://sttoolkitprodstd.blob.core.windows.net/gcxchange/department%20onboarding%20_%20embarquement%20des%20minist%C3%A8res-20210901T152433Z-001.zip?sp=r&st=2021-09-01T17:38:17Z&se=2025-09-02T01:38:17Z&spr=https&sv=2020-08-04&sr=b&sig=FAk%2BsWw8zLFEWNlFWaEc2SkhjgVnmgbTUiMRlEIoOnY%3D">Download <span className="sr-only">Department onboarding</span></a>
                                                     </td>
                                                 </tr>
                                             </tbody>
