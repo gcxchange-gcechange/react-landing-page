@@ -1,6 +1,7 @@
 const Lang = {
     "en-us": {
         title: 'gcxchange - Activate your account',
+        alert: 'Hang tight! We are currently under construction so registration may take a little longer than usual—24 hours to be exact. Don’t panic, we’ll be back to our regular scheduled programming shortly. Thanks for your patience!',
         hero: {
             h1: 'You\'re <span class="highlight">so</span> close!',
             subtitle: 'It\'s time to get you onboarded onto gcxchange, the new platform for GC-wide communication and collaboration.  Review the steps below and once you’re ready, click the green “Activate your account” button at the bottom to kickstart the account activation process.',
@@ -46,6 +47,7 @@ const Lang = {
     },
     "fr-ca": {
         title: 'gcéchange - Activez votre compte',
+        alert: 'Tenez bon! Nous sommes actuellement en phase de construction et l’inscription peut prendre un peu plus de temps que d’habitude - 24 heures pour être exact. Pas de panique, nous reviendrons sous peu à notre programmation habituelle. Merci de votre patience.',
         hero: {
             h1: 'Vous y <span class="highlight">êtes</span> presque!',
             subtitle: 'Le moment est venu de vous intégrer à gcéchange, la nouvelle plateforme de communication et de collaboration à l’échelle du gouvernement du Canada (GC). Passez en revue les étapes à suivre ci-dessous et, une fois que vous êtes prêt, cliquez sur le bouton vert « Activez votre compte » au bas de la page pour lancer le processus d’activation du compte.',

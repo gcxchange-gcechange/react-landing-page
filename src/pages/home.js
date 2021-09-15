@@ -1,5 +1,5 @@
 import React, {Fragment} from 'react'
-import { Container, Row, Col, Button } from 'reactstrap';
+import { Container, Row, Col, Button, Alert } from 'reactstrap';
 import {Helmet} from "react-helmet";
 import {Link} from "react-router-dom";
 
@@ -43,6 +43,11 @@ class Home extends React.Component {
           <title>{lang.title}</title>
         </Helmet>
         <main>
+          <Alert color="warning" className="page-notice">
+            <div>
+              {lang.alert}  
+            </div>
+          </Alert>
           <section className="cta-hero">
             <Container>
               <Row>

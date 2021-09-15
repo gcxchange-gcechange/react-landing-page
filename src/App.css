@@ -58,7 +58,7 @@ img {
   background-image: url(./assets/img/splashPage.jpg);
   background-position: center;
   background-size: cover;
-  padding: 60px 0 80px;
+  padding: 105px 0 80px;
   color: #1a406a;
 }
 
@@ -369,6 +369,18 @@ footer a:hover {
 	transform: rotate(45deg);
 }
 */
+
+.page-notice {
+  position: fixed !important;
+  width: 100%;
+  z-index: 99999;
+  text-align: center;
+  color: #473500 !important;
+}
+.page-notice div {
+  width: 75%;
+  margin: 0 auto;
+}
 @media (max-width: 870px) {
   .footer-imgs .d-flex {
     display: block !important;
