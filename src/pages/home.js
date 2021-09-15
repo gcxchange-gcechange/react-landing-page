@@ -19,7 +19,7 @@ import govCanadaFr from '../assets/img/FIP_BIL_couleurs-05.png';
 import heroImage from '../assets/img/hero-img.png';
 
 import i18n from '../i18n/lang';
-import { getDepartTest, getDomains, sendUser } from '../services/DepartmentService';
+import { getDepartments, getDomains, sendUser } from '../services/DepartmentService';
 
 initializeIcons();
 const iconProps = { iconName: 'Accept' };
@@ -57,6 +57,7 @@ class Home extends React.Component {
       backendMsg: '',
       emailMatch: false,
       confirmEmail: '',
+      isSendLoading: false,
     };
     this.toggle = this.toggle.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
@@ -77,6 +78,9 @@ class Home extends React.Component {
     let splitEmail = emailWork.split('@');
     let firstName = capitalizeFirstLetter(splitEmail[0].split('.')[0]);
     let lastName = capitalizeFirstLetter(splitEmail[0].split('.')[1]);
+    this.setState({
+      isSendLoading: true,
+    });
     sendUser({
       EmailWork: emailWork,
       EmailCloud: emailCloud,
@@ -94,12 +98,14 @@ class Home extends React.Component {
           if(data.includes("already registered")) {
             this.setState({
               backendError: true,
-              backendMsg: lang.form.backendErrorUserRegistered
+              backendMsg: lang.form.backendErrorUserRegistered,
+              isSendLoading: false,
             });
           } else {
             this.setState({
               backendError: true,
-              backendMsg: lang.form.backendError
+              backendMsg: lang.form.backendError,
+              isSendLoading: false,
             });
           }
           
@@ -114,7 +120,7 @@ class Home extends React.Component {
     // initialize department lists
     let departs = [];
     let domains = [];
-    getDepartTest().then(e => {
+    getDepartments().then(e => {
       if(e) {
         e.map((field) => {
           departs.push({
@@ -147,6 +153,20 @@ class Home extends React.Component {
   }
 
   checkEmail (email, mailType) {
+    // List of invalid Domains to provide user feedback
+    const invalidDomains = [
+      'canada.ca',
+      'gmail.com',
+      'hotmail.com',
+      'live.com',
+      'yahoo.com',
+      'yahoo.ca', 
+      'hotmail.ca', 
+      'bell.net', 
+      'shaw.ca', 
+      'sympatico.ca', 
+      'rogers.com',
+    ]
     if (email.includes('@')) {
       let domain = email.split('@');
       // compare email domain to our list object
@@ -157,7 +177,7 @@ class Home extends React.Component {
             isCanadaEmail: false,
           })
           // Check if the user is trying to put a canada.ca email
-          if(domain[1] === 'canada.ca'){
+          if(invalidDomains.includes(domain[1])){
             this.setState({
               isCanadaEmail: true,
             })
@@ -268,6 +288,8 @@ class Home extends React.Component {
                               this.setState({
                                 confirmEmail: e.target.value,
                               });
+                              console.log(`This input ${e.target.value}`);
+                              console.log(`Email state ${this.state.emailInput}`);
                               if (e.target.value === this.state.emailInput) {
                                 this.setState({
                                   emailMatch: true,
@@ -324,7 +346,12 @@ class Home extends React.Component {
                               />
                             </MessageBar>
                           )}
-                          <input className="input-padding submit-btn" disabled={(!this.state.isEmailDomainValid || !this.state.department || !this.state.emailMatch) ? true : false} type="submit" value={lang.form.submitBtn} />
+                          {(this.state.isSendLoading) ? 
+                            <Spinner size={SpinnerSize.small} label={lang.form.loading} ariaLive="assertive" className="form-padding" /> :
+                            <input className="input-padding submit-btn" disabled={(!this.state.isEmailDomainValid || !this.state.department || !this.state.emailMatch) ? true : false} type="submit" value={lang.form.submitBtn} />
+
+                          }
+                          
                           <div className="help-holder" dangerouslySetInnerHTML={{__html: lang.form.help}} />
                         </Form>
                       }
