@@ -15,7 +15,7 @@ export async function getDomains() {
   return await response.json();
 }
 
-export async function getDepartTest() {
+export async function getDepartments() {
   // get list of departments
   const response = await fetch(process.env.REACT_APP_DEV_DEPART_URL, {
     method: 'POST',
