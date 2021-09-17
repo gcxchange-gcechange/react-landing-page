@@ -283,7 +283,7 @@ const ToolkitFr = () => (
                                     </UncontrolledCollapse>  
                                 </div>
                                 <div className="toolkit-accordion-item">
-                                    <Button color="link" id="depart-calendar" className="d-flex"><div className="mr-3"><span class="chevron right mr-3"></span></div>Calendrier d’intégration des ministères<div></div></Button>
+                                    <Button color="link" id="depart-calendar" className="d-flex"><div className="mr-3"><span class="chevron right mr-3"></span></div>Embarquement des ministères<div></div></Button>
                                     <UncontrolledCollapse toggler="#depart-calendar">
                                         <Table>
                                             <thead>
@@ -295,10 +295,10 @@ const ToolkitFr = () => (
                                             <tbody>
                                                 <tr>
                                                     <td>
-                                                        Calendrier d’intégration des ministères
+                                                        Embarquement des ministères
                                                     </td>
                                                     <td>
-                                                        <a href="https://sttoolkitprodstd.blob.core.windows.net/gcxchange/department%20onboarding%20_%20embarquement%20des%20minist%C3%A8res-20210901T152433Z-001.zip?sp=r&st=2021-09-01T17:38:17Z&se=2025-09-02T01:38:17Z&spr=https&sv=2020-08-04&sr=b&sig=FAk%2BsWw8zLFEWNlFWaEc2SkhjgVnmgbTUiMRlEIoOnY%3D">Télécharger <span className="sr-only">Calendrier d’intégration des ministères</span></a>
+                                                        <a href="https://sttoolkitprodstd.blob.core.windows.net/gcxchange/department%20onboarding%20_%20embarquement%20des%20minist%C3%A8res-20210901T152433Z-001.zip?sp=r&st=2021-09-01T17:38:17Z&se=2025-09-02T01:38:17Z&spr=https&sv=2020-08-04&sr=b&sig=FAk%2BsWw8zLFEWNlFWaEc2SkhjgVnmgbTUiMRlEIoOnY%3D">Télécharger <span className="sr-only">Embarquement des ministères</span></a>
                                                     </td>
                                                 </tr>
                                             </tbody>
