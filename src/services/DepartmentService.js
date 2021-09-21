@@ -15,7 +15,7 @@ export async function getDomains() {
   return await response.json();
 }
 
-export async function getDepartTest() {
+export async function getDepartments() {
   // get list of departments
   const response = await fetch(process.env.REACT_APP_DEV_DEPART_URL, {
     method: 'POST',
@@ -41,10 +41,12 @@ export async function sendUser(user) {
     },
     body:JSON.stringify(user)
   })
-  // .then(res => {return res})
-  .then((data) => {
-     console.log(data);
-     return data
+  .then(res => {
+      if(res.status === 200) {
+        return res;
+      } else {
+        return res.text()
+      }
   })
   .catch((error) => {
       console.error(error);
