@@ -128,7 +128,7 @@ const ToolkitFr = () => (
                         <span className="toolkit-bold">Bonne nouvelle! L’intégration à gcéchange a déjà commencé.</span> Les ministères et organismes sont intégrés conformément à ce calendrier stratégique. 
                     </div>
                     <div className="toolkit-text-holder">
-                        In the meantime, all public servants are welcome to join gcxchange! <a href="/">Click here to activate your gcxchange account!</a>
+                        En attendant, tous les fonctionnaires sont invités à se joindre à gcéchange! <a href="/">Cliquez ici pour activer votre compte gcéchange!</a>
                     </div>
                 </div>
             </Row>
@@ -316,7 +316,7 @@ const ToolkitFr = () => (
             <Row>
                 <div className="toolkit-row-holder">
                     <div className="toolkit-text-holder">
-                        <a href="/" className="btn btn-primary btn-lg">Inscrivez-vouse maintenant!</a>
+                        <a href="/" className="btn btn-primary btn-lg">Activez votre compte gcéchange dès maintenant!</a>
                     </div>
                 </div>
             </Row>
