@@ -124,8 +124,11 @@ const ToolkitFr = () => (
             <Row>
                 <div className="toolkit-row-holder">
                     <h2 className="toolkit-display-header">Quand pourrai-je accéder à gc<span className="toolkit-highlight">é</span>change?  </h2>
-                    <div className="toolkit-text-holder">
+                    <div className="toolkit-text-holder mb-3">
                         <span className="toolkit-bold">Bonne nouvelle! L’intégration à gcéchange a déjà commencé.</span> Les ministères et organismes sont intégrés conformément à ce calendrier stratégique. 
+                    </div>
+                    <div className="toolkit-text-holder">
+                        In the meantime, all public servants are welcome to join gcxchange! <a href="/">Click here to activate your gcxchange account!</a>
                     </div>
                 </div>
             </Row>
@@ -154,7 +157,7 @@ const ToolkitFr = () => (
                 </div>
             </Row>
             <Row className="resource-row">
-                <div id="resource-holder" className="toolkit-row-holder">
+                <div id="resource-holder" className="toolkit-row-holder download-holder">
                     <h2 className="toolkit-bold">Aidez-nous à passer le mot! </h2>
                     <div className="resource-text">
                         <span className="toolkit-bold">Téléchargez</span> les produits de communication officiels ci-dessous pour promouvoir gcéchange dans vos ministères et réseaux : 
@@ -312,7 +315,6 @@ const ToolkitFr = () => (
             </Row>
             <Row>
                 <div className="toolkit-row-holder">
-                    <h2 className="toolkit-display-header">Pas encore inscrit?</h2>
                     <div className="toolkit-text-holder">
                         <a href="/" className="btn btn-primary btn-lg">Inscrivez-vouse maintenant!</a>
                     </div>

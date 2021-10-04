@@ -381,6 +381,11 @@ footer a:hover {
   width: 75%;
   margin: 0 auto;
 }
+.download-holder{
+  min-height: 680px !important;
+  margin-top: 25px;
+}
+
 @media (max-width: 870px) {
   .footer-imgs .d-flex {
     display: block !important;
