@@ -167,6 +167,7 @@ class Home extends React.Component {
       'sympatico.ca', 
       'rogers.com',
     ]
+    var isValid = false;
     if (email.includes('@')) {
       let domain = email.split('@');
       // compare email domain to our list object
@@ -193,6 +194,7 @@ class Home extends React.Component {
             })
           }
         }
+        
         this.state.domainList.map((domState) => {
             if (domState.dom === domain[1]) {
               if (mailType === 'email') {
@@ -201,7 +203,9 @@ class Home extends React.Component {
                 this.setState({
                   department: {key: domState.key},
                   isEmailDomainValid: true,
+                  isCanadaEmail: false,
                 })
+                isValid = true;
                 console.log("depat key" + domState.key)
               } else {
                 this.setState({
@@ -213,7 +217,7 @@ class Home extends React.Component {
         })
 
         // Add check for unrecognized domains that are not in invalid domain list
-        if(!this.state.isEmailDomainValid) {
+        if(!isValid && mailType === 'email') {
           this.setState({
             isCanadaEmail: true,
           })
