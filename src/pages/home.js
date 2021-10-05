@@ -167,6 +167,7 @@ class Home extends React.Component {
       'sympatico.ca', 
       'rogers.com',
     ]
+    var isValid = false;
     if (email.includes('@')) {
       let domain = email.split('@');
       // compare email domain to our list object
@@ -175,6 +176,7 @@ class Home extends React.Component {
           this.setState({
             isEmailDomainValid: false,
             isCanadaEmail: false,
+            emailInput: email,
           })
           // Check if the user is trying to put a canada.ca email
           if(invalidDomains.includes(domain[1])){
@@ -192,25 +194,34 @@ class Home extends React.Component {
             })
           }
         }
+        
         this.state.domainList.map((domState) => {
             if (domState.dom === domain[1]) {
-                if (mailType === 'email') {
-                    console.log("domstatekey " + domState.key + " domstate " + domState.dom + " domain " + domain[1])
+              if (mailType === 'email') {
+                console.log("domstatekey " + domState.key + " domstate " + domState.dom + " domain " + domain[1])
 
-              this.setState({
-                department: {key: domState.key},
-                isEmailDomainValid: true,
-                emailInput: email,
-              })
+                this.setState({
+                  department: {key: domState.key},
+                  isEmailDomainValid: true,
+                  isCanadaEmail: false,
+                })
+                isValid = true;
                 console.log("depat key" + domState.key)
-            } else {
-              this.setState({
-                isCloudDomainValid: true,
-                cloudEmail: email,
-              })
+              } else {
+                this.setState({
+                  isCloudDomainValid: true,
+                  cloudEmail: email,
+                })
+              }
             }
-          }
         })
+
+        // Add check for unrecognized domains that are not in invalid domain list
+        if(!isValid && mailType === 'email') {
+          this.setState({
+            isCanadaEmail: true,
+          })
+        }
       }
     }
   }
