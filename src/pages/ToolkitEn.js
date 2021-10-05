@@ -124,8 +124,11 @@ const ToolkitEn = () => (
             <Row>
                 <div className="toolkit-row-holder">
                     <h2 className="toolkit-display-header">When can I get on gc<span className="toolkit-highlight">x</span>change?</h2>
-                    <div className="toolkit-text-holder">
+                    <div className="toolkit-text-holder mb-3">
                         <span className="toolkit-bold">Good news! Onboarding to gcxchange has already begun.</span> Departments and agencies are being onboarded according to this strategically designed timeline.
+                    </div>
+                    <div className="toolkit-text-holder">
+                        In the meantime, all public servants are welcome to join gcxchange! <a href="/">Click here to activate your gcxchange account!</a>
                     </div>
                 </div>
             </Row>
@@ -154,7 +157,7 @@ const ToolkitEn = () => (
                 </div>
             </Row>
             <Row className="resource-row">
-                <div id="resource-holder" className="toolkit-row-holder">
+                <div id="resource-holder" className="toolkit-row-holder download-holder">
                     <h2 className="toolkit-bold">Help spread the word!</h2>
                     <div className="resource-text">
                         <span className="toolkit-bold">Download</span> the official communications products below to help promote gcxchange within your departments and networks:
@@ -312,9 +315,8 @@ const ToolkitEn = () => (
             </Row>
             <Row>
                 <div className="toolkit-row-holder">
-                    <h2 className="toolkit-display-header">Haven't Registered yet?</h2>
                     <div className="toolkit-text-holder">
-                        <a href="/" className="btn btn-primary btn-lg"> Register now!</a>
+                        <a href="/" className="btn btn-primary btn-lg">Activate your gcxchange account now!</a>
                     </div>
                 </div>
             </Row>

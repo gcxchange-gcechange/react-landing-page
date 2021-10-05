@@ -500,6 +500,11 @@ footer a:hover {
 .toolkit-accordion-item table .btn-link {
   font-weight: bold;
 }
+
+.download-holder{
+  min-height: 680px !important;
+  margin-top: 30px;
+}
 /*
 .chevron.right:before {
 	left: 0;
