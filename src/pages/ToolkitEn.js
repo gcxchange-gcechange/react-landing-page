@@ -163,10 +163,15 @@ const ToolkitEn = () => (
                         <span className="toolkit-bold">Download</span> the official communications products below to help promote gcxchange within your departments and networks:
                     </div>
                     <Row>
-                        <Col>
+                    <Col>
                             <div className="toolkit-accordion">
                                 <div className="toolkit-accordion-item">
-                                    <Button color="link" id="comms-plan" className="toolkit-accordion-button d-flex" ><div className="mr-3"><span class="chevron right"></span></div><div>Communications plan</div></Button>
+                                    <Button color="link" id="comms-plan" className="toolkit-accordion-button d-flex" ><div className="mr-3"><span class="chevron right"></span></div>
+                                    <div className="toolkit-accordion-button">
+                                        <div className="button-head">Communications plan</div>
+                                        <div className="button-subtext">gcxchange communications implementation plan</div>
+                                    </div>
+                                    </Button>
                                     <UncontrolledCollapse toggler="#comms-plan">
                                         <Table>
                                             <thead>
@@ -189,7 +194,12 @@ const ToolkitEn = () => (
                                     </UncontrolledCollapse>  
                                 </div>
                                 <div className="toolkit-accordion-item">
-                                    <Button color="link" id="comms-products" className="toolkit-accordion-button d-flex"><div className="mr-3"><span class="chevron right mr-3"></span></div><div>Supporting Documents</div></Button>
+                                    <Button color="link" id="comms-products" className="toolkit-accordion-button d-flex"><div className="mr-3"><span class="chevron right mr-3"></span></div>
+                                    <div className="toolkit-accordion-button">
+                                        <div className="button-head">Communications Products</div>
+                                        <div className="button-subtext">terms and conditions; presentations; general promotional content for gcxchange; GCtools to gcxchange; frequently asked questions; departmental page set up; community page set up; accessibility</div>
+                                    </div>
+                                    </Button>
                                     <UncontrolledCollapse toggler="#comms-products">
                                         <Table>
                                             <thead>
@@ -201,10 +211,10 @@ const ToolkitEn = () => (
                                             <tbody>
                                                 <tr>
                                                     <td>
-                                                        Supporting Documents
+                                                        Communications Products
                                                     </td>
                                                     <td>
-                                                        <a href="https://sttoolkitprodstd.blob.core.windows.net/gcxchange/communications%20products%20_%20produits%20de%20communication-20210901T152222Z-001.zip?sp=r&st=2021-09-01T17:59:27Z&se=2025-09-02T01:59:27Z&spr=https&sv=2020-08-04&sr=b&sig=dAhRNGcQJyppSsXrPFC2%2FBYxHWBqmBvonSEKNwOzF4o%3D">Download <span className="sr-only">Supporting Documents</span></a>
+                                                        <a href="https://sttoolkitprodstd.blob.core.windows.net/gcxchange/communications%20products%20_%20produits%20de%20communication-20210901T152222Z-001.zip?sp=r&st=2021-09-01T17:59:27Z&se=2025-09-02T01:59:27Z&spr=https&sv=2020-08-04&sr=b&sig=dAhRNGcQJyppSsXrPFC2%2FBYxHWBqmBvonSEKNwOzF4o%3D">Download <span className="sr-only">Communications Products</span></a>
                                                     </td>
                                                 </tr>
                                             </tbody>
@@ -212,7 +222,12 @@ const ToolkitEn = () => (
                                     </UncontrolledCollapse>  
                                 </div>
                                 <div className="toolkit-accordion-item">
-                                    <Button color="link" id="design-branding" className="d-flex"><div className="mr-3"><span class="chevron right mr-3"></span></div><div>Design and branding</div></Button>
+                                    <Button color="link" id="design-branding" className="d-flex"><div className="mr-3"><span class="chevron right mr-3"></span></div>
+                                    <div className="toolkit-accordion-button">
+                                        <div className="button-head">Design and branding</div>
+                                        <div className="button-subtext">style guide; source file; illustrations; font</div>
+                                    </div>
+                                    </Button>
                                     <UncontrolledCollapse toggler="#design-branding">
                                         <Table>
                                             <thead>
@@ -234,13 +249,46 @@ const ToolkitEn = () => (
                                         </Table>
                                     </UncontrolledCollapse>  
                                 </div>
+                                <div className="toolkit-accordion-item">
+                                    <Button color="link" id="tutorial-vid" className="d-flex"><div className="mr-3"><span class="chevron right mr-3"></span></div>
+                                    <div className="toolkit-accordion-button">
+                                        <div className="button-head">Tutorial Videos</div>
+                                        <div className="button-subtext">navigate the platform; how to create your community; how to create a calendar event; how to change your language profile; customizing your community; upgrade your community</div>
+                                    </div>
+                                    </Button>
+                                    <UncontrolledCollapse toggler="#tutorial-vid">
+                                        <Table>
+                                            <thead>
+                                                <tr>
+                                                    <th>File Title</th>
+                                                    <th>Download</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        Tutorial Videos
+                                                    </td>
+                                                    <td>
+                                                        <a href="https://sttoolkitprodstd.blob.core.windows.net/gcxchange/tutorial%20videos%20_%20vid%C3%A9os%20tutorielles.zip?sp=r&st=2021-10-06T13:10:23Z&se=2026-10-06T21:10:23Z&spr=https&sv=2020-08-04&sr=b&sig=51lkuhi2vp9iKGRSrHxgKw17sRN07LV9PV4UIGBKrJg%3D">Download <span className="sr-only">Tutorial Videos</span></a>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </Table>
+                                    </UncontrolledCollapse>  
+                                </div>
                             </div>
                             
                         </Col>
                         <Col>
                             <div className="toolkit-accordion">
                             <div className="toolkit-accordion-item">
-                                    <Button color="link" id="social-media" className="toolkit-accordion-button d-flex" ><div className="mr-3"><span class="chevron right"></span></div><div>Social Media</div></Button>
+                                    <Button color="link" id="social-media" className="toolkit-accordion-button d-flex" ><div className="mr-3"><span class="chevron right"></span></div>
+                                    <div className="toolkit-accordion-button">
+                                        <div className="button-head">Social Media</div>
+                                        <div className="button-subtext">visuals for social media; welcome to gcxchange</div>
+                                    </div>
+                                    </Button>
                                     <UncontrolledCollapse toggler="#social-media">
                                         <Table>
                                             <thead>
@@ -263,7 +311,12 @@ const ToolkitEn = () => (
                                     </UncontrolledCollapse>  
                                 </div>
                                 <div className="toolkit-accordion-item">
-                                    <Button color="link" id="promotional-videos" className="d-flex"><div className="mr-3"><span class="chevron right mr-3"></span></div><div>Promotional videos</div></Button>
+                                    <Button color="link" id="promotional-videos" className="d-flex"><div className="mr-3"><span class="chevron right mr-3"></span></div>
+                                    <div className="toolkit-accordion-button">
+                                        <div className="button-head">Promotional videos</div>
+                                        <div className="button-subtext">gcxchange social media video; short gcxchange video</div>
+                                    </div>
+                                    </Button>
                                     <UncontrolledCollapse toggler="#promotional-videos">
                                         <Table>
                                             <thead>
@@ -286,7 +339,12 @@ const ToolkitEn = () => (
                                     </UncontrolledCollapse>  
                                 </div>
                                 <div className="toolkit-accordion-item">
-                                    <Button color="link" id="depart-calendar" className="d-flex"><div className="mr-3"><span class="chevron right mr-3"></span></div>Department onboarding<div></div></Button>
+                                        <Button color="link" id="depart-calendar" className="d-flex"><div className="mr-3"><span class="chevron right mr-3"></span></div>
+                                        <div className="toolkit-accordion-button">
+                                            <div className="button-head">Department onboarding</div>
+                                            <div className="button-subtext">gcxchange onboarding steps; department onboarding calendar</div>
+                                        </div>
+                                        </Button>
                                     <UncontrolledCollapse toggler="#depart-calendar">
                                         <Table>
                                             <thead>
@@ -307,7 +365,35 @@ const ToolkitEn = () => (
                                             </tbody>
                                         </Table>
                                     </UncontrolledCollapse>  
-                                </div> 
+                                </div>
+                                <div className="toolkit-accordion-item">
+                                    <Button color="link" id="it-toolkit" className="d-flex"><div className="mr-3"><span class="chevron right mr-3"></span></div>
+                                    <div className="toolkit-accordion-button">
+                                        <div className="button-head">IT Toolkit</div>
+                                        <div className="button-subtext">guidance for departmental IT support desks; gcxchange client department security responsibilities</div>
+                                    </div>
+                                    </Button>
+                                    <UncontrolledCollapse toggler="#it-toolkit">
+                                        <Table>
+                                            <thead>
+                                                <tr>
+                                                    <th>File Title</th>
+                                                    <th>Download</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        IT Toolkit
+                                                    </td>
+                                                    <td>
+                                                        <a href="https://sttoolkitprodstd.blob.core.windows.net/gcxchange/IT%20toolkit%20_%20bo%C3%AEte%20%C3%A0%20outils%20de%20la%20TI.zip?sp=r&st=2021-10-06T12:36:35Z&se=2026-10-06T20:36:35Z&spr=https&sv=2020-08-04&sr=b&sig=Vd%2fpiDKMA4WCg1ywo5cqeLFCqp7ahtfv9f%2B8DZI6K7o%3D">Download <span className="sr-only">IT Toolkit</span></a>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </Table>
+                                    </UncontrolledCollapse>  
+                                </div>
                             </div>
                         </Col>
                     </Row>
