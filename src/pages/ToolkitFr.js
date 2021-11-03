@@ -250,13 +250,13 @@ const ToolkitFr = () => (
                                     </UncontrolledCollapse>  
                                 </div>
                                 <div className="toolkit-accordion-item">
-                                    <Button color="link" id="design-branding" className="d-flex"><div className="mr-3"><span class="chevron right mr-3"></span></div>
+                                    <Button color="link" id="tutorial-vid" className="d-flex"><div className="mr-3"><span class="chevron right mr-3"></span></div>
                                     <div className="toolkit-accordion-button">
                                         <div className="button-head">Vidéos tutorielles</div>
                                         <div className="button-subtext">naviguer sur la plateforme; comment créer sa communauté; comment créer un calendrier d’événements; comment changer la langue de son profil; personnaliser votre communauté; </div>
                                     </div>
                                     </Button>
-                                    <UncontrolledCollapse toggler="#design-branding">
+                                    <UncontrolledCollapse toggler="#tutorial-vid">
                                         <Table>
                                             <thead>
                                                 <tr>
@@ -367,13 +367,13 @@ const ToolkitFr = () => (
                                     </UncontrolledCollapse>  
                                 </div>
                                 <div className="toolkit-accordion-item">
-                                    <Button color="link" id="design-branding" className="d-flex"><div className="mr-3"><span class="chevron right mr-3"></span></div>
+                                    <Button color="link" id="it-toolkit" className="d-flex"><div className="mr-3"><span class="chevron right mr-3"></span></div>
                                     <div className="toolkit-accordion-button">
                                         <div className="button-head">Boîte à outils de la TI</div>
                                         <div className="button-subtext">gcxchange communications implementation plan</div>
                                     </div>
                                     </Button>
-                                    <UncontrolledCollapse toggler="#design-branding">
+                                    <UncontrolledCollapse toggler="#it-toolkit">
                                         <Table>
                                             <thead>
                                                 <tr>
