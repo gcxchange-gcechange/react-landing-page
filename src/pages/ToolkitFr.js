@@ -197,7 +197,7 @@ const ToolkitFr = () => (
                                     <Button color="link" id="comms-products" className="toolkit-accordion-button d-flex"><div className="mr-3"><span class="chevron right mr-3"></span></div>
                                     <div className="toolkit-accordion-button">
                                         <div className="button-head">Produits de communication</div>
-                                        <div className="button-subtext">conditions d’utilisation; présentations; contenu promotionnel général pour gcéchange; OutilsGC à gcéchange; foire aux questions; configuration de la page de votre ministère; configuration de la page de votre communauté; accessibilité</div>
+                                        <div className="button-subtext">conditions d’utilisation; présentations; contenu promotionnel général pour gcéchange; guide d’utilisation du responsable de la communauté gcéchange; OutilsGC à gcéchange; foire aux questions; configuration de la page de votre ministère; configuration de la page de votre communauté; accessibilité</div>
                                     </div>
                                     </Button>
                                     <UncontrolledCollapse toggler="#comms-products">
