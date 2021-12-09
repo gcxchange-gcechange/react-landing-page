@@ -197,7 +197,7 @@ const ToolkitEn = () => (
                                     <Button color="link" id="comms-products" className="toolkit-accordion-button d-flex"><div className="mr-3"><span class="chevron right mr-3"></span></div>
                                     <div className="toolkit-accordion-button">
                                         <div className="button-head">Communications Products</div>
-                                        <div className="button-subtext">terms and conditions; presentations; general promotional content for gcxchange; GCtools to gcxchange; frequently asked questions; departmental page set up; community page set up; accessibility</div>
+                                        <div className="button-subtext">terms and conditions; presentations; general promotional content for gcxchange; gcxchange community owner user guide; GCtools to gcxchange; frequently asked questions; departmental page set up; community page set up; accessibility</div>
                                     </div>
                                     </Button>
                                     <UncontrolledCollapse toggler="#comms-products">
