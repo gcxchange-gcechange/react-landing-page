@@ -12,7 +12,7 @@ const Lang = {
         },
         form: {
             loading: 'Loading, please wait',
-            emailLabel: 'Departmental email address (Required) ',
+            emailLabel: 'Departmental email address',
             emailPlaceholder: 'john.smith@tbs-sct.gc.ca, john.smith@ssc-spc.gc.ca',
             emailHelperText: 'Must be a departmental email address',
             confirmEmail: 'Confirm departmental email address',
@@ -52,7 +52,7 @@ const Lang = {
         },
         form: {
             loading: 'Chargement, veuillez patienter',
-            emailLabel: 'Adresse courriel du ministère (Obligatoire) ',
+            emailLabel: 'Adresse courriel du ministère',
             emailPlaceholder: 'jeanne.tremblay@tbs-sct.gc.ca, jeanne.tremblay@ssc-spc.gc.ca',
             emailHelperText: 'Doit être une adresse courriel du ministère',
             confirmEmail: 'Confirmez votre adresse courriel du ministère',
@@ -60,7 +60,7 @@ const Lang = {
             cloudEmailCheck: 'Aimeriez-vous que les notifications de gcéchange soient envoyées à une adresse de courriel autre que celle que vous venez d’entrer ci-dessus?',
             cloudPlaceholder: 'jeanne.tremblaly@canada.ca',
             cloudLabel: 'Avez-vous un deuxième courriel au travail? Écrivez-le ici : (Optionnel)',
-            departmentLabel: 'Department',
+            departmentLabel: 'Ministère',
             departmentPlaceholder: 'Choisir une option',
             submitBtn: 'S\'inscrire',
             help: 'Besoin d\'aide? <a href="mailto:support-soutien@gcx-gce.gc.ca">Contactez notre service d\'assistance</a>',
