@@ -72,8 +72,8 @@ class Home extends React.Component {
   }
 
   onSubmit () {
-    let emailWork = this.state.emailInput;
-    let emailCloud = (this.state.cloudEmail ? this.state.cloudEmail : this.state.emailInput);
+    let emailWork = this.state.emailInput.toLowerCase();
+    let emailCloud = (this.state.cloudEmail ? this.state.cloudEmail.toLowerCase() : this.state.emailInput.toLowerCase());
     let department = this.state.department.key;
     let splitEmail = emailWork.split('@');
     let firstName = capitalizeFirstLetter(splitEmail[0].split('.')[0]);
