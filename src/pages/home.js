@@ -179,7 +179,7 @@ class Home extends React.Component {
             emailInput: email,
           })
           // Check if the user is trying to put a canada.ca email
-          if(invalidDomains.includes(domain[1])){
+          if(invalidDomains.includes(domain[1].toLowerCase())){
             this.setState({
               isCanadaEmail: true,
             })
@@ -196,7 +196,7 @@ class Home extends React.Component {
         }
         
         this.state.domainList.map((domState) => {
-            if (domState.dom === domain[1]) {
+            if (domState.dom === domain[1].toLowerCase()) {
               if (mailType === 'email') {
                 console.log("domstatekey " + domState.key + " domstate " + domState.dom + " domain " + domain[1])
 
@@ -279,6 +279,7 @@ class Home extends React.Component {
                             label={lang.form.emailLabel}
                             placeholder={lang.form.emailPlaceholder}
                             onChange={(e) => {
+                              e.target.value = e.target.value.toLowerCase()
                               this.checkEmail(e.target.value, 'email');
                               if (e.target.value === this.state.confirmEmail) {
                                 this.setState({
