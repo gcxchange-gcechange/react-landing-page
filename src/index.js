@@ -22,19 +22,16 @@ if (typeof document !== 'undefined') {
     renderMethod(
       <div>
         <Comp />
-        <Helmet>
-          <script
-            async
-            src="https://www.googletagmanager.com/gtag/js?id=G-3ENE72JQV2"
-          />
+        <Helmet>  
+          <script async src="https://www.googletagmanager.com/gtag/js?id=UA-222595474-1"></script>
           <script>
-              {`window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
+            {`window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments)}
             gtag('js', new Date());
-          
-            gtag('config', 'G-3ENE72JQV2');
-          `}
-                </script>
+
+            gtag('config', 'UA-222595474-1');
+            `}
+          </script>
         </Helmet>
       </div>,
       target
