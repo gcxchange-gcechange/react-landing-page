@@ -42,7 +42,7 @@ class Home extends React.Component {
     super(props);
     this.state = {
       isOpen: false,
-      isInitLoad: true,
+      isInitLoad: false,
       emailInput: '',
       yesCloudEmail: false,
       cloudEmail: '',
@@ -279,7 +279,7 @@ class Home extends React.Component {
                             label={lang.form.emailLabel}
                             placeholder={lang.form.emailPlaceholder}
                             onChange={(e) => {
-                              e.target.value = e.target.value.toLowerCase()
+                              e.target.value = e.target.value.toLowerCase();
                               this.checkEmail(e.target.value, 'email');
                               if (e.target.value === this.state.confirmEmail) {
                                 this.setState({
@@ -298,6 +298,7 @@ class Home extends React.Component {
                             required
                             label={lang.form.confirmEmail}
                             onChange={(e) => {
+                              e.target.value = e.target.value.toLowerCase();
                               this.setState({
                                 confirmEmail: e.target.value,
                               });
