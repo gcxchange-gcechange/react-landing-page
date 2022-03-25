@@ -42,7 +42,7 @@ class Home extends React.Component {
     super(props);
     this.state = {
       isOpen: false,
-      isInitLoad: true,
+      isInitLoad: false,
       emailInput: '',
       yesCloudEmail: false,
       cloudEmail: '',
@@ -72,8 +72,8 @@ class Home extends React.Component {
   }
 
   onSubmit () {
-    let emailWork = this.state.emailInput;
-    let emailCloud = (this.state.cloudEmail ? this.state.cloudEmail : this.state.emailInput);
+    let emailWork = this.state.emailInput.toLowerCase();
+    let emailCloud = (this.state.cloudEmail ? this.state.cloudEmail.toLowerCase() : this.state.emailInput.toLowerCase());
     let department = this.state.department.key;
     let splitEmail = emailWork.split('@');
     let firstName = capitalizeFirstLetter(splitEmail[0].split('.')[0]);
@@ -179,7 +179,7 @@ class Home extends React.Component {
             emailInput: email,
           })
           // Check if the user is trying to put a canada.ca email
-          if(invalidDomains.includes(domain[1])){
+          if(invalidDomains.includes(domain[1].toLowerCase())){
             this.setState({
               isCanadaEmail: true,
             })
@@ -196,7 +196,7 @@ class Home extends React.Component {
         }
         
         this.state.domainList.map((domState) => {
-            if (domState.dom === domain[1]) {
+            if (domState.dom === domain[1].toLowerCase()) {
               if (mailType === 'email') {
                 console.log("domstatekey " + domState.key + " domstate " + domState.dom + " domain " + domain[1])
 
@@ -279,6 +279,7 @@ class Home extends React.Component {
                             label={lang.form.emailLabel}
                             placeholder={lang.form.emailPlaceholder}
                             onChange={(e) => {
+                              e.target.value = e.target.value.toLowerCase();
                               this.checkEmail(e.target.value, 'email');
                               if (e.target.value === this.state.confirmEmail) {
                                 this.setState({
@@ -297,6 +298,7 @@ class Home extends React.Component {
                             required
                             label={lang.form.confirmEmail}
                             onChange={(e) => {
+                              e.target.value = e.target.value.toLowerCase();
                               this.setState({
                                 confirmEmail: e.target.value,
                               });
