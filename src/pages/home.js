@@ -47,7 +47,7 @@ class Home extends React.Component {
       yesCloudEmail: false,
       cloudEmail: '',
       department: '',
-      departList: [{key: '00007', text: 'TESTING'},],
+      departList: [{key: '00007', text: 'TESTING'}],
       domainList: [{key: '00007', dom: 'test.gc.ca'},],
       isEmailDomainValid: false,
       isCanadaEmail: false,
@@ -129,12 +129,23 @@ class Home extends React.Component {
           })
         })
       }
+      
+      // remove potential duplicates in the array
+      departs = departs.filter((value, index, self) =>
+        index === self.findIndex((t) => (
+          t.key === value.key && t.text === value.text
+        ))
+      )
+
       // sort alphabetical
       departs.sort((a, b) => { if(a.text < b.text) { return -1; } if(a.text > b.text) { return 1; } return 0; })
+      
+      //set state
       this.setState({
         departList: departs,
       })
     })
+
     // initialize domain list
     getDomains().then(d => {
       if(d) {
