@@ -1,8 +1,8 @@
 import React, {Fragment} from 'react'
-import { Container, Row, Col, Form, Collapse } from 'reactstrap';
+import { Container, Row, Col, Form, Collapse, Alert } from 'reactstrap';
 import { TextField } from '@fluentui/react/lib/TextField';
 import { Dropdown } from '@fluentui/react/lib/Dropdown';
-import { Checkbox, MessageBar, MessageBarType, } from '@fluentui/react';
+import { Checkbox, DefaultButton, MessageBar, MessageBarType, } from '@fluentui/react';
 import { Spinner, SpinnerSize } from '@fluentui/react/lib/Spinner';
 import { initializeIcons } from '@fluentui/react/lib/Icons';
 
@@ -116,6 +116,7 @@ class Home extends React.Component {
   }
 
   componentDidMount () {
+    console.log(`UA: ${window.navigator.userAgent}`);
     // Grab the sharepoint list here on mount
     // initialize department lists
     let departs = [];
@@ -270,10 +271,25 @@ class Home extends React.Component {
                             <li dangerouslySetInnerHTML={{__html: lang.hero.list2}} />
                             <li dangerouslySetInnerHTML={{__html: lang.hero.list3}} />
                             <li dangerouslySetInnerHTML={{__html: lang.hero.list4}} />
-                          </ul> 
+                          </ul>
+                          <DefaultButton
+                            text={lang.hero.learnMore}
+                            href={(this.props.lang === 'fr-ca')? "/fr/toolkit" : "/en/toolkit"}
+                          />
+                          <br />
+                          <DefaultButton
+                            text={lang.hero.visitLink}
+                            href={(this.props.lang === 'fr-ca')? "https://gcxgce.sharepoint.com/SitePages/fr/Home.aspx" : "https://gcxgce.sharepoint.com"}
+                            className='mt-3'
+                          />
+                          
                         </div>
                       </Col>
                       <Col md="6" className="form-padding">
+                        <Alert color="info">
+                          <span dangerouslySetInnerHTML={{__html: lang.infoMessage.msg}} className='reg-info-list' />
+                          <span className='reg-info-list'> <b>CBSA</b>, <b>Statscan</b></span>
+                        </Alert>
                       <img className="logo-img" src={logo} alt="gcéchange" />
                       {this.state.isInitLoad ? <Spinner size={SpinnerSize.large} className="form-padding" label={lang.form.loading} ariaLive="assertive" /> :
                         <Form

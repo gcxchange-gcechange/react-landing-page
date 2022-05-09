@@ -9,6 +9,8 @@ const Lang = {
             list3: '<span class="info-highlight">Access information</span> that matters most to you',
             list4: '<span class="info-highlight">Share</span> your content with the GC community',
             link: process.env.REACT_APP_ACCESS_PACKAGE_EN,
+            learnMore: 'Learn more about GCX',
+            visitLink: 'Already regsitered? Go to GCX',
         },
         form: {
             loading: 'Loading, please wait',
@@ -31,6 +33,9 @@ const Lang = {
             title: 'Sit tight, we’re almost finished setting up your account! You’ll be getting an email from us soon. ',
             subtitle: 'If you don\'t receive an email after 10 minutes, please contact us at <a href="mailto:support-soutien@gcx-gce.gc.ca">support-soutien@gcx-gce.gc.ca. </a>',
         },
+        infoMessage: {
+            msg: 'We are aware there are issues with the following departments:',
+        },
         footer: {
             heading: 'Contact',
             linkText: 'gcintranet link',
@@ -49,6 +54,8 @@ const Lang = {
             list3: '<span class="info-highlight">Accéder à l’information</span> qui vous est la plus précieuse ',
             list4: '<span class="info-highlight">Partager</span> votre contenu avec la collectivité du GC ',
             link: process.env.REACT_APP_ACCESS_PACKAGE_EN,
+            learnMore: 'Pour en savoir plus sur gcé',
+            visitLink: 'Déjà enregistré? Aller à gcé',
         },
         form: {
             loading: 'Chargement, veuillez patienter',
@@ -70,6 +77,9 @@ const Lang = {
         process: {
             title: 'Attendez patiemment, nous avons presque fini de configurer votre compte! Vous recevrez bientôt un courriel de notre part.',
             subtitle: 'Si vous ne recevez pas de courriel après 10 minutes, veuillez communiquer avec nous à l’adresse suivante : <a href="mailto:support-soutien@gcx-gce.gc.ca">support-soutien@gcx-gce.gc.ca.</a>',
+        },
+        infoMessage: {
+            msg: "Nous sommes conscients qu'il y a des problèmes avec les départements suivants:",
         },
         footer: {
             heading: 'Contact',
