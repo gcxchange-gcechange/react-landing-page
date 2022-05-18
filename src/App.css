@@ -139,6 +139,10 @@ img {
   font-weight: 400;
 }
 
+.info-link {
+  border-radius: 2rem !important;
+}
+
 .ms-MessageBar-innerText a {
   color: #0056b3;
 }
@@ -247,8 +251,26 @@ footer a:hover {
   font-size: 26px;
   font-weight: bold;
   color: #1A406A;
-  margin-bottom: 30px;
+  margin-bottom: 8px;
   margin-top: 15px;
+}
+.form-sub-text {
+  margin-bottom: 18px;
+  font-size: 13px;
+  color:rgb(102, 102, 102);
+}
+
+.footer-links {
+  list-style: none;
+  color:rgb(102, 102, 102);
+  font-size: 12px;
+  text-align: left !important;
+  position: absolute;
+  bottom: 0;
+}
+.footer-links li {
+  float: left;
+  margin: 5px;
 }
 
 .input-padding {
@@ -436,6 +458,10 @@ footer a:hover {
   font-size: 12px;
 }
 
+.b-link {
+  font-weight: bold;
+  font-size: 16px;
+}
 /*
 .chevron::before {
 	border-style: solid;

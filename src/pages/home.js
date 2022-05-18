@@ -273,16 +273,20 @@ class Home extends React.Component {
                             <li dangerouslySetInnerHTML={{__html: lang.hero.list4}} />
                           </ul>
                           <DefaultButton
+                            className='info-link'
                             text={lang.hero.learnMore}
                             href={(this.props.lang === 'fr-ca')? "/fr/toolkit" : "/en/toolkit"}
                           />
                           <br />
-                          <DefaultButton
-                            text={lang.hero.visitLink}
-                            href={(this.props.lang === 'fr-ca')? "https://gcxgce.sharepoint.com/SitePages/fr/Home.aspx" : "https://gcxgce.sharepoint.com"}
-                            className='mt-3'
-                          />
                           
+                          <ul className='footer-links'>
+                            <li><a href='#'>Terms</a></li>
+                            <li><a href={(this.props.lang === 'fr-ca')? "/fr/toolkit" : "/en/toolkit"}>About</a></li>
+                            <li><a href="mailto:support-soutien@gcx-gce.gc.ca">Help</a></li>
+                            <li>
+                              <a href={(this.props.lang === 'fr-ca')? "https://gcxgce.sharepoint.com/SitePages/fr/Home.aspx" : "https://gcxgce.sharepoint.com"}>Go to GCX</a>
+                            </li>
+                          </ul>
                         </div>
                       </Col>
                       <Col md="6" className="form-padding">
@@ -300,6 +304,10 @@ class Home extends React.Component {
                         >
                           <div className="form-title">
                             {lang.form.submitBtn}
+                          </div>
+                          <div className='form-sub-text'>
+                            Already registered? 
+                            <a href={(this.props.lang === 'fr-ca')? "https://gcxgce.sharepoint.com/SitePages/fr/Home.aspx" : "https://gcxgce.sharepoint.com"}> Go to GCX</a>
                           </div>
                           <TextField
                             required
