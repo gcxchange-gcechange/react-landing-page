@@ -280,11 +280,10 @@ class Home extends React.Component {
                           <br />
                           
                           <ul className='footer-links'>
-                            <li><a href='#'>Terms</a></li>
-                            <li><a href={(this.props.lang === 'fr-ca')? "/fr/toolkit" : "/en/toolkit"}>About</a></li>
-                            <li><a href="mailto:support-soutien@gcx-gce.gc.ca">Help</a></li>
+                            <li><a href='#' dangerouslySetInnerHTML={{__html: lang.footer.terms}} /></li>
+                            <li><a href="mailto:support-soutien@gcx-gce.gc.ca" dangerouslySetInnerHTML={{__html: lang.footer.help}} /></li>
                             <li>
-                              <a href={(this.props.lang === 'fr-ca')? "https://gcxgce.sharepoint.com/SitePages/fr/Home.aspx" : "https://gcxgce.sharepoint.com"}>Go to GCX</a>
+                              <a href={(this.props.lang === 'fr-ca')? "https://gcxgce.sharepoint.com/SitePages/fr/Home.aspx" : "https://gcxgce.sharepoint.com"} dangerouslySetInnerHTML={{__html: lang.footer.visit}} />
                             </li>
                           </ul>
                         </div>
@@ -306,8 +305,7 @@ class Home extends React.Component {
                             {lang.form.submitBtn}
                           </div>
                           <div className='form-sub-text'>
-                            Already registered? 
-                            <a href={(this.props.lang === 'fr-ca')? "https://gcxgce.sharepoint.com/SitePages/fr/Home.aspx" : "https://gcxgce.sharepoint.com"}> Go to GCX</a>
+                          <span dangerouslySetInnerHTML={{__html: lang.hero.visitLink}} />
                           </div>
                           <TextField
                             required

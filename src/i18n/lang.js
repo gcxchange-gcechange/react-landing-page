@@ -10,7 +10,7 @@ const Lang = {
             list4: '<span class="info-highlight">Share</span> your content with the GC community',
             link: process.env.REACT_APP_ACCESS_PACKAGE_EN,
             learnMore: 'Learn more about GCX',
-            visitLink: 'Already regsitered? Go to GCX',
+            visitLink: 'Already regsitered? <a href="https://gcxgce.sharepoint.com">Go to GCX</a>',
         },
         form: {
             loading: 'Loading, please wait',
@@ -19,7 +19,7 @@ const Lang = {
             emailHelperText: 'Must be a departmental email address',
             confirmEmail: 'Confirm departmental email address',
             confirmEmailHelperText: 'Email does not match',
-            cloudEmailCheck: 'Send notification to a different email address?',
+            cloudEmailCheck: 'Send notifications to a different email address?',
             cloudPlaceholder: 'john.smith@canada.ca',
             cloudLabel: 'Do you have a second work email? Enter it here: (Optional)',
             departmentLabel: 'Department',
@@ -41,7 +41,11 @@ const Lang = {
             linkText: 'gcintranet link',
             linkHref: '#',
             goc: 'Government of Canada',
-            symbol: 'Symbol of the Government of Canada'
+            symbol: 'Symbol of the Government of Canada',
+            terms: 'Terms and Conditions',
+            about: 'About',
+            help: 'Help',
+            visit: 'Go to GCX'
         },
     },
     "fr-ca": {
@@ -55,7 +59,7 @@ const Lang = {
             list4: '<span class="info-highlight">Partager</span> votre contenu avec la collectivité du GC ',
             link: process.env.REACT_APP_ACCESS_PACKAGE_EN,
             learnMore: 'Pour en savoir plus sur gcé',
-            visitLink: 'Déjà enregistré? Aller à gcé',
+            visitLink: 'Déjà enregistré? <a href="https://gcxgce.sharepoint.com/SitePages/fr/Home.aspx">Aller à gcé</a>',
         },
         form: {
             loading: 'Chargement, veuillez patienter',
@@ -64,7 +68,7 @@ const Lang = {
             emailHelperText: 'Doit être une adresse courriel du ministère',
             confirmEmail: 'Confirmez votre adresse courriel du ministère',
             confirmEmailHelperText: 'Adresse courriel ne correspond pas',
-            cloudEmailCheck: 'Aimeriez-vous que les notifications de gcéchange soient envoyées à une adresse de courriel autre que celle que vous venez d’entrer ci-dessus?',
+            cloudEmailCheck: 'Envoyer des notifications à une autre adresse courriel?',
             cloudPlaceholder: 'jeanne.tremblaly@canada.ca',
             cloudLabel: 'Avez-vous un deuxième courriel au travail? Écrivez-le ici : (Optionnel)',
             departmentLabel: 'Ministère',
@@ -86,7 +90,11 @@ const Lang = {
             linkText: 'gcintranet link',
             linkHref: '#',
             goc: 'Gouvernement du Canada',
-            symbol: 'Symbole du gouvernement du Canada'
+            symbol: 'Symbole du gouvernement du Canada',
+            terms: 'Conditions d\'utilisation',
+            about: 'About',
+            help: 'Aide',
+            visit: 'Aller à gcé'
         },
     }
 };
