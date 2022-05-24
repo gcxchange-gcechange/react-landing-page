@@ -18,6 +18,9 @@ import govCandaEn from '../assets/img/FIP_BIL_couleurs-03.png';
 import govCanadaFr from '../assets/img/FIP_BIL_couleurs-05.png';
 import heroImage from '../assets/img/hero-img.png';
 
+import enTermsPDF from '../assets/docs/gcx_terms_en.pdf';
+import frTermsPDF from '../assets/docs/gcx_terms_fr.pdf';
+
 import i18n from '../i18n/lang';
 import { getDepartments, getDomains, sendUser } from '../services/DepartmentService';
 
@@ -280,7 +283,7 @@ class Home extends React.Component {
                           <br />
                           
                           <ul className='footer-links'>
-                            <li><a href='#' dangerouslySetInnerHTML={{__html: lang.footer.terms}} /></li>
+                            <li><a href={(this.props.lang === 'fr-ca')? frTermsPDF : enTermsPDF} target='_blank' rel='noopener noreferrer' dangerouslySetInnerHTML={{__html: lang.footer.terms}} /></li>
                             <li><a href="mailto:support-soutien@gcx-gce.gc.ca" dangerouslySetInnerHTML={{__html: lang.footer.help}} /></li>
                             <li>
                               <a href={(this.props.lang === 'fr-ca')? "https://gcxgce.sharepoint.com/SitePages/fr/Home.aspx" : "https://gcxgce.sharepoint.com"} dangerouslySetInnerHTML={{__html: lang.footer.visit}} />
