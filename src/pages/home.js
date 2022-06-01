@@ -292,10 +292,6 @@ class Home extends React.Component {
                         </div>
                       </Col>
                       <Col md="6" className="form-padding">
-                        <Alert color="info">
-                          <span dangerouslySetInnerHTML={{__html: lang.infoMessage.msg}} className='reg-info-list' />
-                          <span className='reg-info-list'> <b>CBSA</b>, <b>Statscan</b></span>
-                        </Alert>
                       <img className="logo-img" src={logo} alt="gcéchange" />
                       {this.state.isInitLoad ? <Spinner size={SpinnerSize.large} className="form-padding" label={lang.form.loading} ariaLive="assertive" /> :
                         <Form
@@ -310,6 +306,13 @@ class Home extends React.Component {
                           <div className='form-sub-text'>
                           <span dangerouslySetInnerHTML={{__html: lang.hero.visitLink}} />
                           </div>
+                          <MessageBar
+                            className="message-padding"
+                            messageBarType={MessageBarType.default}
+                            isMultiline={true}
+                          >
+                            <span dangerouslySetInnerHTML={{__html: lang.form.browserInfo}} /> 
+                          </MessageBar>
                           <TextField
                             required
                             label={lang.form.emailLabel}

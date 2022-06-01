@@ -76,7 +76,7 @@ img {
 
 .info-holder {
   background-color: #EFF6FC;
-  height: 750px;
+  height: 780px;
   border-radius: 25px 0 0 25px;
 }
 .info-content {
@@ -88,13 +88,13 @@ img {
 .info-header {
   font-size: 30px;
   font-weight: 600;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
 }
 .info-sub {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 600;
-  margin-bottom: 25px;
-  padding: 0 55px;
+  margin-bottom: 20px;
+  padding: 0 25px;
 }
 .info-list {
   list-style: none;
@@ -236,7 +236,7 @@ footer a:hover {
   margin-top: 15px;
   box-shadow: 0 1.6px 3.6px 0 rgb(0 0 0 / 13%), 0 0.3px 0.9px 0 rgb(0 0 0 / 11%);
   border-radius: 25px;
-  height: 750px;
+  height: 780px;
 }
 
 .row-holder {
@@ -275,6 +275,9 @@ footer a:hover {
 
 .input-padding {
   margin-top: 12px;
+}
+.message-padding {
+  margin-bottom: 10px;
 }
 
 .input-helper-text {
