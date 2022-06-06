@@ -275,13 +275,6 @@ class Home extends React.Component {
                             <li dangerouslySetInnerHTML={{__html: lang.hero.list3}} />
                             <li dangerouslySetInnerHTML={{__html: lang.hero.list4}} />
                           </ul>
-                          <DefaultButton
-                            className='info-link'
-                            text={lang.hero.learnMore}
-                            href={(this.props.lang === 'fr-ca')? "/fr/toolkit" : "/en/toolkit"}
-                          />
-                          <br />
-                          
                           <ul className='footer-links'>
                             <li><a href={(this.props.lang === 'fr-ca')? frTermsPDF : enTermsPDF} target='_blank' rel='noopener noreferrer' dangerouslySetInnerHTML={{__html: lang.footer.terms}} /></li>
                             <li><a href="mailto:support-soutien@gcx-gce.gc.ca" dangerouslySetInnerHTML={{__html: lang.footer.help}} /></li>
