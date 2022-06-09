@@ -1,8 +1,8 @@
 import React, {Fragment} from 'react'
-import { Container, Row, Col, Form, Collapse } from 'reactstrap';
+import { Container, Row, Col, Form, Collapse, Alert } from 'reactstrap';
 import { TextField } from '@fluentui/react/lib/TextField';
 import { Dropdown } from '@fluentui/react/lib/Dropdown';
-import { Checkbox, MessageBar, MessageBarType, } from '@fluentui/react';
+import { Checkbox, DefaultButton, MessageBar, MessageBarType, } from '@fluentui/react';
 import { Spinner, SpinnerSize } from '@fluentui/react/lib/Spinner';
 import { initializeIcons } from '@fluentui/react/lib/Icons';
 
@@ -17,6 +17,9 @@ import Canada from '../assets/img/FIP_BIL_couleurs-04.png';
 import govCandaEn from '../assets/img/FIP_BIL_couleurs-03.png';
 import govCanadaFr from '../assets/img/FIP_BIL_couleurs-05.png';
 import heroImage from '../assets/img/hero-img.png';
+
+import enTermsPDF from '../assets/docs/gcx_terms_en.pdf';
+import frTermsPDF from '../assets/docs/gcx_terms_fr.pdf';
 
 import i18n from '../i18n/lang';
 import { getDepartments, getDomains, sendUser } from '../services/DepartmentService';
@@ -116,6 +119,7 @@ class Home extends React.Component {
   }
 
   componentDidMount () {
+    console.log(`UA: ${window.navigator.userAgent}`);
     // Grab the sharepoint list here on mount
     // initialize department lists
     let departs = [];
@@ -270,7 +274,14 @@ class Home extends React.Component {
                             <li dangerouslySetInnerHTML={{__html: lang.hero.list2}} />
                             <li dangerouslySetInnerHTML={{__html: lang.hero.list3}} />
                             <li dangerouslySetInnerHTML={{__html: lang.hero.list4}} />
-                          </ul> 
+                          </ul>
+                          <ul className='footer-links'>
+                            <li><a href={(this.props.lang === 'fr-ca')? frTermsPDF : enTermsPDF} target='_blank' rel='noopener noreferrer' dangerouslySetInnerHTML={{__html: lang.footer.terms}} /></li>
+                            <li><a href="mailto:support-soutien@gcx-gce.gc.ca" dangerouslySetInnerHTML={{__html: lang.footer.help}} /></li>
+                            <li>
+                              <a href={(this.props.lang === 'fr-ca')? "https://gcxgce.sharepoint.com/SitePages/fr/Home.aspx" : "https://gcxgce.sharepoint.com"} dangerouslySetInnerHTML={{__html: lang.footer.visit}} />
+                            </li>
+                          </ul>
                         </div>
                       </Col>
                       <Col md="6" className="form-padding">
@@ -285,6 +296,16 @@ class Home extends React.Component {
                           <div className="form-title">
                             {lang.form.submitBtn}
                           </div>
+                          <div className='form-sub-text'>
+                          <span dangerouslySetInnerHTML={{__html: lang.hero.visitLink}} />
+                          </div>
+                          <MessageBar
+                            className="message-padding"
+                            messageBarType={MessageBarType.default}
+                            isMultiline={true}
+                          >
+                            <span dangerouslySetInnerHTML={{__html: lang.form.browserInfo}} /> 
+                          </MessageBar>
                           <TextField
                             required
                             label={lang.form.emailLabel}
