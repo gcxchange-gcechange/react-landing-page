@@ -10,7 +10,7 @@ const Lang = {
             list4: '<span class="info-highlight">Share</span> your content with the GC community',
             link: process.env.REACT_APP_ACCESS_PACKAGE_EN,
             learnMore: 'Learn more about GCX',
-            visitLink: 'Already regsitered? <a href="https://gcxgce.sharepoint.com">Visit the homepage</a> (Remember to bookmark the link!)',
+            visitLink: 'Already registered? <a href="https://gcxgce.sharepoint.com">Visit the homepage</a> (Remember to bookmark the link!)',
         },
         form: {
             loading: 'Loading, please wait',
