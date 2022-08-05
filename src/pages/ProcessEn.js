@@ -11,7 +11,7 @@ const ProcessEn = () => (
     </Helmet>
     <div className="process-holder form-holder">
       <img className="gcx-logo" src={gcxLogo} alt="gcxchange | gcéchange" />
-      <h1 className="process-title">Congrats! You joined GCXchange! We will send you an email in the next 10 with a link to your personal GCXchange homepage.</h1>
+      <h1 className="process-title">Congrats! You joined GCXchange! We will send you an email in the next 10 minutes with a link to your personal GCXchange homepage.</h1>
       <img className="info-img" src={processingImage} alt="" />
       <p>If you don't receive an email after 10 minutes, please contact us at <a href="mailto:support-soutien@gcx-gce.gc.ca">support-soutien@gcx-gce.gc.ca. </a></p>
     </div>
