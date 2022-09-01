@@ -10,7 +10,7 @@ const Index = () => (
     <Helmet>
       <title>gcx-gce.gc.ca</title>
     </Helmet>
-    <img className="gcx-logo" src={gcxLogo} alt="gcxchange | gcéchange" />
+    <img className="gcx-logo" src={gcxLogo} alt="GCXchange | GCÉchange" />
     <div className="content">
       <h1 className="pb-3 sr-only">gcxchange | <span lang="fr">gcéchange</span></h1>
       <h2 className="pb-3 h1">Welcome | <span lang="fr">Bienvenue</span></h2>

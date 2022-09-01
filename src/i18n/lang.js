@@ -2,6 +2,7 @@ const Lang = {
     "en-us": {
         title: 'gcxchange - Register',
         hero: {
+            altimg:"Woman using giant ipad",
             h1: 'GC<span class="info-highlight">X</span>change is here',
             subtitle: 'Say hello to the Government of Canada’s new digital workspace. Register to access GCXchange with your GC device; no password required. On GCXchange you can:',
             list1: '<span class="info-highlight">Collaborate</span> with public servants across the GC',
@@ -52,6 +53,7 @@ const Lang = {
     "fr-ca": {
         title: 'gcéchange - S\'inscrire',
         hero: {
+            altimg:"Une femme utilisant un Ipad géant",
             h1: 'GC<span className="info-highlight">É</span>change est arrivé',
             subtitle: 'Inscrivez-vous pour accéder à GCÉchange avec votre appareil du GC; aucun mot de passe requis. Sur GCÉchange vous pouvez : ',
             list1: '<span class="info-highlight">Collaborer</span> avec les fonctionnaires de l’ensemble du GC ',

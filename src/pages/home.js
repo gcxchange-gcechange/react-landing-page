@@ -266,7 +266,7 @@ class Home extends React.Component {
                       <Col md="6" className="info-holder">
                         <img className="goc-canada" src={(this.props.lang === 'fr-ca')? govCanadaFr : govCandaEn} alt={lang.footer.goc} />
                         <div className="info-content">
-                          <img className="info-img" src={heroImage} alt="" />
+                          <img className="info-img" src={heroImage} alt={lang.hero.altimg} />
                           <h1 className="info-header" dangerouslySetInnerHTML={{__html: lang.hero.h1}} />
                           <p className="info-sub">{lang.hero.subtitle}</p>
                           <ul className="info-list">
@@ -285,7 +285,7 @@ class Home extends React.Component {
                         </div>
                       </Col>
                       <Col md="6" className="form-padding">
-                      <img className="logo-img" src={logo} alt="gcéchange" />
+                      <img className="logo-img" src={logo} alt="GCXchange | GCÉchange" />
                       {this.state.isInitLoad ? <Spinner size={SpinnerSize.large} className="form-padding" label={lang.form.loading} ariaLive="assertive" /> :
                         <Form
                           onSubmit={(e) => {
