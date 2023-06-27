@@ -128,8 +128,8 @@ class Home extends React.Component {
       if(e) {
         e.map((field) => {
           departs.push({
-            key: field.fields.RG_x0020_Code,
-            text: (this.props.lang === 'fr-ca') ? field.fields.Appellation_x0020_l_x00e9_gale : field.fields.Legal_x0020_Title,
+              key: field.fields.additionalData.RG_x0020_Code,
+              text: (this.props.lang === 'fr-ca') ? field.fields.additionalData.Appellation_x0020_l_x00e9_gale : field.fields.additionalData.Legal_x0020_Title,
           })
         })
       }
@@ -155,8 +155,8 @@ class Home extends React.Component {
       if(d) {
         d.map((domain) => {
           domains.push({
-            key: domain.fields.RG_x0020_Code,
-            dom: domain.fields.GoCDomain,
+              key: domain.fields.additionalData.RG_x0020_Code,
+              dom: domain.fields.additionalData.GoCDomain,
           })
         })
       }
