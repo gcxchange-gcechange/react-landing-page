@@ -279,7 +279,7 @@ class Home extends React.Component {
   }
 
 
-  
+ 
 
 
   render() {
@@ -429,20 +429,6 @@ class Home extends React.Component {
                             }}
                             defaultSelectedKey={this.state.department ? this.state.department.text : ''}
                           />
-
-<Dropdown
-        label="Select"
-        options={this.state.departList}
-        defaultSelectedKey={this.state.department.text}
-        onChange={(e, o) => {
-          console.log("option", o);
-          // Set the department state
-          console.log(o);
-          this.setState({
-            department: o,
-          });
-        }}
-      />
 
                           {(this.state.backendError && 
                             <MessageBar
