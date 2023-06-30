@@ -63,9 +63,9 @@ class Home extends React.Component {
       confirmEmail: '',
       isSendLoading: false,
     };
-    // this.toggle = this.toggle.bind(this);
-    // this.onSubmit = this.onSubmit.bind(this);
-    // this.checkEmail = this.checkEmail.bind(this);
+    this.toggle = this.toggle.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
+    this.checkEmail = this.checkEmail.bind(this);
   }
 
   
@@ -135,7 +135,7 @@ class Home extends React.Component {
       if(e) {
         e.map((field, index) => {
           departs.push({
-              key: index,
+              key: index, 
               RGCode: field.fields.additionalData.RGCode,
               text: (this.props.lang === 'fr-ca') ? field.fields.additionalData.Appellation_x0020_l_x00e9_gale : field.fields.additionalData.Legal_x0020_Title,
           })
@@ -163,7 +163,7 @@ class Home extends React.Component {
     getDomains().then(d => {
       console.log("DomainLIST", d);
       if(d) {
-        d.map((domain, index) => {
+        d.map((domain, index ) => {
           domains.push({
               key: index,
               RGCode: domain.fields.additionalData.RG_x0020_Code,
@@ -241,19 +241,19 @@ class Home extends React.Component {
         this.state.domainList.map((domState) => {
         
             if (domState.dom === domain[1].toLowerCase()) {
-              console.log("DOMAIN!",domState.dom)
+              
               if (mailType === 'email') {
-                console.log("domstateKEYINDEX=" + domState.key +  "domstateRGCODE= " + domState.RGCode + " domstate= " + domState.dom + " domain= " + domain[1])
+                console.log("domstateKEY" + domState.key +  "domstateRGCODE= " + domState.RGCode + " domstate= " + domState.dom + " domain= " + domain[1])
 
                 this.setState({
-                  // department: {RGCode: domState.RGCode, text: domState.legalTitle},
+                  // department: {key: domState.RGCode},
                   isEmailDomainValid: true,
                   isCanadaEmail: false,
                 })
 
                 this.setState((prevState) => ({
                     ...prevState.department,
-                    department: {RGCode: domState.RGCode, text: domState.legalTitle}
+                    department: {key: domState.key, RGCode: domState.RGCode, text: domState.legalTitle}
                   })
                 )
                 isValid = true;
@@ -264,8 +264,13 @@ class Home extends React.Component {
                   cloudEmail: email,
                 })
               }
+              
             }
-            
+            //  this.setState({
+                   
+            //         department: {key: domState.key , RGCode: domState.RGCode, text: domState.legalTitle}
+            //       })
+                
         })
 
         // Add check for unrecognized domains that are not in invalid domain list
@@ -279,6 +284,26 @@ class Home extends React.Component {
   }
 
 
+
+  findDepartment () {
+    const itemtoFind = this.state.departList.find(item => (item.RGCode === this.state.department.RGCode))
+
+    if (itemtoFind) {
+      this.setState({
+        department: itemtoFind.key
+      })
+    } else {
+      this.setState({
+        department: null
+      })
+    }
+    
+    
+  }
+
+  
+
+  
  
 
 
@@ -288,8 +313,17 @@ class Home extends React.Component {
 
     document.documentElement.lang = this.props.lang;
 
-    const department = this.state.department.text;
-    console.log("DEPART", department);
+    // const department = this.state.department;
+    console.log("DEPART", this.state.department);
+
+    console.log("DEP LISt", this.state.departList);
+
+
+    const foundItem = this.state.departList.find(item => (item.RGCode === this.state.department.RGCode));
+    console.log('find', foundItem)
+
+    
+  
 
     return (
       <Fragment>
@@ -427,7 +461,7 @@ class Home extends React.Component {
 
 
                             }}
-                            defaultSelectedKey={this.state.department ? this.state.department.text : ''}
+                            selectedKey={this.state.department ? foundItem.key : null}
                           />
 
                           {(this.state.backendError && 
