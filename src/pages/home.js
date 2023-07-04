@@ -136,7 +136,7 @@ class Home extends React.Component {
         e.map((field, index) => {
           departs.push({
               key: index, 
-              RGCode: field.fields.additionalData.RGCode,
+              RGCode: field.fields.additionalData.RG_x0020_Code,
               text: (this.props.lang === 'fr-ca') ? field.fields.additionalData.Appellation_x0020_l_x00e9_gale : field.fields.additionalData.Legal_x0020_Title,
           })
           // console.log("DEPARTS ARRAY", departs);
@@ -146,7 +146,7 @@ class Home extends React.Component {
       // remove potential duplicates in the array
       departs = departs.filter((value, index, self) =>
         index === self.findIndex((t) => (
-          t.RGCode === value.RGCode && t.text === value.text
+          t.RG_x0020_Code === value.RG_x0020_Code && t.text === value.text
         ))
       )
 
@@ -229,7 +229,6 @@ class Home extends React.Component {
           }     
         
         } else {
-          console.log("what is this?", mailType)
           this.setState({
             isCloudDomainValid: false,
           })
