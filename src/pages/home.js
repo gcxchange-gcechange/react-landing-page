@@ -1,8 +1,9 @@
+/* eslint-disable array-callback-return */
 import React, {Fragment} from 'react'
-import { Container, Row, Col, Form, Collapse, Alert } from 'reactstrap';
+import { Container, Row, Col, Form, Collapse } from 'reactstrap';
 import { TextField } from '@fluentui/react/lib/TextField';
 import { Dropdown } from '@fluentui/react/lib/Dropdown';
-import { Checkbox, DefaultButton, MessageBar, MessageBarType, } from '@fluentui/react';
+import { Checkbox,  MessageBar, MessageBarType, } from '@fluentui/react';
 import { Spinner, SpinnerSize } from '@fluentui/react/lib/Spinner';
 import { initializeIcons } from '@fluentui/react/lib/Icons';
 
@@ -77,7 +78,8 @@ class Home extends React.Component {
   onSubmit () {
     let emailWork = this.state.emailInput.toLowerCase();
     let emailCloud = (this.state.cloudEmail ? this.state.cloudEmail.toLowerCase() : this.state.emailInput.toLowerCase());
-    let department = this.state.department.key;
+    let department = this.state.department.RGCode;
+    console.log("submitDep", department)
     let splitEmail = emailWork.split('@');
     let firstName = capitalizeFirstLetter(splitEmail[0].split('.')[0]);
     let lastName = capitalizeFirstLetter(splitEmail[0].split('.')[1]);
@@ -118,6 +120,10 @@ class Home extends React.Component {
     })
   }
 
+  getDepartments = () => {
+    
+  }
+
   componentDidMount () {
     console.log(`UA: ${window.navigator.userAgent}`);
     // Grab the sharepoint list here on mount
@@ -125,19 +131,22 @@ class Home extends React.Component {
     let departs = [];
     let domains = [];
     getDepartments().then(e => {
+      // console.log("Departs", e)
       if(e) {
-        e.map((field) => {
+        e.map((field, index) => {
           departs.push({
-            key: field.fields.RG_x0020_Code,
-            text: (this.props.lang === 'fr-ca') ? field.fields.Appellation_x0020_l_x00e9_gale : field.fields.Legal_x0020_Title,
+              key: index, 
+              RGCode: field.fields.additionalData.RG_x0020_Code,
+              text: (this.props.lang === 'fr-ca') ? field.fields.additionalData.Appellation_x0020_l_x00e9_gale : field.fields.additionalData.Legal_x0020_Title,
           })
+          // console.log("DEPARTS ARRAY", departs);
         })
       }
       
       // remove potential duplicates in the array
       departs = departs.filter((value, index, self) =>
         index === self.findIndex((t) => (
-          t.key === value.key && t.text === value.text
+          t.RG_x0020_Code === value.RG_x0020_Code && t.text === value.text
         ))
       )
 
@@ -152,11 +161,14 @@ class Home extends React.Component {
 
     // initialize domain list
     getDomains().then(d => {
+      console.log("DomainLIST", d);
       if(d) {
-        d.map((domain) => {
+        d.map((domain, index ) => {
           domains.push({
-            key: domain.fields.RG_x0020_Code,
-            dom: domain.fields.GoCDomain,
+              key: index,
+              RGCode: domain.fields.additionalData.RG_x0020_Code,
+              dom: domain.fields.additionalData.GoCDomain,
+              legalTitle: domain.fields.additionalData.Legal_x0020_Title
           })
         })
       }
@@ -166,6 +178,8 @@ class Home extends React.Component {
       })
     })
   }
+
+
 
   checkEmail (email, mailType) {
     // List of invalid Domains to provide user feedback
@@ -182,53 +196,80 @@ class Home extends React.Component {
       'sympatico.ca', 
       'rogers.com',
     ]
-    var isValid = false;
+    let isValid = false;
     if (email.includes('@')) {
       let domain = email.split('@');
+      console.log("domailEmalSplit", domain);
       // compare email domain to our list object
       if(this.state.domainList.length !== 0) {
-        if(mailType === 'email'){
+      
+        if (mailType === 'email') {
+          
           this.setState({
             isEmailDomainValid: false,
             isCanadaEmail: false,
             emailInput: email,
           })
+
           // Check if the user is trying to put a canada.ca email
           if(invalidDomains.includes(domain[1].toLowerCase())){
+           
             this.setState({
               isCanadaEmail: true,
+              isCloudDomainValid: false,
             })
+
+            
           }
+
+          if(domain[1] === 'canada.ca'){
+            this.setState({
+              isCloudDomainValid: false,
+            })
+          }     
+        
         } else {
           this.setState({
             isCloudDomainValid: false,
           })
-          if(domain[1] === 'canada.ca'){
-            this.setState({
-              isCloudDomainValid: true,
-            })
-          }
+
+         
         }
-        
+       
+        //map through the domainList and get the  department title and code
         this.state.domainList.map((domState) => {
+        
             if (domState.dom === domain[1].toLowerCase()) {
+              
               if (mailType === 'email') {
-                console.log("domstatekey " + domState.key + " domstate " + domState.dom + " domain " + domain[1])
+                console.log("domstateKEY" + domState.key +  "domstateRGCODE= " + domState.RGCode + " domstate= " + domState.dom + " domain= " + domain[1])
 
                 this.setState({
-                  department: {key: domState.key},
+                  // department: {key: domState.RGCode},
                   isEmailDomainValid: true,
                   isCanadaEmail: false,
                 })
+
+                this.setState((prevState) => ({
+                    ...prevState.department,
+                    department: {key: domState.key, RGCode: domState.RGCode, text: domState.legalTitle}
+                  })
+                )
                 isValid = true;
-                console.log("depat key" + domState.key)
+                console.log("depat rgcode" + domState.RGCode)
               } else {
                 this.setState({
                   isCloudDomainValid: true,
                   cloudEmail: email,
                 })
               }
+              
             }
+            //  this.setState({
+                   
+            //         department: {key: domState.key , RGCode: domState.RGCode, text: domState.legalTitle}
+            //       })
+                
         })
 
         // Add check for unrecognized domains that are not in invalid domain list
@@ -241,11 +282,47 @@ class Home extends React.Component {
     }
   }
 
+
+
+  findDepartment () {
+    const itemtoFind = this.state.departList.find(item => (item.RGCode === this.state.department.RGCode))
+
+    if (itemtoFind) {
+      this.setState({
+        department: itemtoFind.key
+      })
+    } else {
+      this.setState({
+        department: null
+      })
+    }
+    
+    
+  }
+
+  
+
+  
+ 
+
+
   render() {
 
     var lang = i18n[this.props.lang];
 
     document.documentElement.lang = this.props.lang;
+
+    // const department = this.state.department;
+    console.log("DEPART", this.state.department);
+
+    console.log("DEP LISt", this.state.departList);
+
+
+    const foundItem = this.state.departList.find(item => (item.RGCode === this.state.department.RGCode));
+    console.log('find', foundItem)
+
+    
+  
 
     return (
       <Fragment>
@@ -313,6 +390,7 @@ class Home extends React.Component {
                             onChange={(e) => {
                               e.target.value = e.target.value.toLowerCase();
                               this.checkEmail(e.target.value, 'email');
+                  
                               if (e.target.value === this.state.confirmEmail) {
                                 this.setState({
                                   emailMatch: true,
@@ -373,14 +451,18 @@ class Home extends React.Component {
                             placeholder={lang.form.departmentPlaceholder}
                             options={this.state.departList}
                             onChange={(e, o) => {
+                              console.log("option", o);
                               // Set the department state
                               console.log(o);
                               this.setState({
                                 department: o,
                               });
+
+
                             }}
-                            selectedKey={this.state.department ? this.state.department.key : undefined}
+                            selectedKey={this.state.department ? foundItem.key : null}
                           />
+
                           {(this.state.backendError && 
                             <MessageBar
                               className="input-padding"
