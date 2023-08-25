@@ -30,6 +30,9 @@ const Lang = {
             help: 'Need help? <a href="mailto:support-soutien@gcx-gce.gc.ca">Contact our help desk</a>',
             backendError: 'There was an error. Please try again later',
             backendErrorUserRegistered: 'Looks like you’ve already registered for gcxchange. <a class="b-link" href="https://gcxgce.sharepoint.com">Visit the homepage here</a>.',
+            backendErrorDepartmentSync1: 'Good news! Our records show that you should already have an account on GCXchange. Please follow ',
+            backendErrorDepartmentSync2: 'these instructions to access your account.',
+
         },
         process: {
             title: 'Sit tight, we’re almost finished setting up your account! You’ll be getting an email from us soon. ',

@@ -550,6 +550,26 @@ footer a:hover {
   min-height: 680px !important;
   margin-top: 30px;
 }
+
+.sync-content {
+	width: 70%;
+	margin: 25px auto;
+	background-color:white;
+	border-radius:30px;
+	padding: 5%;
+}
+
+.content-left{
+	text-align:left;
+}
+
+.flex-between {
+	justify-content: space-between;
+}
+
+.first-item-footer{
+	margin-left:4%;
+}
 /*
 .chevron.right:before {
 	left: 0;
@@ -561,9 +581,8 @@ footer a:hover {
 	transform: rotate(45deg);
 }
 */
-
 @media (max-width: 870px) {
-  .footer-imgs .d-flex {
+	.footer-imgs .d-flex {
     display: block !important;
   }
 
