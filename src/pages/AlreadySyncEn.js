@@ -45,7 +45,7 @@ const alreadysync = () => (
 
 
 
-                Thank you for your cooperation!<br></br><br></br>
+                    Thank you for your cooperation! We look forward to collaborating with you on GCXchange soon!<br></br><br></br>
 
                 The GCXchange Team 
                 </p>
