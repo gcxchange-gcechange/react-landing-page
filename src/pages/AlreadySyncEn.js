@@ -7,7 +7,7 @@ import govCandaEn from '../assets/img/gouv_BLANC_EN-01.png';
 const queryParameters = new URLSearchParams(window.location.search)
 const type = queryParameters.get("user")
 
-const Maintenance = () => (
+const alreadysync = () => (
     <main className="text-center toolkit-container">
     <Helmet>
       <title>Already sync</title>
@@ -15,44 +15,48 @@ const Maintenance = () => (
     <img className="gcx-logo" src={gcxLogo} alt="gcxchange | gcéchange" />
     <div className="content sync-content">
       <h1 className="pb-3 sr-only">gcxchange | <span lang="fr">gcéchange</span></h1>
-      <h2 className="pb-4 h1">Your department is already sync!</h2>
+            <h2 className="pb-4 h1">Your department's synchronization with GCXchange has you covered!</h2>
+            <div className="content-sync">
+
+            
             <p className="lead mb-4 content-left">
-                Dear GCXchange User,<br></br>
-                Your home department participated in a process to automatically create GCXchange accounts for its employees. Please contact your IT Team using the following template and they will be ready to assist you.
-            </p>
-            <hr class="toolkit-hr"></hr>
+                    Your home department has taken care of setting up GCXchange accounts for its employees, but for one reason or another your profile was not properly created. To fix this issue, please contact your Information Technology (IT) team by using the template below:
+            </p><br></br>
+          
             <p className="lead mb-4 content-left">
-            Template:<br></br>
+                Hello,<br></br><br></br>
 
-            Hello from the GCXchange Team!<br></br>
-
-            The colleague contacting you today attempted to register on GCXchange. Please add them to the TBS Identity Federation Group so that they can be added to the GCXchange/IDF tenant, and have their account automatically created for them.<br></br>
-
-                Below is their departmental email:{type}<br></br>
+                While registering for a GCXchange account, the GCXchange support team has advised me to relay this message to my IT department:<br></br><br></br>
 
 
 
-            Thank you!<br></br>
+                Please add this user to the TBS Identity Federation Group (IDF). This will allow them to join the GCXchange/IDF tenant and have their account automatically established.<br></br><br></br>
 
-            GCXchange Support
-            </p>
-            <hr class="toolkit-hr"></hr>
+                Below is the user’s departmental email:<br></br><br></br>
+
+                {type}<br></br><br></br>
+
+                Thank you! 
+            </p><br></br>
+            
             <p className="lead mb-4 content-left">
-                For any issues or questions that you may have once you contact your IT Team, please reach out to GCXchange Support.<br></br>
+                <span className="toolkit-bold">GCXchange Support Team </span><br></br><br></br>
+                For any issues or questions that you may have once you contact your IT Team, please reach out to the GCXchange Support for further assistance.<br></br><br></br>
 
 
 
-                Thank you!<br></br>
+                Thank you for your cooperation!<br></br><br></br>
 
-                The GCXchange Team
-            </p>
+                The GCXchange Team 
+                </p>
+            </div>
         </div>
         <footer>
             <div className="d-flex align-items-center flex-between">
-                <img className="goc-canada first-item-footer" src={govCandaEn} alt="" /> 
-                <div><a herf="www.google.ca">Terms and Conditions</a></div>
-                <div><a herf="www.google.ca">Help</a></div>
-                <div><a herf="www.google.ca">Go to GCX</a></div>
+                <img className="goc-canada first-item-footer" src={govCandaEn} alt="Government of Canada" /> 
+                <div><a herf="https://www.gcx-gce.gc.ca/static/media/gcx_terms_en.7b9ac15818e30845358c.pdf">Terms and Conditions</a></div>
+                <div><a herf="mailto:support-soutien@gcx-gce.gc.ca">Help</a></div>
+                <div><a herf="https://gcxgce.sharepoint.com/">Go to GCX</a></div>
                 <img className="goc-canada item" src={Canada} alt="" />
             </div>
         </footer>
@@ -60,4 +64,4 @@ const Maintenance = () => (
 
 )
 
-export default Maintenance;
+export default alreadysync;

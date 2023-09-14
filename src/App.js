@@ -13,6 +13,7 @@ import ProcessEn from "./pages/ProcessEn";
 import ProcessFr from "./pages/ProcessFr";
 import Maintenance from "./pages/Maintenance";
 import AlreadySyncEn from "./pages/AlreadySyncEn";
+import AlreadySyncFr from "./pages/AlreadySyncFr";
 import './App.css'
 
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -36,6 +37,9 @@ function App() {
                 <ProcessFr />
               </Route><Route exact path="/en/alreadysync">
                 <AlreadySyncEn />
+                  </Route>
+                  <Route exact path="/fr/alreadysync">
+                      <AlreadySyncFr />
                   </Route>
               <Route exact path="/">
                 {process.env.REACT_APP_MAINTENANCE_MODE == "true" ?

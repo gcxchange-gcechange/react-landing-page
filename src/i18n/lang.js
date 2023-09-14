@@ -30,8 +30,9 @@ const Lang = {
             help: 'Need help? <a href="mailto:support-soutien@gcx-gce.gc.ca">Contact our help desk</a>',
             backendError: 'There was an error. Please try again later',
             backendErrorUserRegistered: 'Looks like you’ve already registered for gcxchange. <a class="b-link" href="https://gcxgce.sharepoint.com">Visit the homepage here</a>.',
-            backendErrorDepartmentSync1: 'Good news! Our records show that you should already have an account on GCXchange. Please follow ',
-            backendErrorDepartmentSync2: 'these instructions to access your account.',
+            backendErrorDepartmentSync1: 'Your department is now fully registered to GCXchange! Your profile should have already been created, however, we\'ve encountered a small issue along the way. No worries! To access your account, simply',
+            backendErrorDepartmentSync2: 'follow these easy instructions.',
+
 
         },
         process: {
@@ -84,6 +85,8 @@ const Lang = {
             help: 'Besoin d\'aide? <a href="mailto:support-soutien@gcx-gce.gc.ca">Contactez notre service d\'assistance</a>',
             backendError: 'Un problème est survenu; veuillez réessayer plus tard.',
             backendErrorUserRegistered: 'Il semble que vous êtes déjà inscrits à gcéchange. <a class="b-link" href="https://gcxgce.sharepoint.com/SitePages/fr/Home.aspx">Visitez la page d\'accueil ici.</a>',
+            backendErrorDepartmentSync1: 'Votre ministère est complètement inscrit à GCÉchange! Votre profil devrait déjà avoir été créé, mais nous avons rencontré un petit problème en cours de route. Ne vous inquiétez pas! Pour accéder à votre compte, il vous suffit de ',
+            backendErrorDepartmentSync2: 'suivre les instructions suivantes.',
         },
         process: {
             title: 'Attendez patiemment, nous avons presque fini de configurer votre compte! Vous recevrez bientôt un courriel de notre part.',

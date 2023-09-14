@@ -552,7 +552,7 @@ footer a:hover {
 }
 
 .sync-content {
-	width: 70%;
+	width: 75%;
 	margin: 25px auto;
 	background-color:white;
 	border-radius:30px;
@@ -569,6 +569,11 @@ footer a:hover {
 
 .first-item-footer{
 	margin-left:4%;
+}
+
+.content-sync{
+	width:90%;
+	margin:auto;
 }
 /*
 .chevron.right:before {
