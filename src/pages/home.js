@@ -111,11 +111,9 @@ class Home extends React.Component {
               var user = data.split('email:')[1] //get the user email
 
               if (this.props.lang === 'fr-ca') {
-              var link = '<a class-"b-link" target="_blank" rel="noopener noreferrer" href="http://localhost:3000/fr/alreadysync?user=' + user + '">' + lang.form.backendErrorDepartmentSync2 +'</a> ' // create the link with the email
-
+                  var link = '<a class-"b-link" target="_blank" rel="noopener noreferrer" href="https://www.gcx-gce.gc.ca/fr/alreadysync?user=' + user + '">' + lang.form.backendErrorDepartmentSync2 +'</a> ' // create the link with the email
               } else {
-              var link = '<a class-"b-link" target="_blank" rel="noopener noreferrer" href="http://localhost:3000/en/alreadysync?user=' + user + '">' + lang.form.backendErrorDepartmentSync2 +'</a> ' // create the link with the email
-
+                  var link = '<a class-"b-link" target="_blank" rel="noopener noreferrer" href="https://www.gcx-gce.gc.ca/en/alreadysync?user=' + user + '">' + lang.form.backendErrorDepartmentSync2 +'</a> ' // create the link with the email
               }
             this.setState({
               backendError: true,
