@@ -106,6 +106,20 @@ class Home extends React.Component {
               backendMsg: lang.form.backendErrorUserRegistered,
               isSendLoading: false,
             });
+          } else if (data.includes("already synced")) {
+
+              var user = data.split('email:')[1] //get the user email
+
+              if (this.props.lang === 'fr-ca') {
+                  var link = '<a class-"b-link" target="_blank" rel="noopener noreferrer" href="https://www.gcx-gce.gc.ca/fr/alreadysync?user=' + user + '">' + lang.form.backendErrorDepartmentSync2 +'</a> ' // create the link with the email
+              } else {
+                  var link = '<a class-"b-link" target="_blank" rel="noopener noreferrer" href="https://www.gcx-gce.gc.ca/en/alreadysync?user=' + user + '">' + lang.form.backendErrorDepartmentSync2 +'</a> ' // create the link with the email
+              }
+            this.setState({
+              backendError: true,
+                backendMsg: lang.form.backendErrorDepartmentSync1 + link,// create the error message with the link
+              isSendLoading: false,
+            });
           } else {
             this.setState({
               backendError: true,
