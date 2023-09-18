@@ -78,7 +78,9 @@ class Home extends React.Component {
   onSubmit () {
     let emailWork = this.state.emailInput.toLowerCase();
     let emailCloud = (this.state.cloudEmail ? this.state.cloudEmail.toLowerCase() : this.state.emailInput.toLowerCase());
-    let department = this.state.department.RGCode;
+    let department = this.state.department.text;
+    let rgcode = this.state.department.RGCode
+    let B2B = this.state.department.B2B
     console.log("submitDep", department)
     let splitEmail = emailWork.split('@');
     let firstName = capitalizeFirstLetter(splitEmail[0].split('.')[0]);
@@ -92,6 +94,8 @@ class Home extends React.Component {
       FirstName: firstName,
       LastName: lastName,
       Department: department,
+      RGCode: rgcode,
+      B2B: B2B
     }).then(data => {
       if(data) {
         if(data.status && data.status === 200){
@@ -152,6 +156,7 @@ class Home extends React.Component {
               key: index, 
               RGCode: field.fields.additionalData.RG_x0020_Code,
               text: (this.props.lang === 'fr-ca') ? field.fields.additionalData.Appellation_x0020_l_x00e9_gale : field.fields.additionalData.Legal_x0020_Title,
+              b2b: field.fields.additionalData.B2B
           })
           // console.log("DEPARTS ARRAY", departs);
         })
