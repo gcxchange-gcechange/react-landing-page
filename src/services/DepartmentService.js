@@ -1,9 +1,9 @@
 export async function getDomains() {
   // get list of domains
-    const response = await fetch("", {
+    const response = await fetch(process.env.REACT_APP_DEV_DOMAIN_URL, {
     method: 'POST',
     headers: {
-        'x-functions-key': "",
+        'x-functions-key': process.env.REACT_APP_DEV_DOMAIN_KEY,
         'Content-Type':'application/json'
     }}).then((data) => {
       return data
@@ -17,10 +17,10 @@ export async function getDomains() {
 
 export async function getDepartments() {
   // get list of departments
-    const response = await fetch("", {
+    const response = await fetch(process.env.REACT_APP_DEV_DEPART_URL, {
     method: 'POST',
     headers: {
-        'x-functions-key': "",
+        'x-functions-key': process.env.REACT_APP_DEV_DEPART_KEY,
         'Content-Type':'application/json'
     }}).then((data) => {
       return data
@@ -33,10 +33,10 @@ export async function getDepartments() {
 }
 
 export async function sendUser(user) {
-    const test = await fetch("", {
+    const test = await fetch(process.env.REACT_APP_DEV_SEND_URL, {
     method: 'POST',
     headers: {
-        'x-functions-key': "",
+        'x-functions-key': process.env.REACT_APP_DEV_SEND_KEY,
         'Content-Type':'application/json'
     },
     body:JSON.stringify(user)
