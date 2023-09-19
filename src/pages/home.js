@@ -81,7 +81,6 @@ class Home extends React.Component {
     let department = this.state.department.text;
     let rgcode = this.state.department.RGCode
     let B2B = this.state.department.B2B
-    console.log("submitDep", department)
     let splitEmail = emailWork.split('@');
     let firstName = capitalizeFirstLetter(splitEmail[0].split('.')[0]);
     let lastName = capitalizeFirstLetter(splitEmail[0].split('.')[1]);
@@ -158,7 +157,7 @@ class Home extends React.Component {
               text: (this.props.lang === 'fr-ca') ? field.fields.additionalData.Appellation_x0020_l_x00e9_gale : field.fields.additionalData.Legal_x0020_Title,
               b2b: field.fields.additionalData.B2B
           })
-          // console.log("DEPARTS ARRAY", departs);
+           //console.log("DEPARTS ARRAY", departs);
         })
       }
       
@@ -259,35 +258,46 @@ class Home extends React.Component {
         this.state.domainList.map((domState) => {
         
             if (domState.dom === domain[1].toLowerCase()) {
-              
-              if (mailType === 'email') {
-                console.log("domstateKEY" + domState.key +  "domstateRGCODE= " + domState.RGCode + " domstate= " + domState.dom + " domain= " + domain[1])
 
-                this.setState({
-                  // department: {key: domState.RGCode},
-                  isEmailDomainValid: true,
-                  isCanadaEmail: false,
-                })
+                if (mailType === 'email') {
+                    console.log("domstateKEY" + domState.key + "domstateRGCODE= " + domState.RGCode + " domstate= " + domState.dom + " domain= " + domain[1])
 
-                this.setState((prevState) => ({
-                    ...prevState.department,
-                    department: {key: domState.key, RGCode: domState.RGCode, text: domState.legalTitle}
-                  })
-                )
-                isValid = true;
-                console.log("depat rgcode" + domState.RGCode)
-              } else {
-                this.setState({
-                  isCloudDomainValid: true,
-                  cloudEmail: email,
-                })
-              }
-              
+                    this.setState({
+                        // department: {key: domState.RGCode},
+                        isEmailDomainValid: true,
+                        isCanadaEmail: false,
+                    })
+
+                    this.setState((prevState) => ({
+                        ...prevState.department,
+                        department: { key: domState.key, RGCode: domState.RGCode, text: domState.legalTitle }
+                    })
+                    )
+                    isValid = true;
+                    const foundItem = this.state.departList.find(item => (item.RGCode === domState.RGCode));
+                        this.setState((prevState) => ({
+                            ...prevState.department,
+                            department: { key: domState.key, RGCode: domState.RGCode, text: domState.legalTitle, B2B: foundItem.b2b }
+                        })
+                    )
+
+                } else {
+                    this.setState({
+                        isCloudDomainValid: true,
+                        cloudEmail: email,
+                    })
+                }
+    
+
+                
+
             }
             //  this.setState({
-                   
+
             //         department: {key: domState.key , RGCode: domState.RGCode, text: domState.legalTitle}
             //       })
+
+
                 
         })
 
