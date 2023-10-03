@@ -203,6 +203,7 @@ class Home extends React.Component {
     // List of invalid Domains to provide user feedback
     const invalidDomains = [
       'canada.ca',
+      'canada.gc.ca',
       'gmail.com',
       'hotmail.com',
       'live.com',
