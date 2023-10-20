@@ -1,9 +1,9 @@
 export async function getDomains() {
   // get list of domains
-    const response = await fetch("https://appsvc-function-dev-orgin-dotnet001.azurewebsites.net/api/Domain", {
+    const response = await fetch(process.env.REACT_APP_DEV_DOMAIN_URL, {
     method: 'POST',
     headers: {
-        'x-functions-key': "/KZlGuWy8Mxj3aiLseoKAKnTdE2USA/ComB08IaxjKxvz9g72oiDng==",
+        'x-functions-key': process.env.REACT_APP_DEV_DOMAIN_KEY,
         'Content-Type':'application/json'
     }}).then((data) => {
       return data
@@ -17,10 +17,10 @@ export async function getDomains() {
 
 export async function getDepartments() {
   // get list of departments
-    const response = await fetch("https://appsvc-function-dev-orgin-dotnet001.azurewebsites.net/api/Department", {
+    const response = await fetch(process.env.REACT_APP_DEV_DEPART_URL, {
     method: 'POST',
     headers: {
-        'x-functions-key': "/KZlGuWy8Mxj3aiLseoKAKnTdE2USA/ComB08IaxjKxvz9g72oiDng==",
+        'x-functions-key': process.env.REACT_APP_DEV_DEPART_KEY,
         'Content-Type':'application/json'
     }}).then((data) => {
       return data
@@ -33,10 +33,10 @@ export async function getDepartments() {
 }
 
 export async function sendUser(user) {
-    const test = await fetch("https://appsvc-function-dev-invgs-dotnet001.azurewebsites.net/api/QueueUserInfo", {
+    const test = await fetch(process.env.REACT_APP_DEV_SEND_URL, {
     method: 'POST',
     headers: {
-        'x-functions-key': "/L0H0GKp6qFGiq0UAljNF29Wro1TtAXlbCfaRFCocV9R2XKM/504Cw==",
+        'x-functions-key': process.env.REACT_APP_DEV_SEND_KEY,
         'Content-Type':'application/json'
     },
     body:JSON.stringify(user)
