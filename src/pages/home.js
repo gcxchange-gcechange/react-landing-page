@@ -60,8 +60,11 @@ class Home extends React.Component {
       backendError: false,
       backendMsg: '',
       emailMatch: false,
+      domMatch: false,
       confirmEmail: '',
       isSendLoading: false,
+      domRgCode: '',
+      departRgCode: ''
     };
     this.toggle = this.toggle.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
@@ -203,6 +206,7 @@ class Home extends React.Component {
     // List of invalid Domains to provide user feedback
     const invalidDomains = [
       'canada.ca',
+      'canada.gc.ca',
       'gmail.com',
       'hotmail.com',
       'live.com',
@@ -266,6 +270,7 @@ class Home extends React.Component {
                         // department: {key: domState.RGCode},
                         isEmailDomainValid: true,
                         isCanadaEmail: false,
+                        domRgCode: domState.RGCode,
                     })
 
                     this.setState((prevState) => ({
@@ -275,6 +280,9 @@ class Home extends React.Component {
                     )
                     isValid = true;
                     const foundItem = this.state.departList.find(item => (item.RGCode === domState.RGCode));
+                    this.setState({
+                        departRgCode: foundItem.RGCode,
+                    })
                         this.setState((prevState) => ({
                             ...prevState.department,
                             department: { key: domState.key, RGCode: domState.RGCode, text: domState.legalTitle, B2B: foundItem.b2b }
@@ -484,9 +492,25 @@ class Home extends React.Component {
                               // Set the department state
                               console.log(o);
                               this.setState({
-                                department: o,
+                                  department: o,
+                                  departRgCode: o.RGCode
                               });
 
+                                console.log("Dropdown change")
+                                console.log("departRgCode" + this.state.department.RGCode + "Dom rg code" + this.state.domRgCode);
+
+
+                             
+
+                            //    if (o.RGCode === this.state.emailInput) {
+                            //        this.setState({
+                            //            domMatch: true,
+                            //        });
+                            //    } else {
+                            //        this.setState({
+                            //            domMatch: false,
+                            //        });
+                            //    }
 
                             }}
                             selectedKey={this.state.department ? foundItem.key : null}
@@ -504,8 +528,8 @@ class Home extends React.Component {
                             </MessageBar>
                           )}
                           {(this.state.isSendLoading) ? 
-                            <Spinner size={SpinnerSize.small} label={lang.form.loading} ariaLive="assertive" className="form-padding" /> :
-                            <input className="input-padding submit-btn" disabled={(!this.state.isEmailDomainValid || !this.state.department || !this.state.emailMatch) ? true : false} type="submit" value={lang.form.submitBtn} />
+                                                        <Spinner size={SpinnerSize.small} label={lang.form.loading} ariaLive="assertive" className="form-padding" /> :
+                                                        <input className="input-padding submit-btn" disabled={(!this.state.isEmailDomainValid || !this.state.department || !this.state.emailMatch || (this.state.departRgCode != this.state.domRgCode)) ? true : false} type="submit" value={lang.form.submitBtn} />
 
                           }
                           
