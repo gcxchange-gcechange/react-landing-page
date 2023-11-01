@@ -112,6 +112,7 @@ img {
 }
 .info-img {
   width: 300px;
+  margin-bottom: 16px;
 }
 
 .highlight {
@@ -305,21 +306,31 @@ footer a:hover {
 }
 
 .process-title {
-  font-size: 30px;
+  font-size: 18px;
 }
 .process-holder {
   width: 50%;
   margin: 0 auto;
-  /* height: 525px !important; */
-  padding: 3%;
+  height: 650px !important;
+  padding: 45px;
 }
 .process-holder .gcx-logo {
   margin-top: 0px !important;
+  margin-bottom: 20px;
 }
 
 .process-holder a {
   white-space: nowrap;
   color: #0078D4;
+}
+.process-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.process-mrg-20 {
+  margin-right: 20px;
+  margin-left:20px
 }
 .submit-btn {
   background-color: #0078D4 !important;
