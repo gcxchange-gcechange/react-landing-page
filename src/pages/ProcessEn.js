@@ -12,7 +12,7 @@ const ProcessEn = () => (
     </Helmet>
     <div className="process-holder form-holder">
       <img className="gcx-logo" src={gcxLogo} alt="gcxchange | gcéchange" />
-      <h1 className="process-title">Congratulations, you joined GCXchange! </h1><br></br><span>We will send you an email in the next <strong>20 minutes</strong> with a link to your personal GCXchange homepage.</span>
+      <h1 className="process-title">Congratulations, you joined GCXchange!</h1><br></br><span>We will send you an email in the next <strong>20 minutes</strong> with a link to your personal GCXchange homepage.</span>
       <img className="info-img" src={processingImage} alt="" />
       <p>Please don’t forget to check your <strong>Junk Email Folder</strong> in case it finds its way there – Thank you!</p>
       <p>If you don't receive an email after 20 minutes, please go to the <a href = "https://gcxgce.sharepoint.com/SitePages/Home.aspx">GCXchange homepage</a> and check if your page has been successfully created.</p>

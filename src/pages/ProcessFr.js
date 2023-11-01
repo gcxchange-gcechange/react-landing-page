@@ -11,7 +11,7 @@ const ProcessFr = () => (
     </Helmet>
     <div className="process-holder form-holder">
       <img className="gcx-logo" src={gcxLogo} alt="gcxchange | gcéchange" />
-      <h1 className="process-title">Félicitations pour votre inscription à GCÉchange! Nous vous enverrons un courriel dans les <strong>20 prochaines minutes</strong> avec un lien vers votre page d’accueil personnelle GCÉchange.</h1>
+      <h1 className="process-title">Félicitations pour votre inscription à GCÉchange!</h1><br></br><span>Nous vous enverrons un courriel dans les <strong>20 prochaines minutes</strong> avec un lien vers votre page d’accueil personnelle GCÉchange.</span>
       <img className="info-img" src={processingImage} alt="" />
       <p>N’oubliez pas de vérifier votre <strong>dossier Courrier indésirable</strong> au cas où notre courriel s’y retrouverait. Merci!</p>
       <p>Si vous ne recevez pas notre courriel d’ici 20 minutes, rendez-vous à la  <a href="https://gcxgce.sharepoint.com/SitePages/fr/Home.aspx">page d’accueil de GCÉchange</a> et veillez à ce que votre page ait bel et bien été créée.</p>
