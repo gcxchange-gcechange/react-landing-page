@@ -310,7 +310,7 @@ footer a:hover {
 .process-holder {
   width: 50%;
   margin: 0 auto;
-  height: 525px !important;
+  /* height: 525px !important; */
   padding: 3%;
 }
 .process-holder .gcx-logo {
