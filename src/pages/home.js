@@ -151,16 +151,15 @@ class Home extends React.Component {
     let departs = [];
     let domains = [];
     getDepartments().then(e => {
-      // console.log("Departs", e)
+      console.log("DepartmentLIST", e);
       if(e) {
         e.map((field, index) => {
           departs.push({
-              key: index, 
-              RGCode: field.fields.additionalData.RG_x0020_Code,
-              text: (this.props.lang === 'fr-ca') ? field.fields.additionalData.Appellation_x0020_l_x00e9_gale : field.fields.additionalData.Legal_x0020_Title,
-              b2b: field.fields.additionalData.B2B
+            key: index, 
+            RGCode: field.RG_x0020_Code,
+            text: (this.props.lang === 'fr-ca') ? field.Appellation_x0020_l_x00e9_gale : field.Legal_x0020_Title,
+            b2b: field.B2B
           })
-           //console.log("DEPARTS ARRAY", departs);
         })
       }
       
@@ -187,9 +186,9 @@ class Home extends React.Component {
         d.map((domain, index ) => {
           domains.push({
               key: index,
-              RGCode: domain.fields.additionalData.RG_x0020_Code,
-              dom: domain.fields.additionalData.GoCDomain,
-              legalTitle: domain.fields.additionalData.Legal_x0020_Title
+              RGCode: domain.RG_x0020_Code,
+              dom: domain.GoCDomain,
+              legalTitle: domain.Legal_x0020_Title
           })
         })
       }
