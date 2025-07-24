@@ -115,11 +115,12 @@ class Home extends React.Component {
           } else if (data.includes("already synced")) {
 
               var user = data.split('email:')[1] //get the user email
+              let link = '';
 
               if (this.props.lang === 'fr-ca') {
-                  var link = '<a class-"b-link" target="_blank" rel="noopener noreferrer" href="https://www.gcx-gce.gc.ca/fr/alreadysync?user=' + user + '">' + lang.form.backendErrorDepartmentSync2 +'</a> ' // create the link with the email
+                  link = '<a class-"b-link" target="_blank" rel="noopener noreferrer" href="https://www.gcx-gce.gc.ca/fr/alreadysync?user=' + user + '">' + lang.form.backendErrorDepartmentSync2 +'</a> ' // create the link with the email
               } else {
-                  var link = '<a class-"b-link" target="_blank" rel="noopener noreferrer" href="https://www.gcx-gce.gc.ca/en/alreadysync?user=' + user + '">' + lang.form.backendErrorDepartmentSync2 +'</a> ' // create the link with the email
+                  link = '<a class-"b-link" target="_blank" rel="noopener noreferrer" href="https://www.gcx-gce.gc.ca/en/alreadysync?user=' + user + '">' + lang.form.backendErrorDepartmentSync2 +'</a> ' // create the link with the email
               }
             this.setState({
               backendError: true,
@@ -528,7 +529,7 @@ class Home extends React.Component {
                           )}
                           {(this.state.isSendLoading) ? 
                                                         <Spinner size={SpinnerSize.small} label={lang.form.loading} ariaLive="assertive" className="form-padding" /> :
-                                                        <input className="input-padding submit-btn" disabled={(!this.state.isEmailDomainValid || !this.state.department || !this.state.emailMatch || (this.state.departRgCode != this.state.domRgCode)) ? true : false} type="submit" value={lang.form.submitBtn} />
+                                                        <input className="input-padding submit-btn" disabled={(!this.state.isEmailDomainValid || !this.state.department || !this.state.emailMatch || (this.state.departRgCode !== this.state.domRgCode)) ? true : false} type="submit" value={lang.form.submitBtn} />
 
                           }
                           

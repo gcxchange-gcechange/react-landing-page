@@ -54,9 +54,9 @@ const alreadysyncfr = () => (
         <footer>
             <div className="d-flex align-items-center flex-between">
                 <img className="goc-canada first-item-footer" src={govCandaEn} alt="Gouvernement du Canada" /> 
-                <div><a herf="https://www.gcx-gce.gc.ca/static/media/gcx_terms_fr.588a12c3ce3545665f6d.pdf">Conditions d'utilisation</a></div>
-                <div><a herf="mailto:support-soutien@gcx-gce.gc.ca">Aide</a></div>
-                <div><a herf="https://gcxgce.sharepoint.com/SitePages/fr/Home.aspx">Allé à gcé</a></div>
+                <div><a href="https://www.gcx-gce.gc.ca/static/media/gcx_terms_fr.588a12c3ce3545665f6d.pdf">Conditions d'utilisation</a></div>
+                <div><a href="mailto:support-soutien@gcx-gce.gc.ca">Aide</a></div>
+                <div><a href="https://gcxgce.sharepoint.com/SitePages/fr/Home.aspx">Allé à gcé</a></div>
                 <img className="goc-canada item" src={Canada} alt="Symbole du gouvernement du Canada" />
             </div>
         </footer>

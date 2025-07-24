@@ -42,7 +42,7 @@ function App() {
                       <AlreadySyncFr />
                   </Route>
               <Route exact path="/">
-                {process.env.REACT_APP_MAINTENANCE_MODE == "true" ?
+                {process.env.REACT_APP_MAINTENANCE_MODE === "true" ?
                   <Maintenance />
                   :
                   <LanguageSelect />
