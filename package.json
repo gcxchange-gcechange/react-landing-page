@@ -21,6 +21,10 @@
     "react-dom": "^18.2.0",
     "react-ga": "^3.3.0",
     "react-helmet": "^6.1.0",
+<<<<<<< HEAD
+=======
+    "react-hot-loader": "^4.13.1",
+>>>>>>> origin/dependabot/npm_and_yarn/json5-and-react-hot-loader-and-react-scripts-2.2.3
     "react-html5video": "^2.5.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "5.0.1",
