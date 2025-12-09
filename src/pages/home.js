@@ -19,8 +19,8 @@ import govCandaEn from '../assets/img/FIP_BIL_couleurs-03.png';
 import govCanadaFr from '../assets/img/FIP_BIL_couleurs-05.png';
 import heroImage from '../assets/img/hero-img.png';
 
-import enTermsPDF from '../assets/docs/gcx_prob_access_en.pdf';
-import frTermsPDF from '../assets/docs/gcx_prob_access_fr.pdf';
+import enTermsPDF from '../assets/docs/gcx_terms_en.pdf';
+import frTermsPDF from '../assets/docs/gcx_terms_fr.pdf';
 
 import i18n from '../i18n/lang';
 import { getDepartments, getDomains, sendUser } from '../services/DepartmentService';
