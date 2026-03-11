@@ -42,163 +42,161 @@ function capitalizeFirstLetter(string) {
 }
 
 class Home extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isOpen: false,
-      isInitLoad: false,
-      emailInput: '',
-      yesCloudEmail: false,
-      cloudEmail: '',
-      department: '',
-      departList: [],
-      domainList: [],
-      isEmailDomainValid: false,
-      isCanadaEmail: false,
-      isCloudDomainValid: false,
-      isValid: false,
-      backendError: false,
-      backendMsg: '',
-      emailMatch: false,
-      domMatch: false,
-      confirmEmail: '',
-      isSendLoading: false,
-      domRgCode: '',
-      departRgCode: ''
-    };
-    this.toggle = this.toggle.bind(this);
-    this.onSubmit = this.onSubmit.bind(this);
-    this.checkEmail = this.checkEmail.bind(this);
-  }
+    constructor(props) {
+        super(props);
+        this.state = {
+            isOpen: false,
+            isInitLoad: false,
+            emailInput: '',
+            yesCloudEmail: false,
+            cloudEmail: '',
+            department: '',
+            departList: [],
+            domainList: [],
+            isEmailDomainValid: false,
+            isCanadaEmail: false,
+            isCloudDomainValid: false,
+            isValid: false,
+            backendError: false,
+            backendMsg: '',
+            emailMatch: false,
+            domMatch: false,
+            confirmEmail: '',
+            isSendLoading: false,
+            domRgCode: '',
+            departRgCode: ''
+        };
+        this.toggle = this.toggle.bind(this);
+        this.onSubmit = this.onSubmit.bind(this);
+        this.checkEmail = this.checkEmail.bind(this);
+    }
 
-  
+
   toggle () {
-    this.setState({
-      isOpen: !this.state.isOpen,
-    });
-  }
+        this.setState({
+            isOpen: !this.state.isOpen,
+        });
+    }
 
   onSubmit () {
-    let emailWork = this.state.emailInput.toLowerCase();
-    let emailCloud = (this.state.cloudEmail ? this.state.cloudEmail.toLowerCase() : this.state.emailInput.toLowerCase());
-    let department = this.state.department.text;
-    let rgcode = this.state.department.RGCode
-    let B2B = this.state.department.B2B
-    let splitEmail = emailWork.split('@');
-    let firstName = capitalizeFirstLetter(splitEmail[0].split('.')[0]);
-    let lastName = capitalizeFirstLetter(splitEmail[0].split('.')[1]);
-    this.setState({
-      isSendLoading: true,
-    });
-    sendUser({
-      EmailWork: emailWork,
-      EmailCloud: emailCloud,
-      FirstName: firstName,
-      LastName: lastName,
-      Department: department,
-      RGCode: rgcode,
-      B2B: B2B
-    }).then(data => {
+        let emailWork = this.state.emailInput.toLowerCase();
+        let emailCloud = (this.state.cloudEmail ? this.state.cloudEmail.toLowerCase() : this.state.emailInput.toLowerCase());
+        let department = this.state.department.text;
+        let rgcode = this.state.department.RGCode
+        let B2B = this.state.department.b2b
+        let splitEmail = emailWork.split('@');
+        let firstName = capitalizeFirstLetter(splitEmail[0].split('.')[0]);
+        let lastName = capitalizeFirstLetter(splitEmail[0].split('.')[1]);
+        this.setState({
+            isSendLoading: true,
+        });
+        sendUser({
+            EmailWork: emailWork,
+            EmailCloud: emailCloud,
+            FirstName: firstName,
+            LastName: lastName,
+            Department: department,
+            RGCode: rgcode,
+            B2B: B2B
+        }).then(data => {
       if(data) {
         if(data.status && data.status === 200){
-          this.setState({
-            isValid: true,
-          });
-        } else {
-          var lang = i18n[this.props.lang];
+                    this.setState({
+                        isValid: true,
+                    });
+                } else {
+                    var lang = i18n[this.props.lang];
           if(data.includes("already registered")) {
-            this.setState({
-              backendError: true,
-              backendMsg: lang.form.backendErrorUserRegistered,
-              isSendLoading: false,
-            });
-          } else if (data.includes("already synced")) {
+                        this.setState({
+                            backendError: true,
+                            backendMsg: lang.form.backendErrorUserRegistered,
+                            isSendLoading: false,
+                        });
+                    } else if (data.includes("already synced")) {
 
-              var user = data.split('email:')[1] //get the user email
+                        var user = data.split('email:')[1] //get the user email
 
-              if (this.props.lang === 'fr-ca') {
+                        if (this.props.lang === 'fr-ca') {
                   var link = '<a class-"b-link" target="_blank" rel="noopener noreferrer" href="https://www.gcx-gce.gc.ca/fr/alreadysync?user=' + user + '">' + lang.form.backendErrorDepartmentSync2 +'</a> ' // create the link with the email
-              } else {
+                        } else {
                   var link = '<a class-"b-link" target="_blank" rel="noopener noreferrer" href="https://www.gcx-gce.gc.ca/en/alreadysync?user=' + user + '">' + lang.form.backendErrorDepartmentSync2 +'</a> ' // create the link with the email
-              }
-            this.setState({
-              backendError: true,
-                backendMsg: lang.form.backendErrorDepartmentSync1 + link,// create the error message with the link
-              isSendLoading: false,
-            });
-          } else {
-            this.setState({
-              backendError: true,
-              backendMsg: lang.form.backendError,
-              isSendLoading: false,
-            });
-          }
-          
-          console.log('Something went wrong');
-        }
-      }
-    })
-  }
+                        }
+                        this.setState({
+                            backendError: true,
+                            backendMsg: lang.form.backendErrorDepartmentSync1 + link,// create the error message with the link
+                            isSendLoading: false,
+                        });
+                    } else {
+                        this.setState({
+                            backendError: true,
+                            backendMsg: lang.form.backendError,
+                            isSendLoading: false,
+                        });
+                    }
 
-  getDepartments = () => {
-    
-  }
-
-  componentDidMount () {
-    console.log(`UA: ${window.navigator.userAgent}`);
-    // Grab the sharepoint list here on mount
-    // initialize department lists
-    let departs = [];
-    let domains = [];
-    getDepartments().then(e => {
-      console.log("DepartmentLIST", e);
-      if(e) {
-        e.map((field, index) => {
-          departs.push({
-            key: index, 
-            RGCode: field.RG_x0020_Code,
-            text: (this.props.lang === 'fr-ca') ? field.Appellation_x0020_l_x00e9_gale : field.Legal_x0020_Title,
-            b2b: field.B2B
-          })
+                    console.log('Something went wrong');
+                }
+            }
         })
-      }
-      
-      // remove potential duplicates in the array
-      departs = departs.filter((value, index, self) =>
-        index === self.findIndex((t) => (
-          t.RG_x0020_Code === value.RG_x0020_Code && t.text === value.text
-        ))
-      )
+    }
 
-      // sort alphabetical
+    getDepartments = () => {
+
+    }
+
+    componentDidMount() {
+       // console.log(`UA: ${window.navigator.userAgent}`);
+        // Grab the sharepoint list here on mount
+        // initialize department lists
+        let departs = [];
+        let domains = [];
+        getDepartments().then(e => {
+           // console.log("DepartmentLIST", e);
+            if (e) {
+                e.map((field, index) => {
+                    departs.push({
+                        key: index,
+                        RGCode: field.RG_x0020_Code,
+                        text: (this.props.lang === 'fr-ca') ? field.Appellation_x0020_l_x00e9_gale : field.Legal_x0020_Title,
+                        b2b: field.B2B
+                    })
+                })
+            }
+
+            // remove potential duplicates in the array
+            departs = departs.filter((value, index, self) =>
+                index === self.findIndex((t) => (
+                    t.RG_x0020_Code === value.RG_x0020_Code && t.text === value.text
+                ))
+            )
+
+            // sort alphabetical
       departs.sort((a, b) => { if(a.text < b.text) { return -1; } if(a.text > b.text) { return 1; } return 0; })
-      
-      //set state
-      this.setState({
-        departList: departs,
-      })
-    })
 
-    // initialize domain list
-    getDomains().then(d => {
-      console.log("DomainLIST", d);
-      if(d) {
-        d.map((domain, index ) => {
-          domains.push({
-              key: index,
-              RGCode: domain.RG_x0020_Code,
-              dom: domain.GoCDomain,
-              legalTitle: domain.Legal_x0020_Title
-          })
+            //set state
+            this.setState({
+                departList: departs,
+            })
         })
-      }
-      this.setState({
-        domainList: domains,
-        isInitLoad: false,
-      })
-    })
-  }
 
+        // initialize domain list
+        getDomains().then(d => {
+            if (d) {
+                d.map((domain, index) => {
+                    domains.push({
+                        key: index,
+                        RGCode: domain.RG_x0020_Code,
+                        dom: domain.GoCDomain,
+                        legalTitle: domain.Legal_x0020_Title
+                    })
+                })
+            }
+            this.setState({
+                domainList: domains,
+                isInitLoad: false,
+            })
+        })
+    }
 
 
   checkEmail (email, mailType) {
@@ -220,7 +218,7 @@ class Home extends React.Component {
     let isValid = false;
     if (email.includes('@')) {
       let domain = email.split('@');
-      console.log("domailEmalSplit", domain);
+
       // compare email domain to our list object
       if(this.state.domainList.length !== 0) {
       
@@ -263,7 +261,6 @@ class Home extends React.Component {
             if (domState.dom === domain[1].toLowerCase()) {
 
                 if (mailType === 'email') {
-                    console.log("domstateKEY" + domState.key + "domstateRGCODE= " + domState.RGCode + " domstate= " + domState.dom + " domain= " + domain[1])
 
                     this.setState({
                         // department: {key: domState.RGCode},
@@ -294,17 +291,8 @@ class Home extends React.Component {
                         cloudEmail: email,
                     })
                 }
-    
-
-                
 
             }
-            //  this.setState({
-
-            //         department: {key: domState.key , RGCode: domState.RGCode, text: domState.legalTitle}
-            //       })
-
-
                 
         })
 
@@ -335,30 +323,16 @@ class Home extends React.Component {
     
     
   }
-
-  
-
-  
- 
+    
 
 
   render() {
 
-    var lang = i18n[this.props.lang];
+      var lang = i18n[this.props.lang];
 
     document.documentElement.lang = this.props.lang;
 
-    // const department = this.state.department;
-    console.log("DEPART", this.state.department);
-
-    console.log("DEP LISt", this.state.departList);
-
-
     const foundItem = this.state.departList.find(item => (item.RGCode === this.state.department.RGCode));
-    console.log('find', foundItem)
-
-    
-  
 
     return (
       <Fragment>
@@ -448,8 +422,7 @@ class Home extends React.Component {
                               this.setState({
                                 confirmEmail: e.target.value,
                               });
-                              console.log(`This input ${e.target.value}`);
-                              console.log(`Email state ${this.state.emailInput}`);
+
                               if (e.target.value === this.state.emailInput) {
                                 this.setState({
                                   emailMatch: true,
@@ -487,33 +460,16 @@ class Home extends React.Component {
                             placeholder={lang.form.departmentPlaceholder}
                             options={this.state.departList}
                             onChange={(e, o) => {
-                              console.log("option", o);
                               // Set the department state
                               console.log(o);
-                              this.setState({
+                             this.setState({
                                   department: o,
                                   departRgCode: o.RGCode
-                              });
-
-                                console.log("Dropdown change")
-                                console.log("departRgCode" + this.state.department.RGCode + "Dom rg code" + this.state.domRgCode);
-
-
-                             
-
-                            //    if (o.RGCode === this.state.emailInput) {
-                            //        this.setState({
-                            //            domMatch: true,
-                            //        });
-                            //    } else {
-                            //        this.setState({
-                            //            domMatch: false,
-                            //        });
-                            //    }
+                             });
 
                             }}
                             selectedKey={this.state.department ? foundItem.key : null}
-                          />
+                            />
 
                           {(this.state.backendError && 
                             <MessageBar
